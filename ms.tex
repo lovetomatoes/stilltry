@@ -209,19 +209,11 @@ The QLFs at high redshifts are determined by the original BH seeding and subsequ
 Firstly we describe our model regarding the formation of BH seeds in progenitor DM halos 
 that end up in high-$z$ quasar host galaxies with halo masses of $\Mh>10^{11}~\Msun$.
 This is motivated by the observed masses of quasar hosts which are typically up to $\sim 10^{11-13}~\Msun$, 
-probed by $\CII$ line width estimation \citep{2019ApJ...872L..29S}.
+probed by \blue{$\CII$ line width estimation} \citep{2019ApJ...872L..29S}.
 Therefore, we sample base halos with $\Mh = 10^{11}$, $10^{12}$, and $10^{13} ~\Msun$ at $z=$ 6. 
 We then generate 10$^4$ merger trees with each base halo mass backward in time using the {\tt GALFORM} 
 semi-analytic algorithm based on the extended Press-Schechter formalism 
-\citep{1974ApJ...187..425P,2000MNRAS.319..168C,2008MNRAS.383..557P}.
-The normalizations of the merger trees are estimated by the base halo number densities from Sheth-Tormen halo mass function \citep{2001MNRAS.323....1S}:
-%%%%%%%
-%    Eq. 1
-%%%%%%%
-\begin{equation}
-n_{\Mh}= \int_{\Mh}^{10\Mh}  \frac{\D n_{\mathrm{ST}}} {\D \Mh} \D \Mh.
-\label{eq:nST}
-\end{equation}
+\citep{1974ApJ...187..425P,2000MNRAS.319..168C,2008MNRAS.383..557P}, and study the BH seeds formed therein.
 
 BH seeding is also affected by the baryonic streaming motion of its natal cloud, 
 where gas is streaming relative to the dark matter in the epoch of cosmic recombination at $z_\mathrm{rec}\approx$ 1100, 
@@ -245,20 +237,20 @@ traces the gas evolution along its parent halo growth and yields the seed BH mas
 The merger heating and enhancement of background Lyman-Werner radiation intensity $\jlw$ 
 due to halo clustering is taken into account to shape the gas thermal evolution. 
 Besides, the baryonic streaming velocity $\vbsm$ together with the turbulent velocity $v_\mathrm{tur}$ 
-through halo virialization is modeled by the effective sound speed of gas:
-%%%%%%%
-%    Eq. 2
-%%%%%%%
-\begin{equation}
-  c_{\rm eff} = \sqrt{ c_{\rm s}^2+v_{\rm tur}^2/3+\left(\alpha_0 \vbsm \right)^2}, 
-\end{equation}
-where the coefficient $\alpha_0$ is suggested to be in order of unity by previous studies 
-\citep{2017Sci...357.1375H,2019MNRAS.484.3510S} 
-and we apply $\alpha_0 = 1$ in this work. 
-Following this model we produce 10$^4$ BH seeds with their formation time and masses $M_\mathrm{seed}$, 
-in each merger tree with a given $\vbsm$. 
-Contributed by the number densities of the base halos and the fraction of environmental $\vbsm$, 
-we construct the seed BH mass distribution shown in Fig.~\ref{fig:seedmf}.
+through halo virialization is taken into account
+\footnote{
+We model the effective sound speed of gas as $c_{\rm eff} = \sqrt{ c_{\rm s}^2+v_{\rm tur}^2/3+\left(\alpha_0 \vbsm \right)^2}$,
+where the coefficient $\alpha_0 = 1$ is motivated by previous studies 
+\citep{2017Sci...357.1375H,2019MNRAS.484.3510S}.
+}.
+Following this model we produce 10$^4$ BH seeds with their formation time and masses, 
+in each merger tree with a given $\vbsm$, 
+the abundance of seeds is normalized with the base halo number density from the Sheth-Tormen \citep{2001MNRAS.323....1S} halo mass function:
+\begin{align*}
+  n_{\Mh}= \int_{\Mh}^{10\Mh}  \frac{\D n_{\mathrm{ST}}} {\D \Mh} \D \Mh, 
+\end{align*}
+weighted by the environmental $\vbsm$ fraction $f_{\vbsm}$. 
+We then construct the seed BH mass distribution shown in Fig.~\ref{fig:seedmf}. 
 
 %%%%%%%
 %    Fig. 1
@@ -300,11 +292,12 @@ Thus the new BH mass distribution is reshaped iteratively by integrating with th
 % The BH accretion at high redshifts is probed only by snapshots, in their most luminous quasar phase. We have constraints on simulations and observations of lower redshift counterparts.
 With seeds planted, we grow the BHs with a semi-analytical accretion rate model 
 and study the BH mass distribution at redshift 6. 
+\blue{(references + discussion)}
 The growth model is captured by a limited number of free parameters, 
 % the quasar accretion is episodic with Eddington ratio variations,
 describing the BH mass growth rate $\Mdot$ by: 
 %%%%%%%
-%    Eq. 3
+%    Eq. 1
 %%%%%%%
 \begin{equation}
   \label{eq:mdot}
@@ -318,7 +311,9 @@ the Soltan's argument  \citep{1982MNRAS.200..115S,2002MNRAS.335..965Y}.
 % The high mass BH should be strangulated by as it grows, 
 We introduce the mass dependency 
 $f(M) = 0.5 \left[1+\left(M/10^8~\Msun\right)^\delta\right] ^ {-1}$, 
-to suppress the high mass BH growth with a positive $\delta$. With decreasing $\delta$, 
+to suppress the high mass BH growth with a positive $\delta$. 
+\blue{(references)}
+With decreasing $\delta$, 
 the model is reduced to an exponential growth independent of BH mass.
 % In \S~\ref{sec:fitting}, $\delta$ turns out to be close to 0, indicating an exponential grow manner independent of BH mass.
 
@@ -334,7 +329,7 @@ Observations also propose that the intrinsic ERDF in lower-$z$ quasars hosted by
 \citep{2015MNRAS.447.2085S,2016ApJ...826...12J,2018MNRAS.474.1225A}, 
 therefore we take 2 free parameters $\lambda_0$ and $\alpha$ to characterize the ERDF:
 %%%%%%%
-%    Eq. 4
+%    Eq. 2
 %%%%%%%
 \begin{equation}
   \label{eq:Pl}
@@ -367,7 +362,7 @@ which is given by combining the BH mass distribution from the seeds growing inde
 with different base halo mass $\Mh$,
 weighted by the environmental $\vbsm$ probability and seeding fraction: 
 %%%%%%%
-%    Eq. 5
+%    Eq. 3
 %%%%%%%
 \begin{align}
 & \Phi_\mathrm{M} \equiv \frac{\D n}{\D \log M}  \nonumber \\
@@ -385,7 +380,7 @@ at the previous checkpoint, plus the seeds newly formed in between.
 Considering the growth of a BH with mass $M_{\rm i}$ by a time interval $\Delta t$, 
 from the accretion rate prescription in Eq.~(\ref{eq:mdot}), the final mass $M$ can be described in the relation 
 %%%%%%%
-%    Eq. 6
+%    Eq. 4
 %%%%%%%
 \begin{equation}
   \label{eq:mi2m}
@@ -396,7 +391,7 @@ from the accretion rate prescription in Eq.~(\ref{eq:mdot}), the final mass $M$ 
 
 This yields the BH mass distribution 
 %%%%%%%
-%    Eq. 7
+%    Eq. 5
 %%%%%%%
 \begin{align}
   \label{eq:dpdm}
@@ -434,7 +429,7 @@ Furthermore, we can generate QLFs that is directly probed by high-$z$ observatio
 For a BH accreting with bolometric luminosity $\Lbol=\lambda L_\mathrm{Edd}$, 
 its absolute magnitude $\Muv$ in the rest-frame ultraviolet (UV) band is given by:
 %%%%%%%
-%    Eq. 8
+%    Eq. 6
 %%%%%%%
 \begin{equation}
   \label{eq:M1450}
@@ -476,7 +471,7 @@ and we may refer to more solid prescriptions of $\fobsc$ in the future.
 
 After taking obscuration into account, the observed luminosity function for a given BHMF and ERDF can be written as:
 %%%%%%%
-%    Eq. 9
+%    Eq. 7
 %%%%%%%
 \begin{align}
 \label{eq:dn_dM1450}
@@ -589,7 +584,7 @@ Following the prior distribution, parameters are sampled to generate the synthet
 which is then conjointly compared with the observational data. 
 The offset between the model and data is evaluated as 
 %%%%%%%
-%    Eq. 10
+%    Eq. 8
 %%%%%%%
 \begin{align}
   \chi^2 = \sum_i
