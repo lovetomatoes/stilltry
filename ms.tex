@@ -208,8 +208,9 @@ i.e., $\Omega_{\mathrm{m}}=0.307,~\Omega_{\Lambda}=0.693,~
 The QLFs at high redshifts are determined by the original BH seeding and subsequent growth. 
 Firstly we describe our model regarding the formation of BH seeds in progenitor DM halos 
 that end up in high-$z$ quasar host galaxies with halo masses of $\Mh>10^{11}~\Msun$.
-This is motivated by the observed masses of quasar hosts which are typically up to $\sim 10^{11-13}~\Msun$, 
-probed by \blue{$\CII$ line width estimation} \citep{2019ApJ...872L..29S}.
+This is motivated by the estimated masses of quasar hosts which are typically up to $\sim 10^{11-13}~\Msun$, 
+probed by the $\left[\mathrm{C} \text{ II }\right]$ 158 $\micron$ fine structure line width \citep{2019ApJ...872L..29S}.
+\blue{references}
 Therefore, we sample base halos with $\Mh = 10^{11}$, $10^{12}$, and $10^{13} ~\Msun$ at $z=$ 6. 
 We then generate 10$^4$ merger trees with each base halo mass backward in time using the {\tt GALFORM} 
 semi-analytic algorithm based on the extended Press-Schechter formalism 
@@ -299,15 +300,21 @@ describing the BH mass growth rate $\Mdot$ by:
 %%%%%%%
 %    Eq. 1
 %%%%%%%
+\begin{equation*}
+  \label{eq:mdot_1}
+  \Mdot = \frac{\lambda f\left(M\right) M}{\tEdd} ,
+\end{equation*}
 \begin{equation}
   \label{eq:mdot}
-  \Mdot = \frac{\lambda f\left(M\right) M}{\tEdd},
+  \Mdot = \lambda f\left(M\right) \Mdot_\mathrm{Edd} ,
 \end{equation}
-where $\tEdd = \eta_0  M c^2/L_{\mathrm{Edd}} \approx 45$ Myr,
-$\lambda = L/L_\mathrm{Edd}$ is the Eddington ratio that represents the strength of the accretion power.
-Note here we adopt the radiative efficiency $\eta_0 \approx 0.1 $ according to the thin accretion disk model 
-\citep{1973A&A....24..337S}, which is also consistent with 
-the Soltan's argument  \citep{1982MNRAS.200..115S,2002MNRAS.335..965Y}.
+% where $\tEdd = \eta_0  M c^2/L_{\mathrm{Edd}} \approx 45$ Myr,
+where $\lambda = L/L_\mathrm{Edd}$ is the Eddington ratio,
+and $\Mdot_\mathrm{Edd} = L_{\mathrm{Edd}}/\eta_0 c^2$ is the Eddington accretion rate with the radiative efficiency $\eta_0$.
+Note here we adopt the radiative efficiency $\eta_0 \approx 0.1 $,
+according to the thin accretion disk model \citep{1973A&A....24..337S}, 
+which is also consistent with the Soltan's argument \citep{1982MNRAS.200..115S,2002MNRAS.335..965Y}.
+Then $\tEdd =  M/\Mdot_{\mathrm{Edd}} \approx 45$ Myr is the Salpeter $e$-folding timescale \citep{1964ApJ...140..796S}.
 % The high mass BH should be strangulated by as it grows, 
 We introduce the mass dependency 
 $f(M) = 0.5 \left[1+\left(M/10^8~\Msun\right)^\delta\right] ^ {-1}$, 
@@ -427,7 +434,8 @@ and extend to high mass (luminous) end in the BHMF (QLF) in a numerically effici
 Furthermore, we can generate QLFs that is directly probed by high-$z$ observations.
 %  compared with observations and in return constrain our model.
 For a BH accreting with bolometric luminosity $\Lbol=\lambda L_\mathrm{Edd}$, 
-its absolute magnitude $\Muv$ in the rest-frame ultraviolet (UV) band is given by:
+its rest-frame ultraviolot (UV) absolute magnitude $\Muv$ 
+at 1450 $\mathrm{\AA}$ is given by: 
 %%%%%%%
 %    Eq. 6
 %%%%%%%
@@ -440,7 +448,7 @@ Under this conversion, an ERDF combined with the $z\sim$ 6 BH population is able
 the quasar abundances with different luminosities. 
 However, we note that a vital ingredient to construct the observed QLF, 
 is the luminosity dependent obscuration fraction, 
-which decreases the fraction of the detectable quasars toward the dimmer population 
+which decreases the fraction of the detectable quasars preferentially in the dimmer population 
 \citep{2003ApJ...598..886U,2014ApJ...786..104U,2008A&A...490..905H,2014MNRAS.437.3550M}, 
 thus differs the normalization and shape of the observed QLF from the intrinsic one.
 
@@ -495,7 +503,7 @@ In this section, we describe the Markov Chain Monte Carlo (MCMC) fitting procedu
 \centering
 \includegraphics[width=170mm]{contour.pdf}
 \caption{
-Posterior distributions of all the model parameters with 3 different $\fseed$ values, 
+Posterior distributions of all the model parameters with $\fseed=0.1$ and 0.01, 
 including the marginalized one dimensional projection and the two dimensional distribution between every two parameters. 
 All the parameters converge to a single peak, 
 and specially the $\log\delta$ is confined above the artificial $-3$ barrier, 
@@ -572,7 +580,7 @@ The blue line shows the BHMF derived by \citet{2010AJ....140..546W}.
 \includegraphics[width=170mm]{fits_LF.pdf}
 \caption{
 Fit of QLF at $z=$ 6, by the best-fit parameters and one sigma spread as described in \ref{fig:fitmf}. 
-The blue data points with error bars label the complete QLF sample from the observation by \citet{2018ApJ...869..150M}.
+The blue data points with error bars label the QLF from the observation by \citet{2018ApJ...869..150M}.
 }
 \label{fig:fitlf}
 \end{figure*}
@@ -594,7 +602,7 @@ where $\Phi_\mathrm{mod,i}$ and $\Phi_\mathrm{obs,i}$
 represent the modeled and observational values of $\Phi_\mathrm{M}$ ($\Phi_\mathrm{\Muv}$) in the \textit{i-}th BHMF (QLF) bin, and 
 $\Phi_\mathrm{err,i}$ is the corresponding error.
 Note that the equal constraints from the BHMF and QLF are realized by extracting
-comparable numbers of data bins from $\Phi_\mathrm{M}$ and $\Phi_\mathrm{\Muv}$.
+comparable numbers of data points from $\Phi_\mathrm{M}$ and $\Phi_\mathrm{\Muv}$.
 % the constraint is actually insensitive to the choice of bin numbers. 
 The posterior distribution of the MCMC fitting is stabilized around the minimum value of $\chi^2$ (highest likelihood), 
 with the models best reproducing the $z=$ 6 BHMF and QLF.
