@@ -282,7 +282,7 @@ Schematical demonstration of the procedure to calculate the evolution of BH mass
 from time $t$ to $t+\Delta t$. 
 The probability of a BH with mass $M_\mathrm{i}$ grow to $M$ after $\Delta t$ is drew from the 
 ERDF following Eq.~\ref{eq:Pl}. 
-Thus the new BH mass distribution is reshaped iteratively by integrating with the $\lambda$ distribution. 
+Thus the new BH mass distribution is reshaped iteratively by integrating with the ERDF. 
 }
 \label{fig:scheme}
 \end{figure*}
@@ -300,10 +300,10 @@ describing the BH mass growth rate $\Mdot$ by:
 %%%%%%%
 %    Eq. 1
 %%%%%%%
-\begin{equation*}
-  \label{eq:mdot_1}
-  \Mdot = \frac{\lambda f\left(M\right) M}{\tEdd} ,
-\end{equation*}
+% \begin{equation*}
+%   \label{eq:mdot_1}
+%   \Mdot = \frac{\lambda f\left(M\right) M}{\tEdd} ,
+% \end{equation*}
 \begin{equation}
   \label{eq:mdot}
   \Mdot = \lambda f\left(M\right) \Mdot_\mathrm{Edd} ,
@@ -423,7 +423,7 @@ Setting discrete mass bins to resemble the integration in the calculation above,
 we ensure the convergence of the BHMF produced by increasing the number of mass bins to 800 log evenly across $10^2-10^{12}~\Msun$. 
 Our results are consistent with that from directly generating random $\lambda$ 
 following Eq.~(\ref{eq:Pl}) in each cycle of BH growth. 
-Remarkably, we avoid the fluctuations in drawing random samples following the $\lambda$ distribution 
+Remarkably, we avoid the fluctuations in drawing random samples following the ERDF 
 and extend to high mass (luminous) end in the BHMF (QLF) in a numerically efficient way.
 
 % In the BHMF calculation, we set 100 mass bins ranging from  $10^2~\Msun$ to  $10^{12}~\Msun$, spacing evenly in logarithmic scale.
@@ -497,7 +497,7 @@ to be compared with the ones from observation.
 \subsection{MCMC fitting}\label{sec:fitting}
 In this section, we describe the Markov Chain Monte Carlo (MCMC) fitting procedure we adopt to optimize the parameters described in \S~\ref{sec:MF}. 
 %%%%%%%
-%    Fig. 2
+%    Fig. 3
 %%%%%%%
 \begin{figure*}
 \centering
@@ -559,13 +559,13 @@ Finally to the slope index $\alpha$ which remains unconstrained by current probe
 we assign a Gaussian prior, with the mean value $\mu_{\alpha}=0.$ and scatter $\sigma_{\alpha}=0.3$.
   
 %%%%%%%
-%    Fig. 3
+%    Fig. 4
 %%%%%%%
 \begin{figure*}
 \centering
-\includegraphics[width=170mm]{fits_MF.pdf}
+\includegraphics[width=170mm]{fits_MF.png}
 \caption{
-Fit of BHMF at $z=$ 6 by the best-fit parameters (orange line), with one sigma spread (shaded region) for the 3 different $\fseed$ values. 
+Fit of BHMF at $z=$ 6 by the best-fit parameters (orange line), with one sigma spread (shaded region) for $\fseed=$ 0.1 and 0.01. 
 The blue line shows the BHMF derived by \citet{2010AJ....140..546W}.
 % error of observation
 }
@@ -573,11 +573,11 @@ The blue line shows the BHMF derived by \citet{2010AJ....140..546W}.
 \end{figure*}
 
 %%%%%%%
-%    Fig. 4
+%    Fig. 5
 %%%%%%%
 \begin{figure*}
 \centering
-\includegraphics[width=170mm]{fits_LF.pdf}
+\includegraphics[width=170mm]{fits_LF.png}
 \caption{
 Fit of QLF at $z=$ 6, by the best-fit parameters and one sigma spread as described in \ref{fig:fitmf}. 
 The blue data points with error bars label the QLF from the observation by \citet{2018ApJ...869..150M}.
@@ -614,48 +614,62 @@ with the models best reproducing the $z=$ 6 BHMF and QLF.
 \vspace{2mm}
 \subsection{Fitting Results}\label{sec:fitting_result}
 In Fig.~\ref{fig:contour}, we visualize the MCMC fitting results for each parameter: distribution with the peak and one sigma scatter, 
-with panels (a), (b) and (c) for $\fseed=$ 1.0, 0.1 and 0.01, respectively. 
-With different $\fseed$, the best-fit solutions consistently show that $\delta$ is a nuisance parameter, 
+with panels (a) and (b) for $\fseed=$ 0.1 and 0.01, respectively. 
+The results for the $\fseed=1$ case is complemented in the Appendix.
+With different $\fseed$, the best-fit solutions consistently show that $\delta \lesssim -1$ is a nuisance parameter, 
 which is sufficiently small and should be marginalized out. This suggests that in our model assumption, 
 a nearly exponential growth pattern is favored. 
 % In other words, on average the BH growth can be described as exponential, 
 % under the premise that the gas supply is episodical. 
-The best-fit value of $\tlife$ is 20 $\sim$ 30 Myr for all the three cases, 
-while $\alpha$ increases with decreasing $\fseed$, from $-0.15$ ($\fseed=1.0$) to 0.04 ($\fseed=0.1$) and 0.22 ($\fseed=0.01$).
-indicating strong degeneracy between the $\fseed$ and $\alpha$ values. 
-With lower $\fseed$, more fastly growing BHs are needed to reporduce the high mass end of the BHMF, hence the best-fit 
-$\alpha$ increases and higher $\lambda$ is more commonly realized from the Schechter shape. 
+The best-fit value of $\tlife$ is 20 $\sim$ 30 Myr for both cases, 
+while that of $\alpha$ increases with decreasing $\fseed$, 
+from 0.12 ($\fseed=0.1$) to 0.20 ($\fseed=0.01$),
+indicating a strong degeneracy between the $\fseed$ and $\alpha$ values. 
+With lower seeding fraction, a larger number of BHs are required to grow rapidly to reporduce the observed massive population at $z\sim$ 6, 
+hence the best-fit $\alpha$ increases and higher accretion rate is realized from the Schechter shape with higher $\alpha$. 
 % We expect more complete observations to better constrain the parameter priors in the model fitting.
 
 In Fig.~\ref{fig:fitmf} and Fig.~\ref{fig:fitlf}, we show the BHMF and QLF at $z=$ 6 reproduced by the best-fit parameters, 
-as well as the one sigma spread.
-% Together with 100 bootstrap resamples, 
-The parameters are inferred to be reasonable fits consistent with the observational data.
+as well as the one sigma spread. 
+The observed BHMF in W10 and QLF in \citet{2018ApJ...869..150M} with errors are also plotted for comparison.
+Note that the BHMF in W10 is only sensitive to the $>10^8~\Msun$ regime and our results are consistent in this mass range.
+The QLF fitting results overproduce the abundance of faint quasars than observation, 
+% due to the lack of fine tuning by the model parameters in the low mass range, 
+with the tension slightly eased in the case of $\fseed=0.01$ than $\fseed=0.1$. 
+The cause of this difference is that in the $\fseed=0.01$ case, 
+the progenitor BHs of $10^{7-8}~\Msun$ is systematically lower than in the $\fseed=0.1$ case, 
+which is closer to the peak of the seed mass distribution (see Fig.~\ref{fig:seedmf}), 
+this naturally brings the slope of QLF (and BHMF) in the faint (low-mass) end shallower than in the luminous (high-mass) end.
+Overall, the parameters are inferred to be reasonable fits consistent with the observational data.
 
 \vspace{2mm}
 \subsection{Individual BH growth}\label{sec:evol}
 The best-fit models from MCMC realizations enable us to generate a sample of BH evolutionary tracks starting from BH seeds.
-Taking $\fseed=$ 0.01 as a fiducial case, in the following we demonstrate how the BH sample is constructed and its hints on observations.
+We take $\fseed=$ 0.01 as a fiducial case, where the best-fit parameters for BH growth are 
+$\tlife=18.76$ Myr, $\log\delta=-1.26$, $\lambda_0=0.87$, and $\alpha=0.20$.
+In the following we demonstrate how the BH sample is constructed and its hints on observations.
 
-We generate a 10$^7$ sample of BH at $z=$ 35, with seed mass $M_\star = 1.5\times 10^3~\Msun$, 
-\blue{(10$^5$ sample size actually, but with $\fseed=0.01$, essentially 10$^7$)}
+% We generate a 10$^7$ sample of BHs at $z=$ 35, with seed mass $M_\star = 1.5\times 10^3~\Msun$, 
+% \blue{(10$^5$ sample size actually, but with $\fseed=0.01$, essentially 10$^7$)}
 % \blue{(1e3 $\Msun$ in plot, with seed mass and redshift distribution can also be realized)}, 
-motivated by the properties of typical BH seeds (with median formation redshift and median mass).
+% motivated by the properties of typical BH seeds (with median formation redshift and median mass).
+We plant a sample of 10$^7$ BH seeds at high redshifts, 
+with their formation time and mass distribution according to the seeding model described in \S~\ref{sec:seed}. 
 For individual BH growth history, every time interval $\tlife$ we assign an Eddington ratio 
 $\lambda$ following the Schechter shape in Eq.~(\ref{eq:Pl}), 
-until $z=$ 6 we take a snapshot of the BH mass and $\lambda$ distributions.
+until $z=$ 6 we take a snapshot of the BH mass and ERDF.
 With the best-fit parameters, the BH growth tracks which finally end up with $>10^8~\Msun$ 
 are shown in Fig.~\ref{fig:track}. 
-We notice that in this sample there are 4 BHs with $M>10^9~\Msun$, 
-among which 3 BHs are in sub-Eddington accretion mode, and 1 in super-Eddington. 
+We notice that in this sample there are 7 BHs with $M>10^9~\Msun$, 
+among which 5 BHs are in sub-Eddington accretion mode, and 2 in super-Eddington. 
 If we extrapolate the BH mass with the $z \sim$ 6 witnessed Eddington ratio back to $z\sim$ 30, 
 the sub-Eddington accreting BHs trace back to exceedingly massive seeds which are hard to be explained by current seeding scenarios. 
 Observations also raise strong challenges to the growth histories of these sub-Eddington accreting BHs
 \citep[e.g.,][]{2019ApJ...880...77O}.
-In contrast, the 1 super-Eddington accreting BH traces back to unrealistically low seed mass. 
+In contrast, the super-Eddington accreting BHs trace back to unrealistically low seed mass. 
 On the other hand, we show the mass growth tracks assuming constant Eddington ratio $\lambda=1$ for comparison, 
-and find all the BHs trace back to $\lesssim 10^2~\Msun$ in this constantly vigorous accretion case. 
-Both two treatments lead to BH seed masses extrapolation which deviate from the initial seeds we plant. 
+and find all the BHs trace back to $\lesssim 10^2~\Msun$ with the constantly vigorous accretion. 
+Both treatments of the constant $\lambda$ lead to BH seed masses extrapolation that deviate from the initial seeds we plant. 
 In \citet{2021ApJ...907L...1W}, they discover the currently known most distant quasar at $z=7.642$, 
 tracing back with Eddington accretion, the central BH reaches the $10^{4-6}~\Msun$ seed mass range at $z=$ 30. 
 However in our best-fit model, we observe that to trace back BH mass and understand their seeding scenarios, 
@@ -667,45 +681,45 @@ including both bursts of accretion and quiescent phases.
 % the observational active quasar episode.
 
 %%%%%%%
-%    Fig. 5
+%    Fig. 6
 %%%%%%%
 \begin{figure}
 \centering
-\includegraphics[width=85mm]{2022-05-05_14-27-43_Mevol.png}
+\includegraphics[width=85mm]{Mevol.png}
 \caption{
 BH growth tracks from $z=$ 30 produced by the best-fit model in the $\fseed=0.01$ case, 
 selected by the criterion $M>10^8~\Msun$ at $z=$ 6. 
-Highlighted are 4 massive BHs with $M>10^9~\Msun$ (with colors), 
+Highlighted are 7 massive BHs with $M>10^9~\Msun$ (with colors), 
 extrapolated back following exponential growth with constant Eddington ratio: 
-constant $\lambda$ keeping the $z=$ 6 value with dashed lines and 
-Eddington limit growth with $\lambda=1$ with dotted lines.
+constant $\lambda$ keeping the $z=$ 6 value with dotted lines and 
+Eddington limit growth with $\lambda=1$ with dashed lines.
 }
 \label{fig:track}
 \end{figure}
 
 \vspace{2mm}
-\subsection{Observed v.s. Intrinsic $\lambda$ Distribution}\label{sec:ldist}
+\subsection{Observed v.s. Intrinsic ERDF}\label{sec:ldist}
 Discussion on quasar \textit{intrinsic} properties is naturally difficult, 
-in the sense that quasars are selected by \textit{observed} properties, 
+in the sense that quasars are selected by their \textit{observed} properties, 
 e.g., a cut off of detection under some magnitude floor. 
 The unavoidable bias of quasar surveys may be corrected by the selection function tested 
 by experiments on the detectability of mock data.
-In this section, we examine the effect of flux-limited quasar survey on the observed $\lambda$ distribution, 
-taking advantage of our complete sample of model BHs in the whole luminosity range. 
+In this section, we examine the effect of flux-limited quasar survey on the observed ERDF, 
+taking advantage of our complete sample of BH population in the whole luminosity range. 
 
 Based on the quasar sample from the best-fit model described in \S~\ref{sec:evol}, 
 we select quasars above a bolometric luminosity cutoff at $\Lbol=10^{46}~\mathrm{erg~s^{-1}}$. 
-In Fig.~\ref{fig:lhist}, we plot the intrinsic $\lambda$ distribution for the whole sample together with 
+In Fig.~\ref{fig:lhist}, we plot the intrinsic ERDF for the whole sample together with 
 the selected sample (observed one). 
-The intrinsic $\lambda$ follows the Schechter shape with a majority of inactive quasars, 
-while the observed $\lambda$ is biased toward higher values, and the shape changes to 
-more Gaussian-like distribution. 
-The latter distribution is presented by various observational efforts 
+The intrinsic Eddington ratio follows the Schechter shape with a majority of inactive quasars, 
+while the observed Eddington ratio is biased toward higher values, and the shape changes to 
+more resembling log-normal distribution. 
+The latter distribution is presented by various observational efforts in $z\sim$ 6 quasar samples
 \citep[e.g.,][]{2010AJ....140..546W,2019ApJ...873...35S}, 
-while we predict a huge hidden population of low $\lambda$, 
-based on the best-fit model connecting the BH growth history and high-$z$ BHMF and QLF. 
+while we predict a huge hidden population with low Eddington ratio, 
+based on the best-fit growth model connecting the BH seeding and $z\sim$ 6 BHMF and QLF. 
 To demonstrate qualitatively the caveat for the detection limit on recovering the intrinsic quasar properties, 
-we also plot the $\lambda$ distribution for a sample with $\Lbol>10^{45}~\mathrm{erg~s^{-1}}$. 
+we also examine the observed ERDF by selecting quasars with $\Lbol>10^{45}~\mathrm{erg~s^{-1}}$. 
 We find that lowering the detection limit unveils more quasars with low Eddington ratio. 
 Therefore we emphasize that it is imperative to lower the detection limit in order to 
 understand a more complete quasar sample at high-$z$, 
@@ -714,16 +728,17 @@ so that the numerous dimly accreting BHs can be shed light on.
 
 
 %%%%%%%
-%    Fig. 6
+%    Fig. 7
 %%%%%%%
 \begin{figure}
 \centering
-\includegraphics[width=85mm]{l_hist.png}
+\includegraphics[width=85mm]{distf2N5_06231122_l_hist.png}
 \caption{
-Intrinsic $\lambda$ distribution (blue) and the observed ones after imposing selection effects by $\Lbol>10^{45}$ (orange) and 10$^{46}$ erg~s$^{-1}$ (green).
+Intrinsic ERDF (blue) and the observed ones after imposing selection effects by $\Lbol>L_\mathrm{lim}=10^{45}$ (orange) and 10$^{46}$ erg~s$^{-1}$ (green).
 The observed histograms are elevated by arbitrary normalizations for comparison of the distribution shapes.
-The intrinsic $\lambda$ distribution follows the dashed line which shows the analytical $\lambda$ distribution by the best-fit Schechter model. 
-While with increasing $\Lbol$ limit, the observed $\lambda$ shows 
+The intrinsic ERDF follows the dashed line which shows the analytical ERDF by the best-fit Schechter model. 
+While with the detection limit imposed, the observed ERDFs resemble log-normal shape. 
+With decreasing $L_\mathrm{lim}$, more low $\lambda$ population is unveiled.
 }
 \label{fig:lhist}
 \end{figure}
