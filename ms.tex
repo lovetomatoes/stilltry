@@ -1,5 +1,7 @@
+\documentclass[twocolumn, twocolappendix]{aastex63}
+
 % \documentclass[linenumbers,preprint2,tighten,trackchanges]{aastex631}
-\documentclass[nolinenumbers,preprint2,tighten]{aastex631}
+%\documentclass[nolinenumbers,preprint2,tighten]{aastex631}
 \hypersetup{filecolor=cyan,urlcolor=magenta} %citecolor=green, linkcolor=red,
 \newcommand{\vdag}{(v)^\dagger}
 \newcommand\aastex{AAS\TeX}
@@ -12,6 +14,7 @@
 \usepackage{CJK}
 
 \newcommand{\Msun}{\mathrm{M_\odot}}
+\newcommand{\Msunyr}{\mathrm{M_\odot~yr^{-1}}}
 \newcommand{\Mh}{M_\mathrm{h}}
 \newcommand{\Mseed}{M_\mathrm{seed}}
 \newcommand{\zseed}{z_\mathrm{seed}}
@@ -30,6 +33,7 @@
 \newcommand{\fbol}{f_\mathrm{bol}}
 \newcommand{\D}{\mathrm{d}}
 
+\newcommand{\red}[1]{\textcolor{red}{ #1}}
 \newcommand{\blue}[1]{\textcolor{blue}{ #1}}
 
 
@@ -49,7 +53,7 @@
 %% can be displayed in the front matter or as running meta-data.
 
 \shorttitle{BH growth toward $z=$ 6 BHMF \& QLF}
-% \shortauthors{Li et al.}
+\shortauthors{Li et al.}
 %%
 %% You can add a light gray and diagonal water-mark to the first page 
 %% with this command:
@@ -60,7 +64,8 @@
 %% where dimension is any recognized LaTeX dimension, e.g. pt, in, etc.
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\graphicspath{{./}{../figs/}}
+\graphicspath{{../figs/}}
+% \graphicspath{{./}{figures/}{figs/}}
 %% This is the end of the preamble.  Indicate the beginning of the
 %% manuscript itself with \begin{document}.
 
@@ -68,6 +73,18 @@
 \begin{CJK*}{UTF8}{gbsn}
 
 \title{Draft}
+
+\correspondingauthor{}
+\email{}
+
+\author[0000-0001-9840-4959]{Wenxiu Li}
+\affiliation{Department of Astronomy, School of Physics, Peking University, Beijing, 100871, China}
+\author[0000-0001-9840-4959]{Kohei Inayoshi}
+\affiliation{Kavli Institute for Astronomy and Astrophysics, Peking University, Beijing 100871, China}
+\author[0000-0001-9840-4959]{Masafusa Onoue}
+\altaffiliation{Kavli Astrophysics Fellow}
+\affiliation{Kavli Institute for Astronomy and Astrophysics, Peking University, Beijing 100871, China}
+\affiliation{Kavli Institute for the Physics and Mathematics of the Universe (Kavli IPMU, WPI), The University of Tokyo, Chiba 277-8583, Japan}
 
 %% A significant change from earlier AASTEX versions is in the structure for 
 %% calling author and affiliations. The change was necessary to implement 
@@ -126,9 +143,19 @@
 %% the nearby authors are not part of surrounding collaborations.
 
 %% Mark off the abstract in the ``abstract'' environment. 
-% \begin{abstract}
-
-% \end{abstract}
+\begin{abstract}
+W\\
+E\\
+N\\
+X\\
+I\\
+U\\
+L\\
+I\\
+1\\
+2\\
+3
+\end{abstract}
 
 %% Keywords should appear after the \end{abstract} command. 
 %% The AAS Journals now uses Unified Astronomy Thesaurus concepts:
@@ -136,7 +163,7 @@
 %% You will be asked to selected these concepts during the submission process
 %% but this old "keyword" functionality is maintained in case authors want
 %% to include these concepts in their preprints.
-% \keywords{Classical Novae (251) --- Ultraviolet astronomy(1736) --- History of astronomy(1868) --- Interdisciplinary astronomy(804)}
+\keywords{Supermassive black holes (1663); Quasars (1319); High-redshift galaxies (734)}
 
 %% We recommend that authors also use the natbib \citep
 %% and \citet commands to identify citations.  The citations are
@@ -205,53 +232,162 @@ i.e., $\Omega_{\mathrm{m}}=0.307,~\Omega_{\Lambda}=0.693,~
 
 \vspace{2mm}
 \subsection{Seeds}\label{sec:seed}
-The QLFs at high redshifts are determined by the original BH seeding and subsequent growth. 
-Firstly we describe our model regarding the formation of BH seeds in progenitor DM halos 
-that end up in high-$z$ quasar host galaxies with halo masses of $\Mh>10^{11}~\Msun$.
-This is motivated by the estimated masses of quasar hosts which are typically up to $\sim 10^{11-13}~\Msun$, 
-probed by the $\left[\mathrm{C} \text{ II }\right]$ 158 $\micron$ fine structure line width \citep{2019ApJ...872L..29S}.
-\blue{references}
-Therefore, we sample base halos with $\Mh = 10^{11}$, $10^{12}$, and $10^{13} ~\Msun$ at $z=$ 6. 
-We then generate 10$^4$ merger trees with each base halo mass backward in time using the {\tt GALFORM} 
+The QLFs at high redshifts are determined by the BH seeding mechanism and subsequent growth. 
+We first describe our model regarding the formation of BH seeds in progenitor DM halos 
+that end up in high-$z$ quasar host galaxies with halo mass of $\Mh \gtrsim 10^{11}~\Msun$.
+The mass range of DM halos for $z\sim 6$ quasars is motivated by the halo mass measurement, 
+assuming that the rotation velocity based on [\ion{C}{2}] 158 $\micron$ line width is equal to the circular velocity of the halo.
+%is is motivated by the estimated masses of quasar hosts which are typically up to $\sim 10^{11-13}~\Msun$, 
+%probed by the [\ion{C}{2}] 158 $\micron$ fine structure line width 
+\citep{2002ApJ...578...90F,2013ApJ...773...44W,2019ApJ...872L..29S}.
+Therefore, we consider three parent halos with $\Mh = 10^{11}$, $10^{12}$, and $10^{13} ~\Msun$ at $z=$ 6
+and generate 10$^4$ merger trees for each parent halo mass backward in time using the {\tt GALFORM} 
 semi-analytic algorithm based on the extended Press-Schechter formalism 
-\citep{1974ApJ...187..425P,2000MNRAS.319..168C,2008MNRAS.383..557P}, and study the BH seeds formed therein.
+\citep{1974ApJ...187..425P,2000MNRAS.319..168C,2008MNRAS.383..557P}.
+%, and study the BH seeds formed therein.
+For each tree, we adopt a minimum DM halo mass of $M_{\rm h,min}=10^5~\Msun$, which is lower enough to capture 
+the earliest star formation episodes via H$_2$ line cooling at the high-$z$ universe \citep{1996ApJ...464..523H,1997ApJ...474....1T}.
 
-BH seeding is also affected by the baryonic streaming motion of its natal cloud, 
-where gas is streaming relative to the dark matter in the epoch of cosmic recombination at $z_\mathrm{rec}\approx$ 1100, 
-originated from its decoupling with radiation.
-The streaming velocity follows a Maxwell-Boltzmann distribution with a root-mean-square (\textit{rms}) speed of 
-$\sigma(z) = 30~{\rm km~s}^{-1} (1+z)/(1+z_{\mathrm{rec}})$ which is decaying with time \citep{2010PhRvD..82h3520T}.
-The impact of the super-sonic $\vbsm$ at high redshifts on the PopIII star (seed BH) formation 
-is explored by various studies \citep{2012MNRAS.424.1335F,2014MNRAS.439.1092T,2017Sci...357.1375H,2019MNRAS.484.3510S,2021ApJ...917...60L}.
-Their major findings are that the non-negligible $\vbsm$ injects kinetic support into pristine gas clouds, 
-which increases their effective Jeans mass and delays star formation, 
-yielding BH seeds heavier than typical PopIII stars. 
-The volume fraction of the universe with streaming velocities higher than the \textit{rms} value
-is estimated as $\simeq 0.4$. We then set $\vbsm=$ 0 and the \textit{rms} velocity as two representative cases, 
-accounting for roughly $f_{\vbsm} = 60\%$ and $40\%$ of the seeding environments, respectively. 
 
-Next we introduce our seeding model where the gas dynamical and thermal evolution is regulated by the parent halo growth histories, 
-and the environmental streaming velocities.
-In \citet{2021ApJ...917...60L}, we propose an semi-analytical model which 
-traces the gas evolution along its parent halo growth and yields the seed BH mass distribution. 
+We consider seed BH formation in the main progenitors of quasar host galaxies, following a semi-analytical model established by \citet{2021ApJ...917...60L}.
+In the highly-biased, overdense regions of the universe, those progenitor halos are likely irradiated by intense H$_2$-photodissociating radiation 
+from nearby star-forming galaxies and heat the interior gas by successive mergers. 
+The two effects counteracting H$_2$ formation and cooling prevent gas collapse and delay prior star formation \citep[e.g.,][]{2014MNRAS.445..107V,2019Natur.566...85W}.
+Under such peculiar circumstances, massive clouds collapse to the halo centers at high accretion rates and leave massive stars (presumably seed BHs) behind.
+Our model takes into account various key physical processes on star formation such as halo merger heating, radiative cooling, and
+(photo-)chemical reaction networks.
+%, and gravitational instability of the central gaseous cores.
+The time evolution of the gas dynamics and thermal states is calculated in a self-consistent way with the halo assembly history.
+%the gas dynamical and thermal evolution is regulated by the parent halo growth histories, and the environmental streaming velocities.
+%
+%Next we introduce our seeding model where the gas dynamical and thermal evolution is regulated by the parent halo growth histories, 
+%and the environmental streaming velocities.
+%In \citet{2021ApJ...917...60L}, we propose an semi-analytical model which 
+%traces the gas evolution along its parent halo growth and yields the seed BH mass distribution. 
 % The background UV radiation $$ is calculated by semi-analytical arguments of men
-The merger heating and enhancement of background Lyman-Werner radiation intensity $\jlw$ 
-due to halo clustering is taken into account to shape the gas thermal evolution. 
-Besides, the baryonic streaming velocity $\vbsm$ together with the turbulent velocity $v_\mathrm{tur}$ 
-through halo virialization is taken into account
-\footnote{
-We model the effective sound speed of gas as $c_{\rm eff} = \sqrt{ c_{\rm s}^2+v_{\rm tur}^2/3+\left(\alpha_0 \vbsm \right)^2}$,
-where the coefficient $\alpha_0 = 1$ is motivated by previous studies 
-\citep{2017Sci...357.1375H,2019MNRAS.484.3510S}.
-}.
-Following this model we produce 10$^4$ BH seeds with their formation time and masses, 
-in each merger tree with a given $\vbsm$, 
-the abundance of seeds is normalized with the base halo number density from the Sheth-Tormen \citep{2001MNRAS.323....1S} halo mass function:
-\begin{align*}
-  n_{\Mh}= \int_{\Mh}^{10\Mh}  \frac{\D n_{\mathrm{ST}}} {\D \Mh} \D \Mh, 
-\end{align*}
-weighted by the environmental $\vbsm$ fraction $f_{\vbsm}$. 
-We then construct the seed BH mass distribution shown in Fig.~\ref{fig:seedmf}. 
+%The merger heating and enhancement of background Lyman-Werner radiation intensity $\jlw$ 
+%due to halo clustering is taken into account to shape the gas thermal evolution. 
+
+
+In addition, we consider baryonic streaming motion relative to the DM produced in the epoch of cosmic recombination at $z_{\rm rec} \simeq 1100$.
+%originated from its decoupling with radiation.
+This effect also delays gas collapse and star formation in protogalaxies through injection of kinetic energy into gas
+\citep[e.g.,][]{2012MNRAS.424.1335F, 2014MNRAS.439.1092T, 2017Sci...357.1375H,2019MNRAS.484.3510S,2021ApJ...917...60L}.
+The amplitude of the streaming velocity is set to $\vbsm = 0$ and $\vbsm=1~\sigma_{\rm bsm}$, where $\sigma_{\rm bsm}=30~{\rm km~s}^{-1} (1+z)/(1+z_{\rm rec})$
+is the root-mean-square speed at a redshift of $z$ \citep{2010PhRvD..82h3520T}.
+We calculate the effective sound speed of gas as $c_{\rm eff} = \{c_{\rm s}^2+v_{\rm tur}^2/3+\left(\alpha_0 \vbsm \right)^2 \}^{1/2}$ at the center of each progenitor halo,
+where $c_{\rm s}$ is the thermal sound speed, $v_{\rm tur}$ is the turbulent velocity of gas (i.e., the specific kinetic energy accumulated through halo mergers), and
+the coefficient is set to $\alpha_0=1$\footnote{The value of $\alpha_0=1.0$ is motivated by cosmological simulations of massive primordial stars
+under fast streaming velocities \citep{2017Sci...357.1375H,2019MNRAS.484.3510S}.
+Note that our previous study in \citet{2021ApJ...917...60L} adopted $\alpha_0=4.7$ \citep{2018ApJ...855...17H}.}.
+%
+%Besides, the baryonic streaming velocity $\vbsm$ together with the turbulent velocity $v_\mathrm{tur}$ 
+%through halo virialization is taken into account
+%\footnote{
+%We model the effective sound speed of gas as $c_{\rm eff} = \sqrt{ c_{\rm s}^2+v_{\rm tur}^2/3+\left(\alpha_0 \vbsm \right)^2}$,
+%where the coefficient $\alpha_0 = 1$ is motivated by previous studies 
+%\citep{2017Sci...357.1375H,2019MNRAS.484.3510S}.
+%}.
+When the gas core becomes gravitationally unstable, the evolution of the gas density profile is well described by 
+the Penston-Larson self-similar solution \citep{1969MNRAS.144..425P,1969MNRAS.145..271L}. 
+The mass accretion rate from the envelope can be written as $\dot{M}=c_{\rm eff}^3/G$,
+where $G$ is the gravitational constant.
+
+
+
+%%%%%%%%%
+%	REVISE.   %
+%%%%%%%%%
+\red{KI: we need to explain how we calculate the final stellar mass from the accretion rate. pls add one new paragraph here. 
+also add an argument about translation from stellar mass to BH remnant mass.}
+
+Zooming in to the protostellar vicinity, an accretion disk forms due to the angular momentum of the inflowing material from large scale. 
+The episodic accretion through the clumpy disk decreases the time-averaged accretion rate onto the protostar by $\Mdot_{\star}=\eta \Mdot$, 
+where we take $\eta=0.3$ as the conversion efficiency from global accretion to that through the disk \citep[][Toyouchi 2022]{2016MNRAS.459.1137S}. 
+\blue{
+  (Toyouchi+ find 0.4 actually.)
+}
+We then exploit the accretion rate to estimate the protostellar mass and that of the subsequent seed BH formed. 
+
+The growth pattern of an accreting protostar differs in the effect of radiative feedback,
+with the accretion rate $\Mdot_\star$ in different regimes compared with a critical value $\dot{M}_{\mathrm{crit}}=0.04~\Msunyr$ 
+\citep{2001ApJ...561L..55O,2013ApJ...778..178H,2013A&A...558A..59S,2015MNRAS.452..755S,2018MNRAS.474.2757H}.
+With average accretion rates exceeding $\Mdot_\mathrm{crit}$, the stellar envelope inflates, 
+with its surface temperature as low as $T_\mathrm{eff} \simeq 5000$ K, 
+resulting in trivial UV radiative feedback that hardly affect the accretion flow. 
+The stellar mass is then built up to $\sim 10^5~\Msun$ and limited by the internal GR instability 
+\citep{2016PhRvD..94b1501S,2017ApJ...842L...6W,2019PASA...36...27W}, which is fitted as 
+\begin{equation*}
+ M_{\star, \mathrm{GR}} \simeq\left[0.83 \log \left(\frac{\dot{M}_{\star}}{\Msunyr}\right)+2.48\right] \times 10^{5} ~\Msun,
+\end{equation*}
+in the range of $\dot{M}_\star\gtrsim 0.1~\Msunyr$.
+
+On the other hand, with accretion rates lower than $\Mdot_\mathrm{crit}$, 
+protostars can contract with the effective temperature rapidly increasing to $\sim 10^5$ K, 
+hence the strong UV photons photoevaporate the gaseous disk and hinder the mass accretion 
+\citep{2008ApJ...681..771M,2011Sci...334.1250H}. 
+In this case, the final stellar mass is capped by the balance of the mass loss rate via disk photoevaporation $\dot{M}_{\mathrm{pe}}$
+and the accretion rate $\dot{M}_{\star}$, and the former is expressed as 
+% \begin{equation*}
+  % \dot{M}_{\mathrm{pe}} \simeq 2.1 \times 10^{-2} \Msunyr \left(\frac{\Phi_{\mathrm{ion}}}{10^{52} \mathrm{~s}^{-1}}\right)^{1 / 2}\left(\frac{R_{\rm{disk}}}{0.1 \mathrm{pc}}\right)^{1/2}.
+% \end{equation*}
+$\dot{M}_{\mathrm{pe}} \simeq 2.1 \times 10^{-2} \Msunyr \left( \Phi_{\mathrm{ion}}/10^{52} \mathrm{~s}^{-1}\right)^{1 / 2}\left(R_{\rm{disk}}/0.1 \mathrm{pc}\right)^{1/2}$ 
+\citep{2013ApJ...773..155T}.
+Here we adopt the emissivity of UV photons $\Phi_{\mathrm{ion}} \simeq 1.6 \times 10^{52} \mathrm{~s}^{-1}\left(M_{\star} / 10^{4} \Msun \right)$ following \citet{2012ApJ...750...66J}, 
+and the disk size is estimated as the stellar gravitational influence radius for 2$\times 10^4$ K ionized gas 
+$R_{\mathrm{disk}} \simeq  G M_{\star}/c_{\mathrm{s}, \mathrm{ion}}^{2} \simeq 0.17 \mathrm{pc}\left( M_{\star}/ 10^{4} \Msun \right)$.
+The final stellar mass regulated by radiative feedback is thus 
+\begin{equation*}
+M_{\star, \mathrm{fb}} \simeq 2.9 \times 10^{3} \Msun\left(\frac{\dot{M}_{\star}}{0.01 M_{\odot} \mathrm{yr}^{-1}}\right), 
+\end{equation*}
+for $\Mdot_\star\lesssim \Mdot_\mathrm{crit}$. 
+
+With the intermediate accretion rates between $\Mdot_\mathrm{crit}$ and $0.1~\Msunyr$, 
+we perform logarithmic interpolation in the $\Mdot_\star - M_\star$ plane to smoothly connect 
+$M_{\star, \mathrm{fb}}$ and $M_{\star, \mathrm{GR}}$ at the boundaries.
+In the death of these metal poor stars, most mass are expected to reserve to the collapse into BHs 
+\citep{2003ApJ...591..288H,2010ApJ...714.1217B,2015MNRAS.451.4086S}.
+Therefore, we take the seed BH masses as those of their progenitor stars. 
+
+Based on the probability distribution function of the BH seed mass $\D P/ \D \log M_{\bullet, i}$, we construct the mass function of those seeds formed in one parent halo
+with a mass of $\Mh$ where gas has a coherent streaming velocity of $\vbsm$ as a function of time (and redshift).
+The absolute abundance of those seed BHs is calculated with the number density of the parent halo in a comoving volume at $z=6$ 
+from the Sheth-Tormen mass function \citep{2001MNRAS.323....1S},
+%
+\begin{align}
+  n_{\Mh}= \int_{\Mh}^{10\Mh}  \frac{\D n_{\mathrm{ST}}} {\D \Mh'} \D \Mh', 
+\end{align}
+%
+where we adopt $\Mh = 10^{11}$, $10^{12}$, and $10^{13}~\Msun$, 
+% (\red{KI: explicitly show those numbers?})
+with number densities $n_{\Mh} = 9.87\times 10^{-4}$, $6.15\times 10^{-6}$, 
+and $8.92\times 10^{-10}~ \text{Mpc}^{-3}$, respectively.
+Combining the PDF and number normalization, we obtain the seed BH mass function as
+%
+\begin{align}
+\Phi_\mathrm{M}^{\rm seed} \equiv \sum_{\Mh, \vbsm} n_{\Mh} f_{\vbsm} 
+\cdot \frac{\D P}{\D \log M_{\bullet, i}}\Big| _{\Mh, \vbsm},
+\end{align}
+%
+where $f_{\vbsm}$ is the volume fraction of the universe with a streaming velocity.
+The value is calculated as $f_{\vbsm} = 0.6$ and $0.4$ for $\vbsm = 0$ and $\vbsm=1~\sigma_{\rm bsm}$, respectively. 
+
+
+
+
+%BH seeding is also affected by the baryonic streaming motion of its natal cloud, 
+%where gas is streaming relative to the dark matter in the epoch of cosmic recombination at $z_\mathrm{rec}\approx$ 1100, 
+%originated from its decoupling with radiation.
+%The streaming velocity follows a Maxwell-Boltzmann distribution with a root-mean-square (\textit{rms}) speed of 
+%$\sigma(z) = 30~{\rm km~s}^{-1} (1+z)/(1+z_{\mathrm{rec}})$ which is decaying with time \citep{2010PhRvD..82h3520T}.
+%The impact of the super-sonic $\vbsm$ at high redshifts on the PopIII star (seed BH) formation 
+%is explored by various studies \citep{2012MNRAS.424.1335F,2014MNRAS.439.1092T,2017Sci...357.1375H,2019MNRAS.484.3510S,2021ApJ...917...60L}.
+%Their major findings are that the non-negligible $\vbsm$ injects kinetic support into pristine gas clouds, 
+%which increases their effective Jeans mass and delays star formation, 
+%yielding BH seeds heavier than typical PopIII stars. 
+%The volume fraction of the universe with streaming velocities higher than the \textit{rms} value
+%is estimated as $\simeq 0.4$. We then set $\vbsm=$ 0 and the \textit{rms} velocity as two representative cases, 
+%accounting for roughly $f_{\vbsm} = 60\%$ and $40\%$ of the seeding environments, respectively. 
 
 %%%%%%%
 %    Fig. 1
@@ -285,85 +421,144 @@ ERDF following Eq.~\ref{eq:Pl}.
 Thus the new BH mass distribution is reshaped iteratively by integrating with the ERDF. 
 }
 \label{fig:scheme}
+\vspace{5mm}
 \end{figure*}
 
 % Figure 1 shows the BH seeds formed in progenitors of $\Mh = 10^{11}, 10^{12}$
 \vspace{2mm}
-\subsection{BH growth \& mass Function}\label{sec:MF}
-% The BH accretion at high redshifts is probed only by snapshots, in their most luminous quasar phase. We have constraints on simulations and observations of lower redshift counterparts.
-With seeds planted, we grow the BHs with a semi-analytical accretion rate model 
-and study the BH mass distribution at redshift 6. 
+\subsection{BH mass growth}
+% The BH accretion at high redshifts is probed only by snapshots, in their most luminous quasar phase. 
+% We have constraints on simulations and observations of lower redshift counterparts.
+With BH seeds planted, we grow the BHs with a semi-analytical accretion rate model and study the evolution of the BH mass distribution until $z=6$. 
 \blue{(references + discussion)}
-The growth model is captured by a limited number of free parameters, 
+The growth model is characterized by a minimal number of free parameters, 
 % the quasar accretion is episodic with Eddington ratio variations,
-describing the BH mass growth rate $\Mdot$ by: 
+describing the BH mass growth rate $\Mdot$ by
 %%%%%%%
 %    Eq. 1
 %%%%%%%
 % \begin{equation*}
 %   \label{eq:mdot_1}
-%   \Mdot = \frac{\lambda f\left(M\right) M}{\tEdd} ,
+%   \Mdot_\bullet = \frac{\lambda f(M_\bullet) M_\bullet}{\tEdd} ,
 % \end{equation*}
 \begin{equation}
   \label{eq:mdot}
-  \Mdot = \lambda f\left(M\right) \Mdot_\mathrm{Edd} ,
+  \Mdot_\bullet = \lambda f(M_\bullet) \Mdot_\mathrm{Edd} ,
 \end{equation}
 % where $\tEdd = \eta_0  M c^2/L_{\mathrm{Edd}} \approx 45$ Myr,
-where $\lambda = L/L_\mathrm{Edd}$ is the Eddington ratio,
-and $\Mdot_\mathrm{Edd} = L_{\mathrm{Edd}}/\eta_0 c^2$ is the Eddington accretion rate with the radiative efficiency $\eta_0$.
-Note here we adopt the radiative efficiency $\eta_0 \approx 0.1 $,
-according to the thin accretion disk model \citep{1973A&A....24..337S}, 
-which is also consistent with the Soltan's argument \citep{1982MNRAS.200..115S,2002MNRAS.335..965Y}.
-Then $\tEdd =  M/\Mdot_{\mathrm{Edd}} \approx 45$ Myr is the Salpeter $e$-folding timescale \citep{1964ApJ...140..796S}.
+where $\lambda \equiv L/L_\mathrm{Edd}$ is the Eddington ratio,
+and $\Mdot_\mathrm{Edd} \equiv L_{\mathrm{Edd}}/\eta_0 c^2$ is the Eddington accretion rate with a 10\% radiative efficiency of $\eta_0=0.1$ \citep{1973A&A....24..337S},
+%Note here we adopt the radiative efficiency $\eta_0 \approx 0.1 $,
+%according to the thin accretion disk model \citep{1973A&A....24..337S}, 
+which is consistent with the value obtained from the Soltan's argument \citep{1982MNRAS.200..115S,2002MNRAS.335..965Y}.
 % The high mass BH should be strangulated by as it grows, 
-We introduce the mass dependency 
-$f(M) = 0.5 \left[1+\left(M/10^8~\Msun\right)^\delta\right] ^ {-1}$, 
-to suppress the high mass BH growth with a positive $\delta$. 
-\blue{(references)}
-With decreasing $\delta$, 
-the model is reduced to an exponential growth independent of BH mass.
+We define the mass dependent function of $f(M_\bullet)$ as 
+%
+\begin{equation}
+f(M_\bullet) = \frac{2}{1+\left(M_\bullet /M_{\bullet,c} \right)^\delta}, 
+\end{equation}
+%
+where we adopt $M_{\bullet,c}=10^8~\Msun$.
+With a positive value of $\delta$, the BH growth at the high mass end is suppressed. \blue{(references, Ueda+14?s)}.
+In the limit of $\delta \ll 1$, where $f(M_\bullet) \simeq 1$ is approximated independent of $M_{\bullet,c}$, the model reproduces an exponential growth with an $e$-folding timescale of
+$\tEdd =  M_\bullet/\Mdot_{\mathrm{Edd}} \approx 45$ Myr.
+%h independent of BH mass.
 % In \S~\ref{sec:fitting}, $\delta$ turns out to be close to 0, indicating an exponential grow manner independent of BH mass.
+%Then $\tEdd =  M/\Mdot_{\mathrm{Edd}} \approx 45$ Myr is the Salpeter $e$-folding timescale \citep{1964ApJ...140..796S}.
 
-The quasar activity is episodic in nature, with bursts of accretion triggered by gas inflows 
+
+
+The quasar activity is episodic in nature, with accretion bursts triggered by gas inflows to the galactic nuclei
 % \citep[e.g., mergers or disk instabilities, see][]{2005Natur.433..604D,2005ApJ...630..705H}, 
 \citep{2005Natur.433..604D,2005ApJ...630..705H}, 
 and the accretion rate declines with self-regulating feedbacks \citep[e.g.,][]{2008ApJ...686..815Y,2011ApJ...737...26N} or 
-self-similar disk evolution \citep{1991MNRAS.248..754P,2005ApJ...634..901Y,2007MNRAS.377L..25K}.
-This ``flickering'' pattern of individual quasar luminosity evolution can be directly translated into the diversity in the Eddington ratios 
-of a quasar sample, where the Eddington ratio distribution function (ERDF) $\D P/ \D\ln\lambda$ shares the same Schechter function shape 
-with the differential time at different $\lambda$ \citep{2006ApJ...639..700H,2009ApJ...698.1550H}.
-Observations also propose that the intrinsic ERDF in lower-$z$ quasars hosted by star forming galaxies follows a Schechter shape, 
-\citep{2015MNRAS.447.2085S,2016ApJ...826...12J,2018MNRAS.474.1225A}, 
-therefore we take 2 free parameters $\lambda_0$ and $\alpha$ to characterize the ERDF:
+self-similar disk evolution \citep{1991MNRAS.248..754P,2005ApJ...634..901Y,2007MNRAS.377L..25K}. \red{KI: what's this?}
+This ``flickering'' pattern of individual quasar luminosity evolution can be directly translated into the diversity in the Eddington ratios of a quasar sample, 
+\red{where the Eddington ratio distribution function (ERDF) $\D P/ \D\ln\lambda$ shares the same Schechter function shape 
+with the differential time at different $\lambda$ \citep{2006ApJ...639..700H,2009ApJ...698.1550H}.}
+\red{KI: don't follow this logic...}
+For type-I AGN populations at low redshifts, the ERDF is characterized with a Schechter function
+%Observations also propose that the intrinsic ERDF in lower-$z$ quasars hosted by star forming galaxies follows a Schechter shape, 
+\citep{2015MNRAS.447.2085S,2016ApJ...826...12J,2018MNRAS.474.1225A}.
+Motivated by those facts, we give the ERDF by a Schechter function with two free parameters $\lambda_0$ and $\alpha$ as
 %%%%%%%
 %    Eq. 2
 %%%%%%%
 \begin{equation}
   \label{eq:Pl}
-  \frac{\D P}{ d\ln \lambda} \propto
-  \left(\frac{\lambda} {\lambda_0} \right)^\alpha \exp{\left(-\frac{\lambda}{\lambda_0}\right)},
+  \frac{\D P}{ \D \ln \lambda} \propto
+  \left(\frac{\lambda} {\lambda_0} \right)^\alpha \exp{\left(-\frac{\lambda}{\lambda_0}\right)}.
 \end{equation}
-normalized by the total probability above $\lambda_\mathrm{min}$ = 0.01.
-The minimum Eddington ratio $\lambda_\mathrm{min}$ is motivated by the behavior of quasar luminosity evolution 
-that decreases mildly toward $\lambda\sim 0.1-0.01$ with $\lesssim$ 100 Myr after activation \citep{2011ApJ...737...26N}, 
-also suggested by a turnover at the lowest $\lambda\lesssim 0.01-0.001$ on the observational side \citep{2018MNRAS.474.1225A}.  
+The normalization is set so that the integrant of this function over $\lambda_\mathrm{min}(=0.01) \leq \lambda < \infty$ is unity.
+%normalized by the total probability above $\lambda_\mathrm{min}$ = 0.01.
+The minimum Eddington ratio $\lambda_\mathrm{min}$ is adopted from the simulated evolution of quasar luminosities 
+that decrease mildly toward $\lambda \sim 0.1-0.01$ with $\lesssim$ 100 Myr after the peak activity \citep{2011ApJ...737...26N}.
+Moreover, a turnover at the lowest value $\lambda\lesssim 0.01-0.001$ in the ERDF is suggested by observations \citep{2018MNRAS.474.1225A}.  
 
-To characterize the aforementioned ERDF in a BH population at any time snapshot, 
-together with the episodic accretion pattern of individual BHs, 
-we introduce a time duration $\tlife$, 
-during which a single value of $\lambda$ following the ERDF of Eq.~(\ref{eq:Pl}) is assigned to a growing BH.
-In this way we model a gear change taking place every $\tlife$, 
-which avoids the unreality of a long-lasting super-Eddington accretion from seeding down to $z=$ 6. 
-Note that the $\tlife$ is indispensable as a methodology in our modeling, 
+
+
+
+To characterize the ERDF for a BH population at any time snapshot together with the episodic accretion pattern of individual BHs, 
+we introduce a time duration of $\tlife$, during which a single value of $\lambda$ that follows the ERDF of Eq.~(\ref{eq:Pl}) is assigned to an accreting BH.
+In this way, we give a different growth speed of a BH in every period with a duration of $\tlife$ until $z=6$ (the corresponding cosmic age is $t_{\rm H}\simeq 800$ Myr).
+This treatment enables us to capture the nature of accretion bursts and avoid an unrealistically long-lasting rapid growth phase of a BH.
+\red{We note that the value of $\tlife$ is indispensable as a methodology in our modeling, 
 albeit its direct comparison with observational luminous quasar lifetime is difficult, 
 these timescales are correlated in realizing the SMBH growth. 
-We leave a more detailed disucssion to \S~\ref{sec:discussion}.
+We leave a more detailed discussion to \S~\ref{sec:discussion}.}
+To be done later...
 
-Lastly, the seeding fraction $\fseed$ denotes the portion of halos where the central BH are initially seeded \citep{2009ApJ...696.1798T}.
-Discussing on constraints from the origin of $\fseed$ is beyond our scope in this work. 
-Instead we take different values $\fseed$ = 1, 0.1, and 0.01, 
-and explore the dependency of the best-fit parameters on it.
 
+Thus far, we assume that {\it all} the parent halos form seed BHs during their assembly and end up in quasar host galaxies by $z\simeq 6$.
+To relax this stringent assumption, we introduce the seeding fraction of $\fseed (\leq 1)$.
+As discussed in \citet{2009ApJ...696.1798T}, a small value of $\fseed <1$ is required to avoid overproduction of SMBHs at $z\sim 6$,
+depending on BH seeding and growth mechanisms in semi-analytical models.
+% that denotes the portion of DM halos where seed BHs are seeded \citep{2009ApJ...696.1798T}.
+Since the value has been poorly constrained both by theoretical and observational studies, we treat it as a free parameter.
+We take three different values of $\fseed = 1$, $0.1$, and $0.01$ and explore the dependence on the best-fit BHMF and QLF.
+Note that the seed mass function shown in Fig.~\ref{fig:seedmf} is given with $\fseed = 1$.
+
+
+
+\subsection{BH mass function}\label{sec:MF}
+
+We describe how to calculate the time evolution of the BH mass function, combining the semi-analytical growth model 
+and the ERDF (see Eqs.~\ref{eq:mdot} and \ref{eq:Pl}).
+For a given mass distribution function $\D P/\D  M_{\bullet, i}$ at $t=t_i$, we give the BHMF at $t=t_i+\Delta t$ as
+%%%%%%%
+%    Eq. 5
+%%%%%%%
+\begin{equation}
+  \label{eq:dpdm}
+  \frac{\D P}{\D M_\bullet} = \int
+   \frac{\D P}{\D \ln \lambda}\Big|_{\lambda_\ast} \cdot
+   \frac{\D \ln \lambda_\ast}{\D  M_\bullet}\Big|_{\Delta t, M_{\bullet,i}} \cdot
+   %_{M, M_\mathrm{i},\Delta t, \delta}
+  \frac{\D P}{\D M_{\bullet, i}}~\D M_{\bullet, i},
+\end{equation}
+%
+where $\lambda_\ast$ is the Eddington ratio required for a BH with $M_{\bullet,i}$ to grow up to $M_{\bullet}$ within $\Delta t$
+and is calculated analytically by
+%%%%%%%
+%    Eq. 4
+%%%%%%%
+\begin{equation}
+  \label{eq:mi2m}
+\frac{\lambda_\ast \Delta t}{\tEdd}=
+  \ln \left(\frac{M_\bullet} {M_{\bullet,i}}\right) + \frac{1}{\delta} 
+  \left[ \left(\frac{M_\bullet}{M_{\bullet,c}}\right)^\delta - \left(\frac{M_{\bullet, i}}{M_{\bullet,c}}\right)^\delta \right],
+\end{equation}
+%
+and the derivative of ($\D \ln \lambda_\ast / \D  M_\bullet )|_{\Delta t, M_{\bullet,i}}$ is given by Eq.~(\ref{eq:mi2m}).
+After the seed formation terminates (i.e., after the total number of BHs is fixed), we perform this integration in every timestep 
+by setting to $\Delta t = t_{\rm life}$ until $z=6$.
+
+
+
+
+
+
+\if0
 Next, we explain our method to calculate the time evolution of BHMF, 
 which is given by combining the BH mass distribution from the seeds growing independently in merger trees
 with different base halo mass $\Mh$,
@@ -407,9 +602,15 @@ This yields the BH mass distribution
   & \left(\frac{\D \ln \lambda}{\D \log M} \right)_{M, M_\mathrm{i},\Delta t, \delta}
   \frac{\D P}{\D \log M_\mathrm{i}} \D\log M_\mathrm{i},
 \end{align}
-where ${\D P}/{\D \ln\lambda}$ is given by a set of parameters $\lambda_0$ and $\alpha$ in Eq.~(\ref{eq:Pl}), 
-at the $\lambda$ value $\lambda\left(M, M_\mathrm{i},\Delta t, \delta\right)$ inferred from Eq.~(\ref{eq:mi2m}).
-For the evolution of the BH mass distribution, we set $\Delta t=\tlife$.
+
+
+\fi
+
+
+
+%where ${\D P}/{\D \ln\lambda}$ is given by a set of parameters $\lambda_0$ and $\alpha$ in Eq.~(\ref{eq:Pl}), 
+%at the $\lambda$ value $\lambda\left(M, M_\mathrm{i},\Delta t, \delta\right)$ inferred from Eq.~(\ref{eq:mi2m}).
+%For the evolution of the BH mass distribution, we set $\Delta t=\tlife$.
 On the other hand, for the growth of an individual seed, 
 $\Delta t < \tlife$ is calculated from the seeding time to the current checkpoint,
 and $ \D P/\D \log M_\mathrm{i}$ is a discrete function which is 10$^{-4}$ 
@@ -608,6 +809,10 @@ The posterior distribution of the MCMC fitting is stabilized around the minimum 
 with the models best reproducing the $z=$ 6 BHMF and QLF.
 
 
+
+\if0
+
+
 \vspace{5mm}
 \section{Results}\label{sec:result}
 
@@ -798,6 +1003,9 @@ With decreasing $L_\mathrm{lim}$, more low $\lambda$ population is unveiled.
 %% bibtext sample631
 %% pdflatex sample631.tex
 %% pdflatex sample631.tex
+
+
+\fi
 
 
 \newpage
