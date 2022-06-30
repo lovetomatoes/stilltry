@@ -636,13 +636,13 @@ its rest-frame ultraviolot (UV) absolute magnitude of $\Muv$ at 1450 $\mathrm{\A
 where we adopt a bolometric correction factor of $f^{\rm bol}_{1450}=4.4$ for the monochromatic UV band 
 \citep{2006ApJS..166..470R}.
 Combining this conversion factor and the ERDF to govern the BH growth, the the quasar abundances with different luminosities 
-can be constructed straightforward.
+can be constructed straightforwardly.
 %Under this conversion, an ERDF combined with the $z\sim$ 6 BH population is able to reproduce 
 %the quasar abundances with different luminosities. 
-However, we note that the {\it intrinsic} QLF is not necessary identical to the {\it observed} QLF
-because a larger fraction of fainter quasars are missed in current observations owing to quasar obscuration.
+However, we note that the shape and normalization of the {\it intrinsic} QLF is not necessary identical to the {\it observed} QLF
+because a larger fraction of fainter quasars are missed in current observations owing to quasar obscuration, 
 %it is crucial to obtain we note that a vital ingredient to construct the observed QLF, 
-Therefore, the number of fainter quasars observed as type-I AGNs is reduced by the obscuration effect
+i.e., the number of fainter quasars observed as type-I AGNs is largely reduced by the obscuration effect
 %Therefore, is the luminosity dependent obscuration fraction, 
 %which decreases the fraction of the detectable quasars preferentially in the dimmer population 
 \citep{2003ApJ...598..886U,2014ApJ...786..104U,2008A&A...490..905H,2014MNRAS.437.3550M}. 
@@ -671,9 +671,25 @@ Moreover, the obscured fraction is found to increase gradually toward higher red
 
 
 In this work, we adopt the obscuration fraction $\fobsc$ given by \citet{2014ApJ...786..104U}, 
-converting the hard X-ray luminosity to the 1450\AA magnitude with bolometric correction factors of
-$f^{\rm bol}_{\rm X}=???$ \citep{2020A&A...636A..73D} and $f^{\rm bol}_{1450}=4.4$ \citep{2006ApJS..166..470R}.
-The obscuration fraction is $\simeq 0.8$, $0.5$, $0.3$ at $\Muv$ = $-20$, $-24$, $-28$ mag. 
+converting the hard X-ray luminosity to the 1450 $\mathrm{\AA}$ magnitude with bolometric correction factors of
+\begin{equation*}
+  f^{\rm bol}_{\rm X} =
+  a\left[1+\left(\frac{\log \left(\Lbol / L_\odot\right)}{b}\right)^{c}\right],
+\end{equation*}
+where $a=10.96$, $b = 11.93$, and $c = 17.79$ \citep[Eq. 2 in ][]{2020A&A...636A..73D}, 
+and $f^{\rm bol}_{1450}=4.4$ \citep{2006ApJS..166..470R}.
+The obscuration fraction reads 
+\begin{equation*}
+  \fobsc = \text{min}\lbrace  0.84 , 0.73-0.24\times[ (\log \Lbol/L_\odot) -43.75] \rbrace,
+\end{equation*}
+following \citet{2014ApJ...786..104U}.
+An alternative fitting of $\fobsc$ proposed by \citet{2014MNRAS.437.3550M} from *** (different sample?) is 
+\begin{equation*}
+  \fobsc = 0.56 + \frac{1}{\pi} \text{arctan} \frac{43.89 - (\log \Lbol/L_\odot)}{0.46},
+\end{equation*}
+we fit the parameters using this prescription and discuss the sensitivity of results to $\fobsc$.
+
+% The obscuration fraction is $\simeq 0.8$, $0.5$, $0.3$ at $\Muv$ = $-20$, $-24$, $-28$ mag. 
 %An alternative form proposed by \citet{2014MNRAS.437.3550M} shows a similar dependence of $\fobsc$ with the luminosity,
 %but the values somewhat differ from that given by \citet{2014ApJ...786..104U} \red{within a factor of $XXX$ KI: more quantitativelt}.
 %Compared with another work by  \citet{2014MNRAS.437.3550M}, this shows a similar decreasing trend with luminosity, 
@@ -689,9 +705,8 @@ and the uncertainties would affect our analyses for fainter quasars.
 %and we may refer to more solid prescriptions of $\fobsc$ in the future.
 We leave more comprehensive arguments about the quasar obscuration effect for future work.
 
-
-
-After taking into account the obscuration effect, the observed QLF for a given BHMF and ERDF is calculated as
+After taking into account the obscuration effect, 
+the observed QLF for a given BHMF and ERDF is calculated as
 %%%%%%%
 %    Eq. 7
 %%%%%%%
