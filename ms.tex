@@ -28,7 +28,6 @@
 \newcommand{\tlife}{\tau}
 \newcommand{\fseed}{f_\mathrm{seed}}
 \newcommand{\fobsc}{f_\mathrm{obsc}}
-\newcommand{\tEdd}{t_\mathrm{Edd}}
 \newcommand{\Nt}{N_\mathrm{t}}
 \newcommand{\Muv}{M_{1450}}
 \newcommand{\Lbol}{L_\mathrm{bol}}
@@ -281,7 +280,7 @@ The amplitude of the streaming velocity is set to $\vbsm = 0$ and $\vbsm=1~\sigm
 is the root-mean-square speed at a redshift of $z$ \citep{2010PhRvD..82h3520T}.
 We calculate the effective sound speed of gas as $c_{\rm eff} = \{c_{\rm s}^2+v_{\rm tur}^2/3+\left(\alpha_0 \vbsm \right)^2 \}^{1/2}$ at the center of each progenitor halo,
 where $c_{\rm s}$ is the thermal sound speed, $v_{\rm tur}$ is the turbulent velocity of gas (i.e., the specific kinetic energy accumulated through halo mergers), and
-the coefficient is set to $\alpha_0=1$\footnote{The value of $\alpha_0=1.0$ is motivated by cosmological simulations of massive primordial stars
+the coefficient is set to $\alpha_0=1$\footnote[1]{The value of $\alpha_0=1.0$ is motivated by cosmological simulations of massive primordial stars
 under fast streaming velocities \citep{2017Sci...357.1375H,2019MNRAS.484.3510S}.
 Note that our previous study in \citet{2021ApJ...917...60L} adopted $\alpha_0=4.7$ \citep{2018ApJ...855...17H}.}.
 %
@@ -428,7 +427,7 @@ The value is calculated as $f_{\vbsm} = 0.6$ and $0.4$ for $\vbsm = 0$ and $\vbs
 Schematical demonstration of the procedure to calculate the evolution of BH mass distribution 
 between checkpoints time $t_0$ to $t_0+\tau$. 
 The probability of a BH with mass $M_0$ grow to $M$ after $\Delta t=\tau$ is drew from the 
-ERDF following Eq.~\ref{eq:Pl}. 
+ERDF following Eq.~(\ref{eq:Pl}). 
 For a newly formed seed BH $M_{\rm i}$, the probability distribution function of BH mass is a delta function, 
 and the growth time is $t_0+\tau-t_{\rm i}$.
 Thus the evolution of BH mass distribution is reshaped iteratively 
@@ -446,6 +445,7 @@ plus taking account of the newly formed seeds if any.
 
 
 \subsection{BH mass growth}
+\label{sec:model}
 % The BH accretion at high redshifts is probed only by snapshots, in their most luminous quasar phase. 
 % We have constraints on simulations and observations of lower redshift counterparts.
 With BH seeds planted, we grow the BHs with a semi-analytical accretion rate model and study the evolution of the BH mass distribution until $z=6$. 
@@ -458,13 +458,13 @@ describing the BH mass growth rate $\Mdot$ by
 %%%%%%%
 % \begin{equation*}
 %   \label{eq:mdot_1}
-%   \Mdot_\bullet = \frac{\lambda f(\Mbh) \Mbh}{\tEdd} ,
+%   \Mdot_\bullet = \frac{\lambda f(\Mbh) \Mbh}{t_{\rm S}} ,
 % \end{equation*}
 \begin{equation}
   \label{eq:mdot}
   \Mdot_\bullet = \lambda f(\Mbh) \Mdot_\mathrm{Edd} ,
 \end{equation}
-% where $\tEdd = \eta_0  M c^2/L_{\mathrm{Edd}} \approx 45$ Myr,
+% where $t_{\rm S} = \eta_0  M c^2/L_{\mathrm{Edd}} \approx 45$ Myr,
 where $\lambda \equiv L/L_\mathrm{Edd}$ is the Eddington ratio,
 and $\Mdot_\mathrm{Edd} \equiv L_{\mathrm{Edd}}/\eta_0 c^2$ is the Eddington accretion rate with a 10\% radiative efficiency of $\eta_0=0.1$ \citep{1973A&A....24..337S},
 %Note here we adopt the radiative efficiency $\eta_0 \approx 0.1 $,
@@ -480,10 +480,10 @@ f(\Mbh) = \frac{2}{1+\left(\Mbh /M_{\bullet,c} \right)^\delta},
 where we adopt $M_{\bullet,c}=10^8~\Msun$.
 With a positive value of $\delta$, the BH growth at the high mass end is suppressed. \blue{(references, Ueda+14?s)}.
 In the limit of $\delta \ll 1$, where $f(\Mbh) \simeq 1$ is approximated independent of $M_{\bullet,c}$, the model reproduces an exponential growth with an $e$-folding timescale of
-$\tEdd =  \Mbh/\Mdot_{\mathrm{Edd}} \approx 45$ Myr.
+$t_{\rm S} =  \Mbh/\Mdot_{\mathrm{Edd}} \approx 45$ Myr, well known as the Salpeter timescale \citep{1964ApJ...140..796S}.
 %h independent of BH mass.
 % In \S~\ref{sec:fitting}, $\delta$ turns out to be close to 0, indicating an exponential grow manner independent of BH mass.
-%Then $\tEdd =  M/\Mdot_{\mathrm{Edd}} \approx 45$ Myr is the Salpeter $e$-folding timescale \citep{1964ApJ...140..796S}.
+%Then $t_{\rm S} =  M/\Mdot_{\mathrm{Edd}} \approx 45$ Myr is the Salpeter $e$-folding timescale \citep{1964ApJ...140..796S}.
 
 
 
@@ -584,7 +584,7 @@ and is calculated analytically from Eq.~(\ref{eq:mi2m}) by
 %%%%%%%
 \begin{equation}
   \label{eq:mi2m}
-\frac{2 \lambda_\ast \Delta t}{\tEdd}=
+\frac{2 \lambda_\ast \Delta t}{t_{\rm S}}=
   \ln \left(\frac{\Mbh} {M_{\bullet,i}}\right) + \frac{1}{\delta} 
   \left[ \left(\frac{\Mbh}{M_{\bullet,c}}\right)^\delta - \left(\frac{M_{\bullet, 0}}{M_{\bullet,c}}\right)^\delta \right],
 \end{equation}
@@ -715,7 +715,7 @@ which are obscured even in the hard X-ray band and show possible dependence on q
 % and it is currently not warranted to discuss the uncertainties of $\fobsc$.
 It is worth noting that the obscured fraction for high-$z$ quasar populations is still under investigation,
 and the uncertainties would affect our analyses for fainter quasars.
-%with complex convertions between the probes in different observational bands,
+%with complex conversions between the probes in different observational bands,
 % optical and X-ray observations, 
 %and is need to be 
 %and we may refer to more solid prescriptions of $\fobsc$ in the future.
@@ -884,7 +884,7 @@ This suggests that in our model assumption, a nearly exponential BH growth patte
 The typical duration of quasar activity is required to be $\tlife \simeq 29$ Myr for both the cases, 
 which is $\sim 64\%$ of the $e$-folding time for an exponential growth.
 This suggests that accreting seed BHs vary their growth speeds (i.e., the Eddington ratio) 
-$\sim 30$ times on average, over the cosmic time of $t_{\rm H}\simeq 800$ Myr at $z\simeq 6$.
+$\sim 30$ times on average, toward the cosmic time of $t_{\rm H}\gtrsim 900$ Myr at $z\simeq 6$.
 The timescale of $\tlife$ also gives a lower bound of the quasar lifetimes of $t_{\rm Q}\sim 1-10$ Myr, 
 which are estimated by the measurement of the physical extents of hydrogen Ly$\alpha$ proximity zones 
 observed in the rest-frame UV spectra (e.g., Eilers+2018, Davies+ 2019).\red{KI: we need to figure out 
@@ -894,19 +894,20 @@ More detailed comparison is discussed in \S\ref{sec:evol}.
 
 The two parameters characterizing the ERDF are given as
 $(\lambda_0,\alpha) = (0.89,0.12)$ and $(0.87,0.20)$ for $\fseed=0.01$ and $0.1$, respectively.
-With those values, the number fraction of BHs growing with Eddington ratios above unity is
-estimated as $P(>1)=***$.
-Thus, nearly ***\% of BHs are required to grow in mass rapidly to be SMBHs by $z\simeq 6$,
-consistent with a general picture for the early assembly of SMBHs (ref, Xiaohui? Willott? SDSS papers?)
+\blue{\\This paragraph is revised hereafter.}
+With those values, the number fraction of super-Eddington accreting BHs is
+estimated as $P(\lambda>1)=0.064$ and 0.075, respectively. 
+The small discrepancy is enlarged with the multiple cycles of assigning $\lambda$ to BH growth, 
+and increase the fraction of the super-Eddington phase for smaller $\fseed$. 
+Thus for different $\fseed$ values, a similar number density of BHs which rapidly grow to be SMBHs by $z\simeq 6$ is produced, 
+consistent with a general picture for the early assembly of SMBHs 
+\citep[e.g.,][]{2006NewAR..50..665F,2008AJ....135.1057J,2010AJ....139..906W}.
 The characteristic Eddington ratio needs to be close to unity, otherwise the highest luminosity and BH mass
 in the model would differ from those in observations.
 On the other hand, the power-law index of $\alpha$ in the ERDF tends to increase as the seeding fraction decreases,
-indicating that the number of inactive BHs with $\lambda \ll \lambda_0$ is reduced.
-\red{KI: can you check if $\fseed \cdot P(>\lambda_0)$ is roughly constant?}
-Thus, with lower seeding fractions, a larger number of active BHs with $\lambda \sim \lambda_0$ 
-participate in the high-$z$ quasar assembly and reproduce the bulk properties of the BHMF and QLF.
-%hence the best-fit $\alpha$ increases and higher accretion rate is realized from the Schechter shape with higher $\alpha$. 
-% We expect more complete observations to better constrain the parameter priors in the model fitting.
+indicating that fraction of active BHs with $\lambda \gtrsim 1$ is elevated. 
+Thus, with lower seeding fractions, the high-$z$ quasar assembly spends a larger fraction of time in active phases 
+and reproduce the bulk properties of the BHMF and QLF.
 
 
 
@@ -923,7 +924,7 @@ but seems to overproduce the abundance of fainter quasars at $\Muv>-24~{\rm mag}
 % due to the lack of fine tuning by the model parameters in the low mass range, 
 The difference at the fainter end tends to be alleviated with the seeding fraction lowered ($\fseed = 0.01$),
 because the progenitors of $z=6$ BHs with $10^{7-8}~\Msun$ (or similarly, 
-$-22~{\rm mag} \lesssim \Muv \lesssim -24~{\rm mag}$) were less massive seed BHs with $\sim ***~\Msun$,
+$-22~{\rm mag} \lesssim \Muv \lesssim -24~{\rm mag}$) were less massive seed BHs with $\sim 10^4~\Msun$,
 which is closer to the peak of the seed mass distribution (see Fig.~\ref{fig:seedmf}).
 Those BH population naturally produces a flatter slope of the QLF (and BHMF) at the faint (low-mass) end.
 Overall, the parameters are inferred to be reasonable fits consistent with the observational data.
@@ -964,13 +965,59 @@ The blue data points with error bars label the QLF from the observation by \cite
 You repeat the MCMC fitting with a fixed value of $\tlife$? Saying like for a longer $\tlife$,
 the fitting results would never be improved.}
 
+As described in \S~\ref{sec:model}, we introduce the parameter $\tau$ as a typical timescale 
+for individual duration of quasar accretion activities, i.e. in each cycle $\tlife$ 
+we assign Eddington ratio $\lambda$ following the parameterized ERDF for all BHs.
+The extraction of this timescale essentially modifys the ERDF in the whole BH growth history, 
+because the multiple sampling of $\lambda$ reduces the possibility of a BH accreting on average with $\lambda \gtrsim \lambda_0$ 
+than single sampling. 
+However at any time during growth, the ERDF of the BH population remains the same as at $z\sim$ 6, 
+therefore we ensure treating all cosmic time equally. 
+
+% tau极端小，则非常小的lambda，不能解释 （且delta func？ 有必要说或是放在后面讨论？） 
+
+Hereafter we demonstrate the role of $\tlife$ on shaping the BHMF evolution and the consequent QLF. 
+In the left panel of Fig.~\ref{fig:tau}, the BHMF at $z=6$ is calculated from setting $\tlife=$ 10, 18, and 50 Myr, 
+and keeping the other parameters as the best-fit values for the $\fseed=0.01$ case.
+While $\tlife \approx$ 18 Myr is the best-fit value, resulting in the BHMF which nicely matches the results in \citetalias{2010AJ....140..546W}, 
+the other two cases demonstrate the sensitivity of the $\tlife$ value in producing the bulk of massive BHs 
+and the slope in the high mass tail. 
+For $\tlife=$ 10 Myr, the number of Eddington ratio assignment cycles increases to $\sim$ 80 
+from $\sim$ 40 with the best-fit $\tlife$ value. 
+Thus the possibility of continuous high Eddington ratio accretion along the growth is lower, 
+suppressing the growth of massive BHs at $M_\bullet \gtrsim 10^8~\Msun$. 
+On the other hand, for $\tlife=$ 50 Myr, with $\sim$ 16 times of multiple Eddington ratio assignment,
+on average high values of $\lambda\gtrsim \lambda_0$ is non-negligibly realized in the BHMF evolution. 
+Therefore in the high mass end of BHMF at $z=$ 6, the BH population is significantly overproduced than the constraints from observation.
+
+The QLF at $z=6$ is shown in the right panel of Fig.~\ref{fig:tau}. 
+In the conversion from BHMF to QLF, the ERDF is the same for different $\tlife$ values, 
+following the $P(\lambda)$ in Eq.~(\ref{eq:Pl}) with $\lambda_0=0.87$ and a=0.20. 
+Thus the deviation from the observed QLF in \citetalias{2018ApJ...869..150M}  shows similar trends as in the BHMF. 
+i.e., $\tlife$ values lower (higher) than the best-fit one leads to the under(over)-production of the luminous quasar population.
+We notice that the best-fit value of $\tlife$ favors a moderate fraction of $t_{\rm S}$, 
+which regulates the BH growth and reproduces the quasar observation together with the other best-fit parameters in their reasonable ranges. 
+
+%%%%%%%
+%    Fig. 
+%%%%%%%
+\begin{figure*}
+\centering
+\includegraphics[width=160mm]{tau.png}
+\caption{
+Left panel: BHMF at $z=$ 6 calculated with $\tlife= $. The solid lines denote modeled BHMF produced by the best-fit parameters 
+and the shaded regions are the one sigma spread. 
+Right panel: the mass density of BHs with $\Mbh > 10^7~\Msun$, integrated from the BHMF in the left panel.
+}
+\label{fig:tau}
+\end{figure*}
 
 
 \vspace{2mm}
 \subsection{Cosmological evolution of BHMF and QLF}\label{sec:cosm}
-\red{KI: shall we discuss the $z$-dependence of the BHMF and QLF?
-Don't need to repeat calculations. Just using the same parameters with 1sigma scatter?
-Showing $\rho_{\bullet}(z)$ in $\Msun ~ {\rm Mpc}^{-3}$, which is the integrant of BHMF, would be interesting}
+% \red{KI: shall we discuss the $z$-dependence of the BHMF and QLF?
+% Don't need to repeat calculations. Just using the same parameters with 1sigma scatter?
+% Showing $\rho_{\bullet}(z)$ in $\Msun ~ {\rm Mpc}^{-3}$, which is the integrant of BHMF, would be interesting}
 
 
 %%%%%%%
@@ -1001,47 +1048,128 @@ Right panel: the cumulative number density of quasars with $\Muv <-26$, integrat
 \label{fig:QLF_rhoz}
 \end{figure*}
 
-Constrained by $z\sim 6$ observations, 
-the best-fit model from the MCMC realizations enables us to probe the statistical BH evolution at higher redshifts.
-As a fiducial case, we take the best-fit parameters of BH growth for $\fseed=$ 0.01, 
+\begin{table}
+\renewcommand\thetable{1} %! fix indexing
+\caption{$\rho_\bullet(z)$ Evolution Parameters}
+\begin{center}
+% \tablenum{1}
+\begin{tabular}{l c r}
+\hline
+$M_{\rm min}$ & $\log \rho_{\bullet,0}$ & $k_{\rm M}$ ~~~ \\ 
+\hline 
+\hline
+10$^7$  &  $-5.91\pm 0.28$  &  $-0.58 \pm 0.21$  \\
+10$^8$  &  $-6.93\pm 0.47$  &  $-0.78 \pm 0.31$  \\
+% 10$^9$  &  $-8.30_{-0.47}^{+0.47}$  & $-1.04_{-0.58}^{+0.54}$ \\
+10$^9$  &  $-8.30\pm 0.47$  &  $-1.04 \pm 0.58$ \\
+\hline 
+\end{tabular}
+\label{tab:MFz}
+\end{center}
+\end{table}  
+
+Based on the constraint from $z\sim 6$ quasar observations, the best-fit model from the MCMC realizations enables
+us to probe the statistical BH evolution at higher redshifts.
+As a fiducial case, we take the best-fit parameters of BH growth for $\fseed=$ 0.01,
 where $\tlife=18.76$ Myr, $\delta=0.055$, $\lambda_0=0.87$, and $\alpha=0.20$.
-We apply the result to construct BHMF and QLF at higher redshifts 
-and produce implications to high-$z$ observations in the future.
-
-The best-fit modeled BHMFs with 1-$\sigma$ scatter at redshifts $z$ from 6 to 10 is shown in  Fig.~\ref{fig:BHMF_rhoz}.
-The number density of BHs with $\Mbh=10^7~\Msun$ emerging from high redshifts increase by a factor of $\sim 4$ per unit redshift.
-The mass density of BHs with $\Mbh \gtrsim 10^7~\Msun$ is integrated by the BHMF as
+We apply the result to construction of BHMFs and QLFs at higher redshifts and give implications for
+the future explorations of high-$z$ quasars.
+In the left panel of Fig.~\ref{fig:BHMF_rhoz}, we show the BHMFs at five different redshifts of $z=6-10$.
+For all the redshifts, the BHMFs can be characterized with a double power-law function, similar to lower-$z$ quasar populations.
+From higher to lower redshifts, the number density of BHs heavier than $M_\bullet = 10^7~\Msun$ increases
+and the high-mass tail of the distribution is extended owing to efficient growth of the most massive BH population.
+%The number density of BHs with $\Mbh=10^7~\Msun$ emerging from high redshifts increase by a factor of $\sim 4$ per unit redshift.
+In the right panel of Fig.~\ref{fig:BHMF_rhoz}, we also present the cumulative mass density of BHs with $\Mbh \geq M_{\rm min}$ in a comoving volume,
+defined by the integration of the BHMF as
+%
 \begin{equation}
-  \rho_\bullet(z)=\int_{10^7~\Msun}^{\infty} \Phi_{\Mbh} (z) \Mbh \D \log \Mbh, 
+ \rho_\bullet(z)=\int_{M_{\rm min}}^{\infty} \Phi_{\Mbh} (z) \Mbh \D \log \Mbh,
 \end{equation}
-as a function of redshift.
-Thus we predict the early assembly of BH mass in the galactic nuclei, 
-and the steep decline toward higher redshifts can be described by a fitting formula $\rho_\bullet(z)\propto 10^{k_{\rm M}(z-6)}$,
-with $k_{\rm M}\approx -0.8$. 
-The exponential dependency on redshift is reminiscent of the cosmic galaxy mass growth 
-$M_{\star} \propto e^{-B z}$, as a consequnce of the assumption of fixed galaxy to DM halo mass ratio, 
-and the growth rate of DM halos in the extended Press-Schechter formalism 
-$\D \left(\ln \Mh \right) / \D t \propto(1+z)^{5/2}$ \citep{2008MNRAS.383..615N}.
-Our results suggest that the cumulative massive BH mass density growing in galactic nuclei also follows 
-an exponential evolution with redshift, 
-which is statistically in agreement with the host halo and galaxy growth. 
+%
+%as a function of redshift.
+where we set the minimum mass to $M_{\rm min}=10^7$, $10^8$, and $10^9~\Msun$.
+This result shows that the early BH assembly takes place rapidly and the redshift-dependence can be approximated by
+%
+\begin{equation}
+\rho_\bullet(z)
+%= \rho_{\bullet 0}\cdot e^{k_{\rm M}(z-6)}
+\simeq \rho_{\bullet,0}~ 10^{k_{\rm M}(z-6)},
+\end{equation}
+%
+where the fitted values of $\rho_{\bullet,0}$ and $k_{\rm M}$ are shown in Table.~\ref{tab:MFz}.
+On the other hand, the stellar mass density of the quasar progenitor halos is calculated as
+%
+\begin{equation}
+\rho_{\star}(z)
+\simeq f_\star n_{\Mh} M_h~ 10^{k_{\rm h}(z-6)},
+\end{equation}
+%
+where $f_\star(\equiv M_\star/\Mh)$ is the mass ratio of the galaxy stellar mass to the DM halo mass and
+$n_{\Mh}$ is the number density of quasar host halos with $\Mh$ in a comoving volume at $z=6$; namely,
+the value of $n_{\Mh}\Mh \simeq (6.2-99)\times 10^6~\Msun~{\rm Mpc}^{-3}$.
+We here express the mass growth of the DM halo with a functional form of $\propto 10^{k_{\rm h} z}$,
+which nicely reproduces the mass growth of DM halos
+\citep[e.g.,][]{2002ApJ...568...52W,2008MNRAS.383..615N,2008MNRAS.388.1792N,2010MNRAS.406.2267F}
+\footnote[3]{
+In fact, this redshift dependence leads to a halo-mass growth rate of $\D \left(\ln \Mh \right) / \D t \propto(1+z)^{5/2}$,
+which has been understood based on the extended Press-Schechter formalism and also derived by
+a fit to merger trees from cosmological N-body simulations \citep{2013MNRAS.435..999D}.}.
+% The redshift dependence yields the cosmic BH growth rate in the matter-dominated universe
+% as $\dot{\rho}_\bullet \propto \rho_\bullet (1+z)^{5/2}$ or
 
+% \begin{align}
+% \dot{\rho}_\bullet(z) & =\dot{\rho}_\bullet(z=6)\left(\frac{1+z}{7}\right)^{5/2} 10^{k_{\rm M}(z-6)}, \\
+% &\simeq *** ~\Msunyr~{\rm Mpc}^{-3} \left(\frac{1+z}{7}\right)^{5/2} e^{\bar{k}_{\rm M}(z-6)},\nonumber
+% \end{align}
 
-On the other hand, the QLFs at $z$ from 6 to 10 are also deduced from the BH growth model (see Fig.~\ref{fig:QLF_rhoz}).
-The model QLFs we propose give interesting prediction and will be further constrained by higher redshift quasar observations.
-The luminous quasar ($\Muv <-26$) density evolution with redshift is shown in Fig.~\ref{fig:QLF_rhoz}, and fitted with 
-$n(z,\Muv<-26)\propto 10^{k_{\rm L}z}$, where $k_{\rm L}\approx -0.95$. 
-A rapid decline in luminous quasar population toward high redshift is firstly proposed by \citet{2001AJ....122.2833F}, 
-with $k_{\rm L}= -0.47$ in their analysis of $z$ from 3 to 6 quasar sample. 
-A steeper decline in higher redshifts is suggested in recent studies of $z\gtrsim 6$ quasars, 
-e.g. \citet{2019ApJ...884...30W} measure the spatial density of $z\sim 6.7$ quasars, 
-and fit the parameter $k_{\rm L}=-0.78$ by connecting the $z\sim 6$ result from \citet{2016ApJ...833..222J}.
-Studies with the assumption of the close correlation of DM halo mass with central BH mass, and a constant Eddington ratio 
-interprete this rapid decline by the rarity of massive halos toward higher redshifts \citep[e.g.,][]{2010ApJ...718..231S}, 
-while another entangling factor is the radiative efficiency in converting BH growth rate to luminosity. 
-In this work we argue that the episodical BH accretion with bursts and quiescent phases is 
-important in matching the $z\sim 6$ quasar observations, 
-and this calls consideration of the more realistic BH-galaxy coevolution in understanding the observable AGN properties.
+% where $\bar{k}_{\rm M} \equiv k_{\rm M} \ln 10 \simeq -1.84$.
+% \red{KI: I'm not sure what we discuss here... One thing is the cosmic SFR density (Madau's plot).
+% Is there something like Madau's plot but for DM halos?}
+% The exponential dependence on redshift is reminiscent of the cosmic galaxy mass growth
+% $M_{\star} \propto e^{-B z}$, as a consequnce of the assumption of fixed galaxy to DM halo mass ratio,
+% and the growth rate of DM halos in the extended Press-Schechter formalism
+% $\D \left(\ln \Mh \right) / \D t \propto(1+z)^{5/2}$ \citep{2008MNRAS.383..615N}.
+% Our results suggest that the cumulative massive BH mass density growing in galactic nuclei also follows
+% an exponential evolution with redshift,
+% which is statistically in agreement with the host halo and galaxy growth.
+The star-to-halo mass ratio is assumed to be $f_\star =0.01$ for those quasar progenitor halos at $z>6$
+% (UNIVERSEMACHINE; Behroozi et al. 2019).
+\citep[fits by code {\tt UNIVERSEMACHINE} in][]{2019MNRAS.488.3143B}.
+%https://ui.adsabs.harvard.edu/abs/2019MNRAS.488.3143B/abstract
+With those values, we estimate the cumulative stellar-to-BH mass ratio for high-$z$ quasars as
+%
+\begin{equation}
+\frac{\rho_{\star}(z)}{\rho_{\bullet}(z)}
+\simeq 2.5\times 10^{3} \left(\frac{f_\star}{0.01}\right)
+~ 10^{(k_{\rm h}-k_{\rm M})(z-6)},
+\end{equation}
+% wli now
+\red{KI: please check the value of $k_{\rm h}-k_{\rm M}$.}
+\blue{
+where $k_{\rm h} \approx -0.16 $ for the parent halo growth histories.
+}
+Therefore, at $z\sim 6$ the bulge-to-BH mass ratio $\sim O(10^3)$ for the entire BH population (i.e., low-mass BHs and low-luminosity quasars) 
+is broadly consistent with those seen in the local universe, although SMBHs observed as high-$z$ quasars
+appear to be overmassive compared to the local relation \citep{2013ApJ...773...44W,2020A&A...637A..84P} \dots.
+
+Next, we show the QLFs at different redshifts of $z=6-10$ taken from the BH growth model in the left panel of Fig.~\ref{fig:QLF_rhoz}.
+%The model QLFs we propose give interesting prediction and will be further constrained by higher redshift quasar observations.
+\red{KI: add more explanations about the QLFs. How about the detection limits of Euclid, Roman, and others?
+Also, you could compare your results with Aaron Yung's results.}
+In the right panel of Fig.~\ref{fig:QLF_rhoz}, we present the number density of luminous quasars with $\Muv <-26$ as a function of redshift.
+The evolutionary trend can be fitted as $\propto 10^{k_{\rm L}z}$, where $k_{\rm L}\approx -0.97$.
+A rapid decay of the quasar number density toward higher redshifts is found by previous studies \citep[e.g.,][]{2001AJ....122.2833F,2016ApJ...833..222J},
+which show $k_{\rm L}= -0.47$ and $-0.72$ from the analysis of quasar samples at $z\simeq 3-5$ and $z\simeq 5-6$, respectively.
+Recently, a steeper decline of luminous quasar number density toward higher redshifts is proposed by \citet{2019ApJ...884...30W},
+suggesting $k_{\rm L}=-0.78$ at $6\lesssim z \lesssim 7$.
+%a steeper decline ifts is suggested in recent studies of $z\gtrsim 6$ quasars,
+%e.g. \citet{2019ApJ...884...30W} measure the spatial density of $z\sim 6.7$ quasars,
+%and fit the parameter $k_{\rm L}=-0.78$ by connecting the $z\sim 6$ result from \citet{2016ApJ...833..222J}.
+The rapid decline toward higher redshifts is nicely characterized by the treatment of episodic natures of BH accretion with a finite value of
+$\tau ~(\simeq 20~{\rm Myr})$, in order to match the statistical properties of high-$z$ quasars.
+We also note that the tendency would be explained by the rarity of massive quasar-host halos at higher redshifts,
+non-constant radiative efficiencies that covert the BH growth rate into the luminosity, or some combination of these effects
+\citep[e.g.,][]{2010ApJ...718..231S}.
 
 \section{Discussion}
 \vspace{2mm}
