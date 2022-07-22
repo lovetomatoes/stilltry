@@ -239,7 +239,7 @@ Also, I remember one paper of our former postdoc, Kim.
 Also, recent Raffaella's student's paper and "highly-empirical paper" you introduced.
 Please add more (I might miss some relevant papers.)}
 \blue{
-High-z
+% High-z
 }
 
 
@@ -1031,43 +1031,50 @@ Overall, the parameters are inferred to be reasonable fits consistent with the o
 
 \vspace{2mm}
 \subsection{Model dependence}\label{sec:modep}
-\red{KI: It'd be good to discuss the dependence of our results on key parameters such as $\tlife$.
-You repeat the MCMC fitting with a fixed value of $\tlife$? Saying like for a longer $\tlife$,
-the fitting results would never be improved.}
+As described in \S~\ref{sec:model}, we introduce the parameter $\tau$ as a typical timescale
+for individual durations of quasar accretion activity.
+Specifically, we assign an Eddington ratio $\lambda$ following the ERDF for all BHs in each cycle
+with a time duration of $\tau$.
+Variable accretion episodes in every cycle essentially modify the effective ERDF in the whole BH growth history,
+because multiple sampling of $\lambda$ reduces the possibility of a BH growing with $\lambda \gtrsim \lambda_0$
+compared to that with a single sampling of $\lambda$.
+%However at any time during growth, the ERDF of the BH population remains the same as at $z\sim$ 6,
+%therefore we ensure treating all cosmic time equally.
+In what follows, we demonstrate the role of $\tlife$ in shaping the BHMF evolution and the consequent QLF.
+% tau极端小，则非常小的lambda，不能解释 （且delta func？ 有必要说或是放在后面讨论？）
 
-As described in \S~\ref{sec:model}, we introduce the parameter $\tau$ as a typical timescale 
-for individual duration of quasar accretion activities, i.e. in each cycle $\tlife$ 
-we assign Eddington ratio $\lambda$ following the parameterized ERDF for all BHs.
-The extraction of this timescale essentially modifys the ERDF in the whole BH growth history, 
-because the multiple sampling of $\lambda$ reduces the possibility of a BH accreting on average with $\lambda \gtrsim \lambda_0$ 
-than single sampling. 
-However at any time during growth, the ERDF of the BH population remains the same as at $z\sim$ 6, 
-therefore we ensure treating all cosmic time equally. 
+In the left panel of Fig.~\ref{fig:tau}, we present the BHMF at $z=6$ for three different values of $\tlife=10$, $18$, and $50$ Myr,
+but keeping the other parameters as the best-fit values ($\lambda_0=0.87$ and $\alpha=0.20$) for the case with $\fseed=0.01$.
+We note that $\tlife \approx$ 18 Myr is the best-fit value reproducing the BHMF consistent with that of \citetalias{2010AJ....140..546W}.
+%the other two cases demonstrate the sensitivity of the $\tlife$ value in producing the bulk of massive BHs
+%and the slope in the high mass tail.
+For $\tlife=10$ Myr, the frequency of Eddington ratio assignment increases twice until $z=6$.
+%to $\sim$ 80 from $\sim$ 40 with the best-fit $\tlife$ value.
+Therefore, continuous and efficient growth of BHs with $\lambda \gtrsim \lambda_0$ is less likely to occur,
+%high Eddington ratio accretion along the growth is lower,
+suppressing the formation of BHs heavier than $M_\bullet \simeq 10^8~\Msun$.
+Moreover, if a high Eddington ratio is given with a certain but low probability, the BH mass hardly increases
+within $\tlife=10$ Myr, which is $\simeq 20\%$ of the $e$-folding timescale.
+On the other hand, for $\tlife=$ 50 Myr, there is a non-negligible probability that
+% $\sim$ 16 times of Eddington ratio assignment,
+more BHs experience high accretion rates with $\lambda\gtrsim \lambda_0$ through their assembly history.
+%high values of $\lambda\gtrsim \lambda_0$ is non-negligibly realized in the BHMF evolution.
+Therefore, the high mass end of the BHMF is further extended and those massive populations are substantially
+overproduced compared to the observed abundance.
+%in the high mass end of BHMF at $z=$ 6, the BH population is significantly overproduced than the constraints from observation.
 
-% tau极端小，则非常小的lambda，不能解释 （且delta func？ 有必要说或是放在后面讨论？） 
-
-Hereafter we demonstrate the role of $\tlife$ on shaping the BHMF evolution and the consequent QLF. 
-In the left panel of Fig.~\ref{fig:tau}, the BHMF at $z=6$ is calculated from setting $\tlife=$ 10, 18, and 50 Myr, 
-and keeping the other parameters as the best-fit values for the $\fseed=0.01$ case.
-While $\tlife \approx$ 18 Myr is the best-fit value, resulting in the BHMF which nicely matches the results in \citetalias{2010AJ....140..546W}, 
-the other two cases demonstrate the sensitivity of the $\tlife$ value in producing the bulk of massive BHs 
-and the slope in the high mass tail. 
-For $\tlife=$ 10 Myr, the number of Eddington ratio assignment cycles increases to $\sim$ 80 
-from $\sim$ 40 with the best-fit $\tlife$ value. 
-Thus the possibility of continuous high Eddington ratio accretion along the growth is lower, 
-suppressing the growth of massive BHs at $M_\bullet \gtrsim 10^8~\Msun$. 
-On the other hand, for $\tlife=$ 50 Myr, with $\sim$ 16 times of multiple Eddington ratio assignment,
-on average high values of $\lambda\gtrsim \lambda_0$ is non-negligibly realized in the BHMF evolution. 
-Therefore in the high mass end of BHMF at $z=$ 6, the BH population is significantly overproduced than the constraints from observation.
-
-The QLF at $z=6$ is shown in the right panel of Fig.~\ref{fig:tau}. 
-In the conversion from BHMF to QLF, the ERDF is the same for different $\tlife$ values, 
-following the $P(\lambda)$ in Eq.~(\ref{eq:Pl}) with $\lambda_0=0.87$ and a=0.20. 
-Thus the deviation from the observed QLF in \citetalias{2018ApJ...869..150M}  shows similar trends as in the BHMF. 
-i.e., $\tlife$ values lower (higher) than the best-fit one leads to the under(over)-production of the luminous quasar population.
-We notice that the best-fit value of $\tlife$ favors a moderate fraction of $t_{\rm S}$, 
-which regulates the BH growth and reproduces the quasar observation together with the other best-fit parameters in their reasonable ranges. 
-
+The QLF at $z=6$ is shown in the right panel of Fig.~\ref{fig:tau}.
+%In the conversion from BHMF to QLF, the ERDF is the same for different $\tlife$ values,
+%following the $P(\lambda)$ in Eq.~(\ref{eq:Pl}) with $\lambda_0=0.87$ and $\alpha=0.20$.
+Overall, the dependence of the QLF on the choice of $\tau$ shows the same trend as in the BHMF,
+%the deviation from the observed QLF of \citetalias{2018ApJ...869..150M} shows similar trends as in the BHMF.
+i.e., higher (lower) $\tlife$ values lead to under(over)-production of the luminous quasar population.
+The best-fit value of $\tlife (\simeq 18$ Myr) favors a moderate fraction of $t_{\rm S}$.
+This suggests the importance of regulated growth of BHs to reproduce the shape of the observed BHMF and QLF.
+%reproduces the quasar observation together with the other best-fit parameters in their reasonable ranges.
+In \S\ref{sec:evol}, we apply this episodic accretion model to individual growth pathways of high-$z$ quasars
+and demonstrate that normal seeding mechanisms can explain the existence of massive BHs with low luminosity
+observed at $z\simeq 6-7$.
 
 \vspace{2mm}
 \section{Cosmological evolution of BH mass and quasar luminosity function}\label{sec:cosm}
@@ -1254,6 +1261,7 @@ This result indicates rapid decline of the number of bright quasars toward highe
 
 
 \section{Discussion}
+\label{sec:discussion}
 \vspace{2mm}
 \subsection{Individual BH growth}\label{sec:evol}
 
