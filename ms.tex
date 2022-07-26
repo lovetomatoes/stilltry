@@ -147,17 +147,25 @@
 
 %% Mark off the abstract in the ``abstract'' environment. 
 \begin{abstract}
-W\\
-E\\
-N\\
-X\\
-I\\
-U\\
-L\\
-I\\
-1\\
-2\\
-3
+The early evolution of black hole mass function (BHMF) and the quasar luminosity function (QLF)
+plays an important role in the establishment of BH-galaxy coevolution at high redshifts ($z\gtrsim$ 6).
+However, the accretion and radiation properties of growing BHs in the high-$z$ environments 
+still remain a challenge to be explored.
+In this work, based on a semi-analytic BH seed formation model, 
+we relate the seeding time and BH masses at born with the growth tracks of their parent halos. 
+We then construct the mass and luminosity evolution of the BH population with a growth model 
+characterizing the episodical BH accretion and Eddington ratio distribution function (ERDF) motivated by observational constraints.
+The model parameters are fitted to reproduce the observed BHMF and QLF of the quasar population down to $z\sim$ 6.
+Our best-fit models suggest that BHs grow with episodical bursts and quescent phases, with time duration 
+typically in units of 20 $\sim$ 30 Myr. 
+In the sub-sample of massive BHs with $M\gtrsim 10^8~\Msun$, 
+the duty cycle of active accretion phase is $f_{\rm duty}\sim 0.15$, 
+boosted from that in the whole population by nearly a factor of two. 
+We find that the intrinsic ERDF of the whole quasar population is well presented by a Schechter shape, 
+indicating a large number of low Eddington ratio objects missed by the current flux-limited quasar selections.
+We give prediction of the early evolution of BHMF and QLF, as well as the growth patterns of individual BHs, 
+which will likely be unveied by deep and wide-field surveys with, e.g. 
+the James Webb Space Telescope (JWST) and the forthcoming Roman Space Telescope (RST) and Euclid.
 \end{abstract}
 
 %% Keywords should appear after the \end{abstract} command. 
@@ -176,16 +184,24 @@ I\\
 \vspace{5mm}
 \section{Introduction} \label{sec:intro}
 The growth of massive black holes (BHs) in galactic nuclei is elegantly related to their luminous accretion phases
-across the cosmic time \citep{1982MNRAS.200..115S,1992MNRAS.259..725S}.
+across the cosmic time \citep{1982MNRAS.200..115S}%,1992MNRAS.259..725S}.
 Comparing the mass density of massive BHs in the local universe and the mass accreted onto BH inferred from
 the integration of the quasar luminosity function based on multi-wavelength observations,
-the cosmic BH accretion history and their radiative efficiency are nicely constrained \citet{2002MNRAS.335..965Y}
-\red{KI: add more references, Ueda+14, Delvecchio+14, Marconi?, and some Shankar's papers}.
-
+the cosmic BH accretion history and their radiative efficiency are nicely constrained 
+\citep[e.g.][]{1971ApJ...170..223C,1992MNRAS.259..725S,2002MNRAS.335..965Y,2004MNRAS.351..169M,2008MNRAS.388.1011M,2004MNRAS.354.1020S,
+2009ApJ...690...20S,2014MNRAS.439.2736D,2014ApJ...786..104U,2017A&A...600A..64T}.
 
 Extrapolation of this argument toward higher redshifts beyond $z\sim$ 6 is limited because of the current capability for
-high-$z$ quasar observations \citep{2019BAAS...51c.121F} \red{KI: you could find better reference in this Decadal Survey?}.
-Nevertheless,... \red{KI: you could say the current status of $z=6$ QLFs/BHMFs; citing Jiang+16, 18, Willott+10, HSC papers.}
+high-$z$ quasar observations \citep{2013ApJ...768..105M,2016ApJ...829...33Y,2019ApJ...884...30W,2019BAAS...51c.121F}.
+% \red{KI: you could find better reference in this Decadal Survey?}.
+\red{KI: you could say the current status of $z=6$ QLFs/BHMFs; citing Jiang+16, 18, Willott+10, HSC papers.}
+\blue{
+Nevertheless, currently the $z\sim 6$ quasar population is well constrained by multiband surveys 
+\citep{2008AJ....135.1057J,2010AJ....139..906W,2016arXiv161205560C,2016ApJ...833..222J,2018PASJ...70S..35M,2019ApJ...883..183M,2019AJ....157..168D},
+with the quasar luminosity function constructed \citep[e.g.,][]{2018ApJ...869..150M}, 
+and the virial BH mass investigated from the Mg II 2798 $\rm{\AA}$ line width where deep spectroscopic measurements are carried out
+\citep{2007AJ....134.1150J,2007ApJ...669...32K,2010AJ....140..546W,2018Natur.553..473B,2019ApJ...880...77O,2019ApJ...873...35S}. 
+}
 Moreover, in the era of the James Webb Space Telescope (JWST) and forthcoming facilities,
 e.g., the Roman Space Telescope (RST) and Euclid,
 infrared imaging and spectroscopic observations will unveil a wealth of information on the
@@ -196,7 +212,8 @@ also help answering the intriguing questions e.g.,
 the existence of supermassive BHs in the early universe within one billion year 
 \citep{2012Sci...337..544V,2013ASSL..396..293H,2020ARA&A..58...27I}, 
 and the establishment of BH-galaxy coevolution 
-\red{cite Wang+2013; Venemans+2017, Izumi et al. 2021, Inayoshi+2022 simulation, Habouzit+2022}.
+\citep[e.g.,][]{2013ApJ...773...44W,2017ApJ...851L...8V,2021ApJ...914...36I,2022ApJ...927..237I,2022MNRAS.511.3751H}.
+% \red{cite Wang+2013; Venemans+2017, Izumi et al. 2021, Inayoshi+2022 simulation, Habouzit+2022}.
 
 
 
@@ -208,24 +225,32 @@ semi-analytical studies
 %\citep[e.g.,][Toyouchi 2022]{2001ApJ...546..635O,2002Sci...295...93A,2006ApJ...652....6Y,2011MNRAS.416.2748I,
 %2012ApJ...756...93H,2013ApJ...778..178H,2014MNRAS.439.3798F,
 %2014MNRAS.445L.109I,2014MNRAS.445..544S,2014MNRAS.445..107V,2020MNRAS.499.5960S}.
-\red{KI: I think here we should cite more general citations: Begelman+2006; Tanaka \& Haiman 2009; Hirano+14, 15,
-Toyouchi+2022, one Natarajan+Volonteri's paper discussing the mass function, Valiante+2018, Sassano+21}
+\citep{2006MNRAS.370..289B,2009ApJ...696.1798T,2012MNRAS.422.2051N,2014ApJ...781...60H,
+2015MNRAS.448..568H,2018MNRAS.474.3825V,2021MNRAS.506..613S,2022arXiv220614459T}.
+% \red{KI: I think here we should cite more general citations: Begelman+2006; Tanaka \& Haiman 2009; Hirano+14, 15,
+% Toyouchi+2022, one Natarajan+Volonteri's paper discussing the mass function, Valiante+2018, Sassano+21}
 Massive star formation episodes in the early universe is substantially modulated by external environmental effects such as
 %factors which modulate the Pop III star formation have been assessed,
 (i) H$_2$ photo-dissociating irradiation from nearby galaxies
 %irradiation in Lyman-Werner band which photo-dissociates the major coolant $\hh$
-\citep{2001ApJ...546..635O,2002ApJ...569..558O,2003Natur.425..812B,2010MNRAS.402.1249S,2014MNRAS.445..544S,2014MNRAS.445..107V}
-\red{KI: add Chon+16},
+\citep{2001ApJ...546..635O,2002ApJ...569..558O,2003Natur.425..812B,2010MNRAS.402.1249S,2014MNRAS.445..544S,2014MNRAS.445..107V,2016ApJ...832..134C},
+% \red{KI: add Chon+16},
 (ii) supersonic baryonic streaming motion that delays gas collapse in halos
-\citep{2012MNRAS.424.1335F, 2014MNRAS.439.1092T, 2018ApJ...855...17H} \red{KI: add Inayoshi, Li \& Haiman 18, Schauer +17},
+\citep{2012MNRAS.424.1335F, 2014MNRAS.439.1092T, 2018ApJ...855...17H,2017MNRAS.471.4878S,2018MNRAS.479.4017I},
+% \red{KI: add Inayoshi, Li \& Haiman 18, Schauer +17},
 and
 (iii) dynamical heating caused by frequent halo mergers and turbulence injection led by cold accretion flows
-\citep{2003ApJ...592..645Y, 2019Natur.566...85W} \red{KI: add Latif's Nature paper, Mayer+10 or 15}.
+\citep{2003ApJ...592..645Y,2010Natur.466.1082M,2015ApJ...810...51M,2019Natur.566...85W,2022Natur.607...48L}.
+% \red{KI: add Latif's Nature paper, Mayer+10 or 15}.
 Those effects keep isothermal collapse ($T\sim 8000~{\rm K}$) of massive gas at high accretion rates of $\gtrsim 0.1~\Msunyr$
-without vigorous fragmentation \citep{2014MNRAS.445L.109I} \red{KI: add Becerra+15, Latif+16}, and allow supermassive stars
-with $\sim 10^5~\Msun$ (presumably seed BHs) to form at the halo centers \red{cite Hosokawa+13, Woods+19?, Schleicher+13, Toyouchi+22}.
+without vigorous fragmentation \citep{2014MNRAS.445L.109I,2015MNRAS.446.2380B,2016PASA...33...51L},% \red{KI: add Becerra+15, Latif+16}, 
+and allow supermassive stars with $\sim 10^5~\Msun$ (presumably seed BHs) to form at the halo centers 
+\citep{2013ApJ...778..178H,2013A&A...558A..59S,2019PASA...36...27W,2022arXiv220614459T}.
+% \red{cite Hosokawa+13, Woods+19?, Schleicher+13, Toyouchi+22}.
 Although the conditions required for heavy seed formation are thought to be too stringent to be realized in the typical regions of the early universe
-\red{cite Dijkstra+08, Ahn+09, Inayoshi \& Tanaka 15}, recent studies by Lupi+21 and Li+21 found that the heavy-seed formation
+\citep{2008MNRAS.391.1961D,2009ApJ...695.1430A,2015MNRAS.450.4350I},
+% \red{cite Dijkstra+08, Ahn+09, Inayoshi \& Tanaka 15}, 
+recent studies by \citet{2021MNRAS.503.5046L} and \citet{2021ApJ...917...60L} found that the heavy-seed formation
 can be accelerated in the rare, overdense regions of the universe, where non-linear galaxy clustering boosts the irradiation intensity
 and the frequency of halo mergers.
 %These factors prevail in some environments at high redshifts and facilitate massive Pop III and even supermassive star formation,
@@ -239,6 +264,7 @@ Also, I remember one paper of our former postdoc, Kim.
 Also, recent Raffaella's student's paper and "highly-empirical paper" you introduced.
 Please add more (I might miss some relevant papers.)}
 \blue{
+% Haiman \& Loeb 1997.
 % High-z
 }
 
@@ -505,19 +531,24 @@ describing the BH mass growth rate $\Mdot$ by
 \end{equation}
 % where $t_{\rm S} = \eta_0  M c^2/L_{\mathrm{Edd}} \approx 45$ Myr,
 where $\lambda \equiv L/L_\mathrm{Edd}$ is the Eddington ratio,
-and $\Mdot_\mathrm{Edd} \equiv L_{\mathrm{Edd}}/\eta_0 c^2$ is the Eddington accretion rate with a 10\% radiative efficiency of $\eta_0=0.1$ \citep{1973A&A....24..337S},
+and $\Mdot_\mathrm{Edd} \equiv L_{\mathrm{Edd}}/\eta_0 c^2$ is the Eddington accretion rate with a radiative efficiency of $\eta_0=0.1$ \citep{1973A&A....24..337S},
 %Note here we adopt the radiative efficiency $\eta_0 \approx 0.1 $,
 %according to the thin accretion disk model \citep{1973A&A....24..337S}, 
-which is consistent with the value obtained from the Soltan's argument \citep{1982MNRAS.200..115S,2002MNRAS.335..965Y}.
+which is consistent with the value obtained from the Soltan's argument \citep[e.g.,][]{2002MNRAS.335..965Y,2010ApJ...725..388C}.
 % The high mass BH should be strangulated by as it grows, 
-We define the mass dependent function of $f(\Mbh)$ as 
+\blue{
+On the basis of studies on the mass dependence of the radiative efficiency for AGNs at $z\lesssim$ 3 
+\citep{2008MNRAS.390..561C,2012ApJ...749..187L,2014ApJ...786..104U}, 
+we also introduce a similar functional form which defines the mass dependent function of $f(\Mbh)$ as 
 %
 \begin{equation}
 f(\Mbh) = \frac{2}{1+\left(\Mbh /M_{\bullet,c} \right)^\delta}, 
 \end{equation}
 %
 where we adopt $M_{\bullet,c}=10^8~\Msun$.
-With a positive value of $\delta$, the BH growth at the high mass end is suppressed. \blue{(references, Ueda+14?s)}.
+With a positive value of $\delta$, the BH growth at the high mass end is suppressed.
+%  \blue{(references, Ueda+14?s)}.
+}
 In the limit of $\delta \ll 1$, where $f(\Mbh) \simeq 1$ is approximated independent of $M_{\bullet,c}$, the model reproduces an exponential growth with an $e$-folding timescale of
 $t_{\rm S} =  \Mbh/\Mdot_{\mathrm{Edd}} \approx 45$ Myr, well known as the Salpeter timescale \citep{1964ApJ...140..796S}.
 %h independent of BH mass.
@@ -535,10 +566,8 @@ This ``flickering'' pattern of individual quasar luminosity evolution can be dir
 in the Eddington ratios of quasar samples. 
 We here suppose that the Eddington ratio distribution function $\D P/ \D\ln\lambda$ (ERDF) is characterized
 with a Schechter function and the distribution function is independent of redshift 
-\citep{2006ApJ...639..700H,2009ApJ...698.1550H}. \red{KI: I slightly modified the previous sentence. Is that what you meant?}
-\blue{
-  not exactly, what I meant may not be necessary here, but we may discuss later.
-}
+\citep{2006ApJ...639..700H,2009ApJ...698.1550H}.
+%
 For type-I AGN populations at low redshifts, the ERDF is characterized with a Schechter function
 %Observations also propose that the intrinsic ERDF in lower-$z$ quasars hosted by star forming galaxies follows a Schechter shape, 
 \citep{2015MNRAS.447.2085S,2016ApJ...826...12J,2018MNRAS.474.1225A}.
@@ -565,7 +594,7 @@ accretion pattern of individual BHs,
 we introduce a time duration of $\tlife$, during which a single value of $\lambda$ that follows 
 the ERDF of Eq.~(\ref{eq:Pl}) is assigned to an accreting BH.
 In this way, we give a different growth speed of a BH in every period with a duration of $\tlife$ until $z=6$ 
-(the corresponding cosmic age is $t_{\rm H}\simeq 800$ Myr).
+(the corresponding cosmic age is $t_{\rm H}\gtrsim 900$ Myr).
 This treatment enables us to capture the nature of accretion bursts and avoid an unrealistically 
 long-lasting rapid growth phase of a BH.
 This phenomenological method introducing a parameter of $\tlife(<t_{\rm H})$ allows us to avoid 
@@ -738,17 +767,15 @@ The obscuration fraction reads
   \fobsc = \text{min}\lbrace  0.84 , 0.73-0.24\times[ (\log \Lbol/L_\odot) -43.75] \rbrace,
 \end{equation*}
 following \citet{2014ApJ...786..104U}.
-An alternative fitting of $\fobsc$ proposed by \citet{2014MNRAS.437.3550M} from *** \blue{(different sample?)} is 
+\blue{
+An alternative fitting of $\fobsc$ proposed by \citet{2014MNRAS.437.3550M} 
+for their X-ray AGN sample with additional optical obscuration classification gives 
 \begin{equation*}
-  \fobsc = 0.56 + \frac{1}{\pi} \text{arctan} \frac{43.89 - (\log \Lbol/L_\odot)}{0.46},
+  \fobsc = 0.56 + \frac{1}{\pi} \text{arctan} \frac{43.89 - (\log \Lbol/L_\odot)}{0.46}.
 \end{equation*}
-we fit the parameters using this prescription and discuss the sensitivity of results to $\fobsc$.
-% wli: add more!
+We also fit the parameters using this prescription and discuss the sensitivity of results to $\fobsc$ in the Appendix.
+}
 
-%An alternative form proposed by \citet{2014MNRAS.437.3550M} shows a similar dependence of $\fobsc$ with the luminosity,
-%but the values somewhat differ from that given by \citet{2014ApJ...786..104U} \red{within a factor of $XXX$ KI: more quantitativelt}.
-%Compared with another work by  \citet{2014MNRAS.437.3550M}, this shows a similar decreasing trend with luminosity, 
-%and the values are in agreement within a factor of 3.
 Here, we neglect the contribution from Compton-thick AGNs with $N_\mathrm{H}>10^{24}$ cm$^{-2}$, 
 which are obscured even in the hard X-ray band and show possible dependence on quasar properties.
 % and it is currently not warranted to discuss the uncertainties of $\fobsc$.
@@ -961,7 +988,7 @@ This suggests that in our model assumption, a nearly exponential BH growth patte
 The typical duration of quasar activity is required to be $\tlife \simeq 29$ Myr for both the cases, 
 which is $\sim 64\%$ of the $e$-folding time for an exponential growth.
 This suggests that accreting seed BHs vary their growth speeds (i.e., the Eddington ratio) 
-$\sim 30$ times on average, over the cosmic time of $t_{\rm H}\simeq 800$ Myr at $z\simeq 6$.
+$\sim 30$ times on average, toward the cosmic time of $t_{\rm H} \gtrsim 900$ Myr at $z\simeq 6$.
 The timescale of $\tlife$ also gives a lower bound of the quasar lifetimes of $t_{\rm Q}\sim 1-10$ Myr, 
 which are estimated by the measurement of the physical extents of hydrogen Ly$\alpha$ proximity zones 
 observed in the rest-frame UV spectra (e.g., Eilers+2018, Davies+ 2019).\red{KI: we need to figure out 
@@ -992,7 +1019,7 @@ similar trends of deviation from observation as in the BHMF curves.
 
 The two parameters characterizing the ERDF are given as
 $(\lambda_0,\alpha) = (0.89,0.12)$ and $(0.87,0.20)$ for $\fseed=0.01$ and $0.1$, respectively.
-\blue{\\This paragraph is revised hereafter.}
+\blue{
 With those values, the number fraction of super-Eddington accreting BHs is
 estimated as $P(\lambda>1)=0.064$ and 0.075, respectively. 
 The small discrepancy is enlarged with the multiple cycles of assigning $\lambda$ to BH growth, 
@@ -1006,7 +1033,7 @@ On the other hand, the power-law index of $\alpha$ in the ERDF tends to increase
 indicating that fraction of active BHs with $\lambda \gtrsim 1$ is elevated. 
 Thus, with lower seeding fractions, the high-$z$ quasar assembly spends a larger fraction of time in active phases 
 and reproduce the bulk properties of the BHMF and QLF.
-
+}
 
 
 In Figs.~\ref{fig:fitmf} and \ref{fig:fitlf}, we show the BHMF and QLF at $z=$ 6 reproduced by the best-fit parameters
@@ -1274,13 +1301,27 @@ From the BH growth model described in \S~\ref{sec:MF}, we further explore indivi
 % \blue{(1e3 $\Msun$ in plot, with seed mass and redshift distribution can also be realized)}, 
 % motivated by the properties of typical BH seeds (with median formation redshift and median mass).
 We generate a sample of 10$^7$ BHs, whose formation time and mass distribution at birth follow the model described in \S~\ref{sec:seed}. 
-To growth the individual BHs, we assign an Eddington ratio $\lambda$ in every interval $\tlife$ until $z=6$,
-following the ERDF characterized by a Schechter function with $\lambda_0=0.87$ and $\alpha=0.20$.
-%until $z=$ 6 we take a snapshot of the BH mass and ERDF.
-With the best-fit parameters, the BH growth tracks that end up with $>10^8~\Msun$ by $z=6$ are shown in Fig.~\ref{fig:track}. 
+Following the best fit parameters in the case of $\fseed = 0.01$,
+we assign an Eddington ratio $\lambda$ in every interval $\tlife=18.76$ Myr to grow the individual BHs until $z=6$. 
+The value of $\lambda$ follows the ERDF characterized by a Schechter distribution with $\lambda_0=0.87$ and $\alpha=0.20$.
+With those parameters, we show the BH growth tracks that end up with $>10^8~\Msun$ by $z=6$ in Fig.~\ref{fig:track}. 
 \red{KI: what is the frequency $N$ of BH accretion bursts with $\lambda>\lambda_0$ between $z=6$ and $10$? The duty cycle for the sub-sample
 is $f_{\rm duty}\simeq N\tlife/\Delta t_{\rm H}$.}
-
+\blue{
+We take this sub-sample representing the observable massive BH population,
+which is easier to be probed by flux-limited quasar observations.
+During the growth histories of these BHs, it is interesting to examine the duty cycle of the active phase, 
+e.g., characterized as $f_{\rm duty}\simeq N\tlife/\Delta t_{\rm H}$,
+where $N$ is the frequency of a BH growing with super-Eddington accretion bursts,
+in a time duration $\Delta t_{\rm H}$.
+We estimate the duty cycle between the cosmic age of $z=$ 10 to $z=$ 6,
+and find $f_{\rm duty}\simeq 0.15$.
+On the other hand, the value of $f_{\rm duty}$ in the whole BH population 
+can be estimated as the probability of super-Eddington realization in one single epoch 
+$P(\lambda>1)=$ 0.075 (see \S~\ref{sec:fitting_result}), 
+which is about twice lower than the value of $f_{\rm duty}$.
+Therefore the massive sub-sample is biased toward the BHs undergoing more active accretion episodes.
+}
 
 In this sub-sample, we find seven BHs heavier than $M=10^9~\Msun$ (highlighted with solid curves), 
 among which five BHs show $\lambda<1$ in the snapshots at $z=6$.
