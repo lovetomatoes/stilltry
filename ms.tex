@@ -149,24 +149,24 @@
 
 %% Mark off the abstract in the ``abstract'' environment. 
 \begin{abstract}
-The early evolution of black hole mass function (BHMF) and the quasar luminosity function (QLF)
-plays an important role in the establishment of BH-galaxy coevolution at high redshifts ($z\gtrsim$ 6).
-However, understanding the accretion and radiation properties of growing BHs in the high-$z$ environments 
-still remains challenging.
-In this work, based on a semi-analytic BH seed formation model, 
-we relate BH seeds with the growth tracks of their parent halos. 
-We then construct a model of BH mass and luminosity evolution 
-characterizing the episodical BH accretion and Eddington ratio distribution function (ERDF).
-The model parameters are fitted to reproduce the observed BHMF and QLF of the quasar population at $z\sim$ 6.
-Our best-fit models suggest that BHs grow with episodical bursts and quescent phases, with time duration 
-typically in units of 20 $\sim$ 30 Myr. 
-The duty cycle of active accretion is $f_{\rm duty}\sim 0.15$ for massive BHs with $M\gtrsim 10^8~\Msun$, 
-boosted from that in the whole population by nearly a factor of two. 
-We find that the intrinsic ERDF of the whole quasar population is well presented by a Schechter shape, 
-indicating a large number of low Eddington ratio objects missed by the current flux-limited quasar selections.
-We predict the early evolution of BHMF and QLF, as well as the growth patterns of individual BHs, 
-which will likely be unveiled by the James Webb Space Telescope (JWST) and future deep and wide-field surveys.
-%  with, e.g. 
+The early evolution of the quasar luminosity and black hole mass function (MF) encodes key information
+on the physics determining the radiative and accretion processes of supermassive black holes (SMBHs) in high-redshift quasars.
+Although the shape of the luminosity function (LF) has been constrained by recent wide and deep surveys,
+it still remains challenging to develop a theoretical model that explains the redshift evolution and BH growth self-consistently.
+In this study, based on a semi-analytical model for the formation and growth of seed BHs
+in quasar progenitor halos,
+we construct the LF and MF of the early BH population that experiences multiple accretion bursts,
+in each of which the Eddington ratio is assigned following a Schechter function.
+Our best-fit model to reproduce the observed LF and MF at $z\simeq 6$
+suggests that several episodes of modest super-Eddington accretion occur
+and each of them lasts $\tau \simeq 20-30$ Myr.
+The average duty cycle of BHs that reach $\gtrsim 10^8~\Msun$ by $z\simeq 6$ is as high as $\simeq 15~\%$,
+which is nearly twice that of the entire population.
+We also find that the observed Eddington-ratio distribution function is skewed to a log-normal shape from the intrinsic Shechter function
+owing to detection limits of quasar observations.
+The predicted redshift evolution of both LF and MF of earliest BHs suggests a rapid decay of their number and mass
+toward higher redshifts of $z>6$, compared to galaxy stellar mass.
+This will be unveiled by future deep and wide surveys with the James Webb Space Telescope, Roman Space Telescope, and Euclid.
 % the , Roman Space Telescope (RST), and Euclid.
 \end{abstract}
 
@@ -218,79 +218,77 @@ the existence of supermassive BHs in the early universe within one billion year
 and the establishment of BH-galaxy coevolution 
 \citep[e.g.,][]{2013ApJ...773...44W,2017ApJ...851L...8V,2021ApJ...914...36I,2022ApJ...927..237I,2022MNRAS.511.3751H}.
 
-\blue{
-Nevertheless, starting from empirical BH seeding, combinded with growth chanels e.g., merger and accretion modes,
-models can in return give prediction of the QLF at high redshifts 
-\citep[e.g.,][]{2018MNRAS.474.1995R,2018MNRAS.481.3278R,2021MNRAS.508.2706Y,2022MNRAS.511..616T}. 
-The classical way of regulating BH growth is by keeping the tight relation between $M_\bullet$ 
-and the parent halo mass or the mass of the stellar bulge
-\citep{2007ApJ...669...45H,2013ARA&A..51..511K},
-then following the hierarchical DM halo growth
-\citep[e.g.,][]{1998ApJ...503..505H,2010ApJ...718..231S,2021ApJ...910L..11K}.
-The model parameters can thus be calibrated with low-$z$ BHMF and QLF,
-and subsequently predict the higher redshift and faint quassar observations.
-On the other hand, studies also conduct extrafpolation on the low-$z$ QLF evolution and forecast the high-$z$ QLF shapes,
-which could be investigated by furture surveys
-\citep[e.g.,][]{2020MNRAS.495.3252S,2022arXiv220702233F}.
-}
 
-\red{Introduction of previous studies on QLFs for high-$z$ populations. mention Yung's paper, Ricarte \& Natarajan paper, recent Finkelstein's paper?
-Also, I remember one paper of our former postdoc, Kim.
-Also, recent Raffaella's student's paper and "highly-empirical paper" you introduced.
-Please add more (I might miss some relevant papers.)}
 
-\blue{
-As a starting point to characterize the early assembly of massive BH populations,
-the seed BH formation has been extensively investigated by numerical simulations and
-semi-analytical studies
-}
-% Formation of seed BHs is the starting point to characterize the early assembly of massive BH populations.
-% Their formation pathway and expected mass range have been extensively investigated by numerical simulations and
-% semi-analytical studies
-%
-%From Pop III star remnants ($10-10^3 ~\Msun$) to direct collapse supermassive stars (10$^4-10^5 ~\Msun$),
-%the properties of high-$z$ BH seeds are extensively modeled by simulations and semi-analytical works
-%\citep[e.g.,][Toyouchi 2022]{2001ApJ...546..635O,2002Sci...295...93A,2006ApJ...652....6Y,2011MNRAS.416.2748I,
-%2012ApJ...756...93H,2013ApJ...778..178H,2014MNRAS.439.3798F,
-%2014MNRAS.445L.109I,2014MNRAS.445..544S,2014MNRAS.445..107V,2020MNRAS.499.5960S}.
+The shapes of the QLF and BHMF contain key information on the physics characterizing the radiative 
+and accretion processes of high-z SMBHs, as well as seeding mechanisms in principle.
+Two approaches have been utilized to model those distribution functions.  
+The first is semi-analytical modeling, in which BH seed formation, gas accretion, and BH mergers associated 
+with the hierarchical growth of the parent dark-matter halos are taken into account in a simplified way. 
+This is an effective way of examining the statistical properties of BH populations and making predictions 
+that can be directly compared with the QLF and BHMF
+\citep[e.g.,][]{1998ApJ...503..505H,2010ApJ...718..231S,2018MNRAS.474.1995R,2018MNRAS.481.3278R,
+2021MNRAS.508.2706Y,2021ApJ...910L..11K,2022MNRAS.511..616T}. 
+However, due to the limitation of capturing detailed properties of the relevant physics, 
+a large number of model parameters need to be calibrated based on the observed distribution functions 
+of lower-$z$ quasar population \citep[e.g.,][]{2007ApJ...669...45H}
+and empirical correlations between the SMBH mass and their host galaxy properties seen
+in the local universe \citep{2013ARA&A..51..511K}.
+The second approach is more phenomenological, using extrapolation of the low-$z$ QLF evolution with 
+fitting function forms \citep[e.g.,][]{2020MNRAS.495.3252S,2022arXiv220702233F}.
+This method also allows us to forecast the higher-$z$ QLF and bring insights for future surveys.
+Nevertheless, those semi-analytical and phenomenological approaches introduce numerous physical parameters
+and make the key mechanisms reproducing the observed results obscure.
+Therefore, it is required to construct a theoretical model that is characterized by a minimum number of parameters
+but capable of dealing with essential physical processes.
+
+
+To determine the initial conditions of the early BH assembly,
+the formation pathway of seed BHs has been extensively investigated by numerical simulations and semi-analytical studies
+%Formation of seed BHs is the starting point to characterize the early assembly of massive BH populations.
+%Their formation pathway and expected mass range have been extensively investigated by numerical simulations and
+%semi-analytical studies
 \citep{2006MNRAS.370..289B,2009ApJ...696.1798T,2012MNRAS.422.2051N,2014ApJ...781...60H,
 2015MNRAS.448..568H,2018MNRAS.474.3825V,2021MNRAS.506..613S,2022arXiv220614459T}.
-% \red{KI: I think here we should cite more general citations: Begelman+2006; Tanaka \& Haiman 2009; Hirano+14, 15,
-% Toyouchi+2022, one Natarajan+Volonteri's paper discussing the mass function, Valiante+2018, Sassano+21}
 Massive star formation episodes in the early universe is substantially modulated by external environmental effects such as
-%factors which modulate the Pop III star formation have been assessed,
 (i) H$_2$ photo-dissociating irradiation from nearby galaxies
-%irradiation in Lyman-Werner band which photo-dissociates the major coolant $\hh$
 \citep{2001ApJ...546..635O,2002ApJ...569..558O,2003Natur.425..812B,2010MNRAS.402.1249S,2014MNRAS.445..544S,2014MNRAS.445..107V,2016ApJ...832..134C},
-% \red{KI: add Chon+16},
 (ii) supersonic baryonic streaming motion that delays gas collapse in halos
 \citep{2012MNRAS.424.1335F, 2014MNRAS.439.1092T, 2018ApJ...855...17H,2017MNRAS.471.4878S,2018MNRAS.479.4017I},
-% \red{KI: add Inayoshi, Li \& Haiman 18, Schauer +17},
-and
-(iii) dynamical heating caused by frequent halo mergers and turbulence injection led by cold accretion flows
+and (iii) dynamical heating caused by frequent halo mergers and turbulence injection led by cold accretion flows
 \citep{2003ApJ...592..645Y,2010Natur.466.1082M,2015ApJ...810...51M,2019Natur.566...85W,2022Natur.607...48L}.
-% \red{KI: add Latif's Nature paper, Mayer+10 or 15}.
 Those effects keep isothermal collapse ($T\sim 8000~{\rm K}$) of massive gas at high accretion rates of $\gtrsim 0.1~\Msunyr$
-without vigorous fragmentation \citep{2014MNRAS.445L.109I,2015MNRAS.446.2380B,2016PASA...33...51L},% \red{KI: add Becerra+15, Latif+16}, 
+without vigorous fragmentation \citep{2014MNRAS.445L.109I,2015MNRAS.446.2380B,2016PASA...33...51L},
 and allow supermassive stars with $\sim 10^5~\Msun$ (presumably seed BHs) to form at the halo centers 
 \citep{2013ApJ...778..178H,2013A&A...558A..59S,2019PASA...36...27W,2022arXiv220614459T}.
-% \red{cite Hosokawa+13, Woods+19?, Schleicher+13, Toyouchi+22}.
 Although the conditions required for heavy seed formation are thought to be too stringent to be realized in the typical regions of the early universe
 \citep{2008MNRAS.391.1961D,2009ApJ...695.1430A,2015MNRAS.450.4350I},
-% \red{cite Dijkstra+08, Ahn+09, Inayoshi \& Tanaka 15}, 
 recent studies by \citet{2021MNRAS.503.5046L} and \citet{2021ApJ...917...60L} found that the heavy-seed formation
 can be accelerated in the rare, overdense regions of the universe, where non-linear galaxy clustering boosts the irradiation intensity
 and the frequency of halo mergers.
-%These factors prevail in some environments at high redshifts and facilitate massive Pop III and even supermassive star formation,
-%which contribute to the heavy seed scenario of supermassive BH formation at $z\gtrsim$ 6
-%\citep[see a review by][]{2020ARA&A..58...27I}.
+As a result, \citet{2021ApJ...917...60L} predicted a top-heavy mass distribution of seed BHs ranging from $10^2-10^5~\Msun$.
+
+
+In this paper, we propose a theoretical model for the redshift-dependent QLF and BHMF at $z\gtrsim 6$,
+% applying the initial mass function (IMF) of seed BHs obtained from \cite{2021ApJ...917...60L}.
+applying the semi-analytic seed formation model from \cite{2021ApJ...917...60L} to study the BH growth in common regions in the early universe.
+We assume that the early BH population experiences multiple accretion bursts, in each of which the Eddington ratio is assigned 
+following a Schechter distribution function. 
+We conduct the Markov Chain Monte Carlo (MCMC) fitting procedure to optimize the BH growth parameters 
+so that the observed BHMF and QLF at $z\simeq 6$ are simultaneously reproduced. 
+Our best-fit model suggests several episodes of modest super-Eddington accretion and requires
+individual burst durations of $\simeq 20-30$ Myr to avoid over(under)-production of BHs at the high-mass end.
+Furthermore, we construct the redshift-dependent QLF and BHMF that imply a rapid decay of 
+their number and mass toward higher redshifts of $z>6$.
+We also find that the observed Eddington-ratio distribution function is skewed to a log-normal shape from the intrinsic Shechter function
+owing to detection limits of quasar observations.
+Those results will be unveiled by future deep and wide surveys with the James Webb Space Telescope, Roman Space Telescope, and Euclid.
 
 
 
-\blue{
-More explicitly, the initial mass function (IMF) of BH seeds is required to construct the picture of BH evolution.
-}
-% To construct the picture of BH evolution, the initial mass function (IMF) of BH seeds is required.
+
+\if0
+To construct the picture of BH evolution, the initial mass function (IMF) of BH seeds is required.
 Studies have shown that Pop III stars (or the seed BH population) formed in mini-halos is top-heavy, while capped with $\sim 10^3~\Msun$ 
 \citep{2014ApJ...781...60H,2015MNRAS.448..568H}.
 Focusing on the progenitor halos of supermassive BHs at $z\sim$ 6, 
@@ -300,6 +298,10 @@ constituting the stellar evolution with large scale mass inflow under realistic 
 In this work, we apply the seeding model to examine the BH growth in common regions in the early universe, 
 constrained by the observable QLF and BHMF down to $z\sim$ 6, 
 % our aim is to understand the growth patterns of early BHs.
+\fi
+
+
+
 
 This paper is organized as follows. Firstly, in \S \ref{sec:method} we describe the semi-analytical BH seeding procedure, 
 the parameterized BH growth and how we reproduce the modeled BHMF and QLF dataset at $z\sim$ 6 using these ingredients. 
