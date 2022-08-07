@@ -12,6 +12,7 @@
 
 \usepackage{bigints}
 \usepackage{CJK}
+\usepackage{lipsum}
 
 \newcommand{\Msun}{M_\odot}
 \newcommand{\Msunyr}{M_\odot~{\rm yr}^{-1}}
@@ -199,7 +200,7 @@ high-$z$ quasar observations \citep{2013ApJ...768..105M,2016ApJ...829...33Y,2019
 % \red{KI: you could find better reference in this Decadal Survey?}.
 Nevertheless, currently the $z\sim 6$ quasar population is well constrained by multiband surveys
 \citep{2008AJ....135.1057J,2010AJ....139..906W,2016arXiv161205560C,2016ApJ...833..222J,2018PASJ...70S..35M,2019ApJ...883..183M,2019AJ....157..168D}
-along with the quasar luminosity function \citep[e.g.,][]{2018ApJ...869..150M}.
+along with the quasar luminosity function \citep[e.g.,][]{2015ApJ...798...28K,2018ApJ...869..150M}.
 %and the virial BH mass estimates
 %from the \ion{Mg}{2} 2798 $\rm{\AA}$ line width 
 %where 
@@ -249,7 +250,7 @@ the formation pathway of seed BHs has been extensively investigated by numerical
 %Their formation pathway and expected mass range have been extensively investigated by numerical simulations and
 %semi-analytical studies
 \citep{2006MNRAS.370..289B,2009ApJ...696.1798T,2012MNRAS.422.2051N,2014ApJ...781...60H,
-2015MNRAS.448..568H,2018MNRAS.474.3825V,2021MNRAS.506..613S,2022arXiv220614459T}.
+2015MNRAS.448..568H,2018MNRAS.474.3825V,2021MNRAS.506..613S,2022arXiv220614459T,2022arXiv220505717B}.
 Massive star formation episodes in the early universe is substantially modulated by external environmental effects such as
 (i) H$_2$ photo-dissociating irradiation from nearby galaxies
 \citep{2001ApJ...546..635O,2002ApJ...569..558O,2003Natur.425..812B,2010MNRAS.402.1249S,2014MNRAS.445..544S,2014MNRAS.445..107V,2016ApJ...832..134C},
@@ -439,12 +440,12 @@ Therefore, we consider the mass distribution of seed BHs as that of their stella
 %%%%%%%
 \begin{figure*}
 \centering
-\includegraphics[width=160mm]{seedBHMF_z.pdf}
+\includegraphics[width=160mm]{seedBHMF_z.png}
 \caption{
 Mass distribution of seed BHs formed in quasar host galaxies at different redshifts ($50\lesssim z \lesssim 10$).
 %Each panel includes a redshift span of 10, 
 In each panel, the cumulative number distribution of BHs are shown and 
-the contribution from newly-born BHs at the redshift interval are denoted with the hatched region.
+the contribution from newly-born BHs at the redshift interval are highlighted in magenta.
 %with the newly formed BHs denoted by the hatched regions, 
 %and the cumulative BHs formed previously by the blue region.
 The majority of seed BHs form in the epoch of $40\lesssim z \lesssim 20$.
@@ -536,7 +537,7 @@ plus taking account of the newly formed seeds if any.
 % The BH accretion at high redshifts is probed only by snapshots, in their most luminous quasar phase. 
 % We have constraints on simulations and observations of lower redshift counterparts.
 With BH seeds planted, we grow the BHs with a semi-analytical accretion rate model and study the evolution of the BH mass distribution until $z=6$. 
-\blue{(references + discussion)}
+% \blue{(references + discussion)}
 The growth model is characterized by a minimal number of free parameters, 
 % the quasar accretion is episodic with Eddington ratio variations,
 describing the BH mass growth rate $\Mdot$ by
@@ -1036,6 +1037,7 @@ With $\tlife$ values different from the best-fit value, the consequent QLF show
 similar trends of deviation from observation as in the BHMF curves.
 }
 \label{fig:tau}
+\vspace{4mm}
 \end{figure*}
 
 
@@ -1146,49 +1148,10 @@ evaluated by the integration of the BHMF shown in the left panel.
 The evolutionary trend can be approximated as $\rho_\bullet (z) \propto 10^{k_M z}$, where $k_M\simeq -0.68$.
 }
 \label{fig:BHMF_rhoz}
+\vspace{4mm}
 \end{figure*}
 
 
-\begin{table}
-\renewcommand\thetable{1} %! fix indexing
-\caption{$\rho_\bullet(z)$ Evolution Parameters}
-\begin{center}
-% \tablenum{1}
-\begin{tabular}{l c r}
-\hline
-$M_{\rm min}$ & $\log \rho_{\bullet,0}$ & $k_{\rm M}$ ~~~ \\ 
-\hline 
-\hline
-10$^7$  &  $ 1.81\pm 0.28$  &  $-0.68 \pm 0.21$  \\
-10$^8$  &  $ 1.54\pm 0.47$  &  $-0.84 \pm 0.31$  \\
-% 10$^9$  &  $-8.30_{-0.47}^{+0.47}$  & $-1.04_{-0.58}^{+0.54}$ \\
-10$^9$  &  $ 1.01\pm 0.47$  &  $-1.01 \pm 0.58$ \\
-\hline 
-\end{tabular}
-\label{tab:MFz}
-\end{center}
-\end{table}  
-
-
-\begin{table*}
-{ % group it, so that centering can work?
-\centering
-\renewcommand\thetable{2} %! fix indexing
-\caption{Detection number of quasars estimated for future surveys}
-% \tablenum{2}
-\begin{tabular}{lcccccccccccc}
-\hline Telescope & Survey area & Photo. depth & $N(z\sim 6)$ & $N(z\sim 7)$ & $N(z\sim 8)$ & $N(z\sim 9)$ & $N(z\sim10)$ \\
-& (\rm{deg}$^2$) & (AB~mag) \\
-\hline 
-% 6758..6598057248175, 1514.3392258726712, 349.27228533671644, 85.15836783444871, 25.
-Deep \it{LSST}   & 18000 & 27.5 & 73865 & 18470 &  4688 & 1237 & 389\\
-Wide \it{RST}    &  2000 & 27   & 6758 &  1514 &  349 & 85 & 25  \\
-Wide \it{Euclid} & 15000 & 24   & 6653  &  708 &   93 & 14 & 2  \\
-\hline
-\end{tabular}
-\label{tab:N_detect}
-}
-\end{table*}  
 
 
 
@@ -1280,50 +1243,59 @@ appear to be overmassive compared to the local relation \citep[e.g.,][]{2013ApJ.
 
 
 
+%%%%%%%
+%    Table. 1 
+%%%%%%%
+\begin{table}
+\renewcommand\thetable{1} %! fix indexing
+\caption{$\rho_\bullet(z)$ Evolution Parameters}
+\begin{center}
+% \tablenum{1}
+\begin{tabular}{l c r}
+\hline
+\hline
+$M_{\rm min}$ & $\log \rho_{\bullet,0}$ & $k_{\rm M}$ ~~~ \\ 
+\hline 
+10$^7$  &  $ 1.81\pm 0.28$  &  $-0.68 \pm 0.21$  \\
+10$^8$  &  $ 1.54\pm 0.47$  &  $-0.84 \pm 0.31$  \\
+% 10$^9$  &  $-8.30_{-0.47}^{+0.47}$  & $-1.04_{-0.58}^{+0.54}$ \\
+10$^9$  &  $ 1.01\pm 0.47$  &  $-1.01 \pm 0.58$ \\
+\hline 
+\end{tabular}
+\label{tab:MFz}
+\end{center}
+\end{table}    
+
+
+%%%%%%%
+%    Fig. 
+%%%%%%%
+\begin{figure*}
+\centering
+\includegraphics[width=160mm]{QLF_rhoz.png}
+\caption{
+{\it Left panel}: quasar luminosity functions at different redshifts of $6\leq z \leq 10$. 
+The solid lines denote modeled QLF produced by the best-fit parameters and the shaded regions present the $1\sigma$ spread. 
+{\it Right panel}: the redshift evolution of the cumulative number density of quasars with $\Muv <-26~{\rm mag}$ in a comoving volume,
+evaluated by the integration of the QLF shown in the left panel.
+The evolutionary trend can be approximated as $n(\Muv<-26~{\rm mag})\propto 10^{k_{L} z}$, where $k_L \simeq -0.96$.
+This result indicates rapid decline of the number of bright quasars toward higher redshifts, consistent with previous observations
+\citep[red data points; see][]{2016ApJ...833..222J, 2019ApJ...884...30W}
+}
+\label{fig:QLF_rhoz}
+\vspace{5mm}
+\end{figure*}
+
+
 \subsection{Quasar luminosity function}
-On the other hand, the statistics of BH masses together with the ERDF in their growth history can rebuild quasar luminosity functions across cosmic time,
-which is interesting to be probed with future observations.
-In Fig.~\ref{fig:LFs}, we show the QLF prediction by the best-fit model with 1-$\sigma$ scatter at redshifts $z=$ 7 to 10.
-Considering the scarcity of faint quasars ($\Muv\gtrsim -20$) sampled in \citet{2014ApJ...786..104U},
-we emphasize that the observed (Type I) QLF after the current obscuration prescription can be highly uncertain in the faint end,
-which is to be improved by the future equipments.
-% More thorough studies on the high-$z$ quasar obscuration by upcoming equipments will improve the understanding on this aspect.
-We also produce the intrinsic (Type I and Type II) luminosity function without obscuration effects.
-The QLF emgerging from high redshifts quickly evolves toward brighter luminosity 
-with the number of quasars increases as BHs grow.
 
-Thanks to numerous efforts in the high-$z$ galaxy observation field,
-we overlay the galaxy UV luminosity function at each redshift,
-with both binned data points and the fitting functions in Schechter and double power law (DPL) shape
-\citep{2021AJ....162...47B,2022ApJS..259...20H,2020MNRAS.493.2059B,2022arXiv220712356D,2013MNRAS.432.2696M,2019ApJ...883...99S,
-2022ApJ...929....1H,2018ApJ...867..150M,2022arXiv220801612H,2016ApJ...819..129O,2022arXiv220709434N}.
-Compared to our QLF predictions, galaxies prevail in the faint end at all these redshifts,
-with their LFs quickly declines toward the luminous end.%, where quasars outshine.
-The large number of galaxies with $\Muv\gtrsim -23$ makes it prohibitive to probe rare quasars among the faint objects detected.
-While with increasing luminosity, the extrapolation of galaxy LF curve with the Schechter fitting function drops quickly,
-crossing the QLF at $\Muv$ at critical values of $\Muv\sim-23$, $-24$, and $-25$ at redshifts $z=7-8$, $9$, and $10-13$, respectively.
-While for the galaxy LF fitted by DPL function,
-the corresponding crossing point shifts to $\Muv\sim-26$, $-25$, and $\ll -30$.
-Therefore the galaxy contamination effect on quasar observations still remains model-dependent. 
-In the future, deep and wide-field surveys e.g.,
-Deep {\it{LSST}} \citep{2017arXiv170801617R}, Wide {\it{RST}} \citep{2019arXiv190205569A}, and Wide {\it{Euclid}} \citep{2011arXiv1110.3193L}
-will be crucial to construct the LF data for high-$z$ quasars and galaxies,
-categorizing them by spectroscopic diagnostics.
-We show the detection limit of these surveys at each redshift in Fig.~\ref{fig:LFs},
-demonstrating their capability of optimizing high-$z$ galaxy and quasar observations.
-The adopted survey parameters is shown in Table.~\ref{tab:N_detect}.
-The depths of detection will be pushed down to $\Muv\lesssim -20$,
-which is able to uncover the critical luminosities at which the numbers of galaxies and quasars are comparable.
-The number of high-$z$ quasars are also predicted at each redshift (Table.~\ref{tab:N_detect}),
-with the assumption of the survey volume with $\Delta z =1$ and 100\% completeness.
-The large sample of objects at those high redshifts will shed light on
-the early coevolution of galaxies and BHs in a statistically unbiased way. 
-
-% Next, we show the QLFs at different redshifts of $z=6-10$ taken from the BH growth model in the left panel of Fig.~\ref{fig:QLF_rhoz}.
+Next, we show the QLFs at different redshifts of $z=6-10$ taken from the BH growth model in the left panel of Fig.~\ref{fig:QLF_rhoz}.
+Similar to the BHMF, for all the redshift range, the shape of the QLF is well approximated with a double power-law function.
+From higher to lower redshifts, the number density of luminous quasars increases and the bright-end of the distribution is extended.
 % %The model QLFs we propose give interesting prediction and will be further constrained by higher redshift quasar observations.
 % \red{KI: add more explanations about the QLFs. How about the detection limits of Euclid, Roman, and others?
 % Also, you could compare your results with Aaron Yung's results.}
-In Fig.~\ref{fig:QLF_rhoz}, we present the number density of luminous quasars with $\Muv <-26$ as a function of redshift.
+In the right panle of Fig.~\ref{fig:QLF_rhoz}, we present the number density of luminous quasars with $\Muv <-26~{\rm mag}$ as a function of redshift.
 The evolutionary trend can be fitted as $\propto 10^{k_{\rm L}z}$, where $k_{\rm L}\approx -0.97$.
 A rapid decay of the quasar number density toward higher redshifts is found by previous studies \citep[e.g.,][]{2001AJ....122.2833F,2016ApJ...833..222J},
 which show $k_{\rm L}= -0.47$ and $-0.72$ from the analysis of quasar samples at $z\simeq 3-5$ and $z\simeq 5-6$, respectively.
@@ -1345,41 +1317,126 @@ non-constant radiative efficiencies that covert the BH growth rate into the lumi
 %and this calls consideration of the more realistic BH-galaxy coevolution in understanding the observable AGN properties.
 
 
-\begin{figure*}
-\gridline{\fig{M0r8_f2linLF_spreadz7_KI.pdf}{0.45\textwidth}{}
-          \fig{M0r8_f2linLF_spreadz8_KI.pdf}{0.45\textwidth}{}}
-\gridline{\fig{M0r8_f2linLF_spreadz9_KI.pdf}{0.45\textwidth}{}
-          \fig{M0r8_f2linLF_spreadz10_KI.pdf}{0.45\textwidth}{}}
-\caption{QLF evolution at redshifts from $z=7$ to $z\gtrsim 10$.
-In all panels the solid lines denote modeled QLF produced by the best-fit parameters and the shaded regions present the $1\sigma$ spread. 
-The intrinsic QLF without obscuration effect is shown in the dashed lines,
-deviating from the observed QLF mostly in the faint end.
-The expected depths and volumes of future surveys with
-Deep {\it{LSST}}, Wide {\it{RST}}, and Wide {\it{Euclid}} are overlaid with the blue thin lines,
-indicating the detectability of quasars at these redshifts.
-High-$z$ galaxy LF data points (grey) and fitting functions in the Schechter (dotted  magenta line) and DPL (dash-dotted  magenta line) shapes are shown.
-With the extrapolated galaxy LFs in different shapes,
-the galaxy contamination effect on quasar selection can be estimated.
-\label{fig:LFs}}
-\end{figure*}
+
+%On the other hand, the statistics of BH masses together with the ERDF in their growth history can rebuild quasar luminosity functions across cosmic time,
+%which is interesting to be probed with future observations.
+In Fig.~\ref{fig:LFs}, we divide the cosmological QLF into four different epochs; (a) $z\simeq 7$, (b) $z\simeq 8$, (c) $z\simeq 9$, and (d) $z\simeq 10-13$.
+The black solid and dashed curves present the QLF for the unobscured population (i.e., type-I AGNs, same as those in Fig.~\ref{fig:QLF_rhoz})
+and the whole population (i.e., type-I and type-II AGNs).
+We note that the AGN obscured fraction based on X-ray samples \citep{2014ApJ...786..104U} is applied to faint objects, 
+but the correction factor is highly uncertain at the faint end of $\Muv\gtrsim -20$ mag.
+% sampled in \citet{2014ApJ...786..104U},
+%we emphasize that the observed (Type I) QLF after the current obscuration prescription can be highly uncertain in the faint end,
+%ßwhich is to be improved by the future equipments.
+% More thorough studies on the high-$z$ quasar obscuration by upcoming equipments will improve the understanding on this aspect.
+%We also produce the intrinsic (Type I and Type II) luminosity function without obscuration effects.
+%The QLF emgerging from high redshifts quickly evolves toward brighter luminosity 
+%with the number of quasars increases as BHs grow.
+We also overlay the expected depths and volumes of upcoming survey programs (blue lines) with Wide Euclid \citep{2011arXiv1110.3193L}
+and Wide RST \citep{2019arXiv190205569A}.
+Table.~\ref{tab:N_detect} summarizes the expected number of detected quasars in each survey. 
+Euclid will identify quasars up to $z\sim 8$ and discover $O(100-1000)$ quasars at $z\simeq 7-8$.
+The RST will be able to explore the very faint ($\Muv>-22$ mag) but abundant quasar population even at $z>10$, in principle,
+after subtracting galaxy contaminants.
+
+
+%will be crucial to construct the LF data for high-$z$ quasars and galaxies,
+%categorizing them by spectroscopic diagnostics.
+%We show the detection limit of these surveys at each redshift in Fig.~\ref{fig:LFs},
+%demonstrating their capability of optimizing high-$z$ galaxy and quasar observations.
+%The adopted survey parameters is shown in Table.~\ref{tab:N_detect}.
+%The depths of detection will be pushed down to $\Muv\lesssim -20$,
+%which is able to uncover the critical luminosities at which the numbers of galaxies and quasars are comparable.
+%The number of high-$z$ quasars are also predicted at each redshift (Table.~\ref{tab:N_detect}),
+%with the assumption of the survey volume with $\Delta z =1$ and 100\% completeness.
+%The large sample of objects at those high redshifts will shed light on
+%the early coevolution of galaxies and BHs in a statistically unbiased way. 
+
+
+We also show the galaxy UV luminosity function in each panel
+%Thanks to numerous efforts in the high-$z$ galaxy observation field,
+%we overlay the galaxy UV luminosity function at each redshift,
+along with the fitting functions in a Schechter (dotted curves) and double power law (dashed-dotted curves) shape extended to the brighter end
+\citep{2021AJ....162...47B,2022ApJS..259...20H,2020MNRAS.493.2059B,2022arXiv220712356D,2013MNRAS.432.2696M,2019ApJ...883...99S,
+Harikane_2022b,2018ApJ...867..150M,Harikane_2022c,2016ApJ...819..129O,2022arXiv220709434N}.
+Compared to our QLF predictions, those galaxies prevail in the faint end at all these redshifts and the number decreases toward the luminous end.
+The large number of galaxies with $\Muv\gtrsim -23$ mag makes it difficult to probe rare quasars among those faint objects.
+Since extrapolated galaxy LFs with a Schechter shape decline quickly with the luminosity increasing,
+the galaxy LFs cross the QLFs at $\Muv$ with critical values of $\Muv \sim -23$, $-24$, and $-25$ mag at redshifts $z=7-8$, $9$, and $10-13$, respectively.
+On the other hand, if the galaxy LFs are extended with a power law, the corresponding crossing magnitude shifts to $\Muv\sim-26$, $-25$, and $\ll -30$ mag.
+%Therefore the galaxy contamination effect on quasar observations still remains model-dependent. 
+Therefore, future deep and wide surveys will lead to significant progress understanding the relative 
+contribution of both populations to astrophysical phenomena in the cosmic dawn.
+
+
 
 %%%%%%%
-%    Fig. 
+%    Fig. 9
 %%%%%%%
-\begin{figure*}
+\begin{figure*}[h!]
 \centering
-\includegraphics[width=160mm]{QLF_rhoz.png}
-\caption{
-{\it Left panel}: quasar luminosity functions at different redshifts of $6\leq z \leq 10$. 
-The solid lines denote modeled QLF produced by the best-fit parameters and the shaded regions present the $1\sigma$ spread. 
-{\it Right panel}: the redshift evolution of the cumulative number density of quasars with $\Muv <-26~{\rm mag}$ in a comoving volume,
-evaluated by the integration of the QLF shown in the left panel.
-The evolutionary trend can be approximated as $n(\Muv<-26~{\rm mag})\propto 10^{k_{L} z}$, where $k_L \simeq -0.95$.
-This result indicates rapid decline of the number of bright quasars toward higher redshifts, consistent with previous observations
-\citep[red data points; see][]{2016ApJ...833..222J, 2019ApJ...884...30W}
+\includegraphics[width=85mm]{M0r8_f2linLF_spreadz7_KI.pdf}\hspace{5mm}
+\includegraphics[width=85mm]{M0r8_f2linLF_spreadz8_KI.pdf}\\\vspace{5mm}
+\includegraphics[width=85mm]{M0r8_f2linLF_spreadz9_KI.pdf}\hspace{5mm}
+\includegraphics[width=85mm]{M0r8_f2linLF_spreadz10_KI.pdf}
+\caption{Predicted quasar luminosity functions and depths and volumes of upcoming surveys.
+The black solid and dashed curves present the QLF for the unobscured population (e.g., type-I AGNs) 
+and the whole population (i.e., type-I and type-II AGNs), and the shaded region presents the $1\sigma$ spread.
+The expected depths and volumes of future surveys with Wide RST and Wide Euclid are overlaid with the blue lines,
+indicating the detectability of quasars at these redshifts.
+Galaxy UV luminosity functions are plotted with the data points (grey) and fitting functions with a Schechter (dotted curve) and double power-law (dash-dotted curve) shape.
+The galaxy luminosity function data at $z\sim$ 7 are taken from \citet[triangles]{2022ApJS..259...20H} \&
+\citet[circles]{2021AJ....162...47B}, and the fitting functions are produced by \citet{2022ApJS..259...20H}. 
+At $z\sim$ 8, the data points are from \citet[triangles]{2021AJ....162...47B},
+\citet[circles]{2022arXiv220712356D}, \citet[pluses]{2013MNRAS.432.2696M}, \citet[diamond]{2020MNRAS.493.2059B}, and \citet[pentagons]{2019ApJ...883...99S},
+as well as the fitting results by  \citet[double power law]{2020MNRAS.493.2059B} \& \citet[Schechter]{2013MNRAS.432.2696M}.
+At  $z\sim$ 9, those data are from \citet[triangles]{Harikane_2022c}, \citet[circles]{2022arXiv220712356D}, \citet[pluses]{2020MNRAS.493.2059B}, \citet[diamonds]{2019ApJ...883...99S}, and \citet[pentagons]{2018ApJ...867..150M},
+with the fitting functions from  \citet{Harikane_2022c}.
+At $z\sim$ $10-13$, \citet[triangles]{Harikane_2022c},\citet[circles]{2022arXiv220712356D},\citet[pluses]{Harikane_2022b}, \citet[diamonds]{2022arXiv220709434N}, \citet[pentagons]{2018ApJ...867..150M}, and \citet[stars]{2016ApJ...819..129O},
+and the fitting functions are produced by \citet{Harikane_2022c}.
 }
-\label{fig:QLF_rhoz}
+\label{fig:LFs}
 \end{figure*}
+
+
+%%%%%%%
+%    Table. 2 
+%%%%%%%
+\startlongtable
+\begin{deluxetable*}{lccccccc}%[h!]
+\tablecolumns{2}
+\renewcommand\thetable{2} %! fix indexing
+\tablewidth{0pt} 
+\tablecaption{Detection Number of Quasars Estimated for Future Surveys}
+\tablehead{
+  \colhead{Telescope} & \colhead{ Survey area} & \colhead{Photo. depth} &  \colhead{$N(z\sim 6)$} & \colhead{$N(z\sim 7)$}& \colhead{$N(z\sim 8)$}&  \colhead{$N(z\sim 9)$}&  \colhead{$N(z\sim 10)$}\\
+  \colhead{} & \colhead{(\rm{deg}$^2$)} & \colhead{(AB mag)} & & & & & 
+}
+\startdata
+Wide RST    &  2000 & 27   & 6758 &  1514 &  349 & 85 & 25  \\
+Wide Euclid & 15000 & 24   & 6653  &  708 &   93 & -- & --  \\
+\enddata
+\label{tab:N_detect}
+\tablecomments{
+Based on the 5$\sigma$ point source detection limits, the number of quasars at each redshift are predicted
+with the assumption of the survey volume with $\Delta z =1$ and 100\% completeness.
+}
+\end{deluxetable*}
+
+%In the future, deep and wide-field surveys e.g.,
+%Wide {\it{RST}} \citep{2019arXiv190205569A} and Wide {\it{Euclid}} \citep{2011arXiv1110.3193L,2017MNRAS.470.5007M}
+%will be crucial to construct the LF data for high-$z$ quasars and galaxies,
+%categorizing them by spectroscopic diagnostics.
+%We show the detection limit of these surveys at each redshift in Fig.~\ref{fig:LFs},
+%demonstrating their capability of optimizing high-$z$ galaxy and quasar observations.
+%The adopted survey parameters is shown in Table.~\ref{tab:N_detect}.
+%The depths of detection will be pushed down to $\Muv\lesssim -20$,
+%which is able to uncover the critical luminosities at which the numbers of galaxies and quasars are comparable.
+%The number of high-$z$ quasars are also predicted at each redshift (Table.~\ref{tab:N_detect}),
+%with the assumption of the survey volume with $\Delta z =1$ and 100\% completeness.
+%The large sample of objects at those high redshifts will shed light on
+%the early coevolution of galaxies and BHs in a statistically unbiased way. 
+
 
 
 
@@ -1458,7 +1515,7 @@ including both bursts of accretion and quiescent phases.
 
 
 %%%%%%%
-%    Fig. 6
+%    Fig. 10
 %%%%%%%
 \begin{figure}
 \centering
@@ -1516,7 +1573,7 @@ This will be proved by the ongoing observations with the Subaru HSC providing lo
 
 
 %%%%%%%
-%    Fig. 7
+%    Fig. 11
 %%%%%%%
 \begin{figure}
 \centering
@@ -1553,15 +1610,15 @@ Therefore, multiple accretion bursts with variable Eddington ratios enable the e
 consistent with the observed distribution functions.
 Using the best-fit model parameters, we construct the redshift-dependent QLF and BHMF at $6\leq z \leq 10$.
 The two functions suggest a rapid decay of the number and mass density of massive BHs and luminous quasars in a cosmic volume
-toward higher redshifts as $\propto 10^{-k_i z}$, where $k_{\rm M}\simeq -0.68$ for the BH mass and $k_{\rm L}=$ for the quasar number.
+toward higher redshifts as $\propto 10^{-k_i z}$, where $k_{\rm M}\simeq -0.68$ for the BH mass and $k_{\rm L}=-0.96$ for the quasar number.
 The predicted value of the decay slope $k_{\rm L}$ is consistent with that estimated by previous observations for $z\simeq 6-7$ quasars
 but tends to be slightly steeper at higher redshifts.
-\red{Add comparison to GLFs and expected detection numbers }\blue{
-Comparing to galaxy LFs at redshifts from $z=7$ to $z\gtrsim 10$, the QLFs we predict is burried in the faint end at $\Muv \gtrsim -23$ by the huge galaxy population,
-which raises the challenge of select quasars from the high-$z$ faint objects.
-While in the luminous end, quasars account for a significant fraction of high-$z$ UV luminosity function,
-we predict the critical luminosity at which galaxy and quasars make equal contribution,
-depending on the fitting function form of galaxy LFs.}
+% \red{Add comparison to GLFs and expected detection numbers }\blue{
+Compared to the galaxy luminosity functions at redshifts from $z=7$ to $z\gtrsim 10$, the QLFs we predict are burried in the faint end at $\Muv \gtrsim -23$ mag,
+which makes it more challenging to select such faint quasars.
+The number of quasars dominates over that of galaxies in the bright end of the UV luminosity function.
+We predict the critical magnitude at which galaxies and quasars equally contribute in number,
+depending on extrapolation of the galaxy luminosity functions.
 We further explore individual BH evolutionary tracks starting from the BH seeds, applying the BH growth model
 with the best-fit parameters reproducing their statistical properties.
 For massive BHs that reach $\gtrsim 10^8~\Msun$ by $z\simeq 6$, the average duty cycle of accretion is as high as $\simeq 15~\%$.
@@ -1571,7 +1628,7 @@ Multiple accretion-burst treatment nicely produces the mass assembly history of 
 unlike the case where one single value of the Eddington ratio is assigned.
 We also find that the observed Eddington-ratio distribution function is skewed to a log-normal shape from the intrinsic Shechter function
 owing to detection limits of quasar observations.
-Those results will be unveiled by future deep and wide surveys with the JWST, LSST, RST, and Euclid.
+Those results will be unveiled by future deep and wide surveys with the JWST, RST, and Euclid.
 
 
 % \begin{acknowledgments}
