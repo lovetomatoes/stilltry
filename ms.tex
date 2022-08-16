@@ -2,7 +2,7 @@
 
 % \documentclass[linenumbers,preprint2,tighten,trackchanges]{aastex631}
 %\documentclass[nolinenumbers,preprint2,tighten]{aastex631}
-\hypersetup{filecolor=cyan,urlcolor=magenta} %citecolor=green, linkcolor=red,
+\hypersetup{filecolor=cyan,urlcolor=blue} %citecolor=green, linkcolor=red,
 \newcommand{\vdag}{(v)^\dagger}
 \newcommand\aastex{AAS\TeX}
 \newcommand\latex{La\TeX}
@@ -78,8 +78,8 @@
 
 \title{Constraining Black Hole Growth with High-z Quasar Observations}
 
-\correspondingauthor{}
-\email{}
+\correspondingauthor{Wenxiu Li; Kohei Inayoshi}
+\email{wenxiuli@pku.edu.cn; inayoshi@pku.edu.cn}
 
 \author[0000-0001-9840-4959]{Wenxiu Li}
 \affiliation{Department of Astronomy, School of Physics, Peking University, Beijing, 100871, China}
@@ -150,22 +150,23 @@
 
 %% Mark off the abstract in the ``abstract'' environment. 
 \begin{abstract}
-The early evolution of the quasar luminosity and black hole mass function (MF) encodes key information
-on the physics determining the radiative and accretion processes of supermassive black holes (SMBHs) in high-redshift quasars.
-Although the shape of the luminosity function (LF) has been constrained by recent wide and deep surveys,
-it still remains challenging to develop a theoretical model that explains the redshift evolution and BH growth self-consistently.
+The early evolution of the quasar luminosity function (QLF) and black hole mass function (BHMF) encodes 
+key information on the physics determining the radiative and accretion processes of supermassive 
+black holes (SMBHs) in high-redshift quasars.
+Although the shape of the QLF has been constrained by recent wide and deep surveys,
+it still remains challenging to develop a theoretical model that explains its redshift evolution with BH growth self-consistently.
 In this study, based on a semi-analytical model for the formation and growth of seed BHs
 in quasar progenitor halos,
-we construct the LF and MF of the early BH population that experiences multiple accretion bursts,
-in each of which the Eddington ratio is assigned following a Schechter function.
-Our best-fit model to reproduce the observed LF and MF at $z\simeq 6$
+we construct the QLF and BHMF of the early BH population that experiences multiple accretion bursts,
+in each of which constant Eddington ratio is assigned following a Schechter distribution function.
+Our best-fit model to reproduce the observed QLF and BHMF at $z\simeq 6$
 suggests that several episodes of modest super-Eddington accretion occur
 and each of them lasts $\tau \simeq 20-30$ Myr.
 The average duty cycle of BHs that reach $\gtrsim 10^8~\Msun$ by $z\simeq 6$ is as high as $\simeq 15~\%$,
 which is nearly twice that of the entire population.
 We also find that the observed Eddington-ratio distribution function is skewed to a log-normal shape from the intrinsic Shechter function
 owing to detection limits of quasar observations.
-The predicted redshift evolution of both LF and MF of earliest BHs suggests a rapid decay of their number and mass
+The predicted redshift evolution of both QLF and BHMF of earliest BHs suggests a rapid decay of their number and mass
 toward higher redshifts of $z>6$, compared to galaxy stellar mass.
 This will be unveiled by future deep and wide surveys with the James Webb Space Telescope, Roman Space Telescope, and Euclid.
 % the , Roman Space Telescope (RST), and Euclid.
@@ -186,11 +187,11 @@ This will be unveiled by future deep and wide surveys with the James Webb Space 
 
 \vspace{5mm}
 \section{Introduction} \label{sec:intro}
-The growth of massive black holes (BHs) in active galactic nuclei (AGN) is elegantly related to their luminous accretion phases
+The growth of massive BHs in active galactic nuclei (AGN) is elegantly related to their luminous accretion phases
 across the cosmic time \citep{1982MNRAS.200..115S}.
 %,1992MNRAS.259..725S}.
 Comparing the mass density of massive BHs in the local universe and the mass accreted onto BH inferred from
-the integration of the quasar luminosity function based on multi-wavelength observations,
+the integration of the QLF based on multi-wavelength observations,
 the cosmic BH accretion history and their radiative efficiency are nicely constrained 
 \citep[e.g.][]{1971ApJ...170..223C,1992MNRAS.259..725S,2002MNRAS.335..965Y,2004MNRAS.351..169M,2008MNRAS.388.1011M,2004MNRAS.354.1020S,
 2009ApJ...690...20S,2014MNRAS.439.2736D,2014ApJ...786..104U,2017A&A...600A..64T,2022arXiv220607357S}.
@@ -200,7 +201,7 @@ high-$z$ quasar observations \citep{2013ApJ...768..105M,2016ApJ...829...33Y,2019
 % \red{KI: you could find better reference in this Decadal Survey?}.
 Nevertheless, currently the $z\sim 6$ quasar population is well constrained by multiband surveys
 \citep{2008AJ....135.1057J,2010AJ....139..906W,2016arXiv161205560C,2016ApJ...833..222J,2018PASJ...70S..35M,2019ApJ...883..183M,2019AJ....157..168D}
-along with the quasar luminosity function \citep[e.g.,][]{2015ApJ...798...28K,2018ApJ...869..150M}.
+along with the QLF \citep[e.g.,][]{2015ApJ...798...28K,2018ApJ...869..150M}.
 %and the virial BH mass estimates
 %from the \ion{Mg}{2} 2798 $\rm{\AA}$ line width 
 %where 
@@ -315,7 +316,7 @@ i.e., $\Omega_{\mathrm{m}}=0.307,~\Omega_{\Lambda}=0.693,~
 
 
 
-\vspace{5mm}
+\vspace{2mm}
 \section{METHODOLOGY}\label{sec:method}
 
 \vspace{2mm}
@@ -957,7 +958,7 @@ with the models best reproducing the $z=$ 6 BHMF and QLF.
 
 
 
-\vspace{5mm}
+\vspace{2mm}
 \section{Results}\label{sec:result}
 
 
@@ -1026,15 +1027,18 @@ More detailed comparison is discussed in \S\ref{sec:evol}.
 \centering
 \includegraphics[width=160mm]{tau.png}
 \caption{
-Left panel: BHMF at $z=$ 6 calculated in the $\fseed=0.01$ case, 
-with different $\tlife=$ 10, 18 (the best-fit value), and 50 Myr, respectively, 
-and other parameters are fixed to the best-fit values. 
-The blue curve denotes the BHMF constrained by the \citetalias{2010AJ....140..546W} result. 
-With lower(higher) $\tlife$ than the best-fit value, the BHMF is under(over)-produced in the high mass end.
-Right panel: QLF at $z=$ 6 calculated with the same parameters as in the left panel.
-The overlaid blue dots are from the \citetalias{2018ApJ...869..150M} $z\sim$ 6 quasar observation. 
-With $\tlife$ values different from the best-fit value, the consequent QLF show 
-similar trends of deviation from observation as in the BHMF curves.
+The BH mass function (left) and quasar luminosity function (right) at $z=$ 6 in the case of $\fseed=0.01$, 
+with different values of $\tlife=$ 10, 18 (the best-fit value), and 50 Myr, respectively.
+Note that the other parameters are fixed to the best-fit values. 
+The $z=6$ BHMF (\citetalias{2010AJ....140..546W}) and QLF (\citetalias{2018ApJ...869..150M}) 
+are overlaid with the blue curve and data points.
+With shorter (longer) timescales of each accretion episode $\tlife$, the number of BHs at the high mass end and bright end is under(over)-produced.
+%Right panel: QLF at $z=$ 6 calculated with the same parameters as in the left panel.
+%The overlaid blue dots are from the \citetalias{2018ApJ...869..150M} $z\sim$ 6 quasar observation. 
+%With $\tlife$ values different from the best-fit value, the consequent QLF show 
+%similar trends of deviation from observation as in the BHMF curves.
+Multiple accretion bursts in each duration of $\tau \simeq 20$ Myr best produce the observations,
+which is nearly half of the $e$-folding time of the exponential BH mass growth.
 }
 \label{fig:tau}
 \vspace{4mm}
@@ -1385,15 +1389,15 @@ and the whole population (i.e., type-I and type-II AGNs), and the shaded region 
 The expected depths and volumes of future surveys with Wide RST and Wide Euclid are overlaid with the blue lines,
 indicating the detectability of quasars at these redshifts.
 Galaxy UV luminosity functions are plotted with the data points (grey) and fitting functions with a Schechter (dotted curve) and double power-law (dash-dotted curve) shape.
-The galaxy luminosity function data at $z\sim$ 7 are taken from \citet[triangles]{2022ApJS..259...20H} \&
-\citet[circles]{2021AJ....162...47B}, and the fitting functions are produced by \citet{2022ApJS..259...20H}. 
-At $z\sim$ 8, the data points are from \citet[triangles]{2021AJ....162...47B},
-\citet[circles]{2022arXiv220712356D}, \citet[pluses]{2013MNRAS.432.2696M}, \citet[diamond]{2020MNRAS.493.2059B}, and \citet[pentagons]{2019ApJ...883...99S},
-as well as the fitting results by  \citet[double power law]{2020MNRAS.493.2059B} \& \citet[Schechter]{2013MNRAS.432.2696M}.
-At  $z\sim$ 9, those data are from \citet[triangles]{Harikane_2022c}, \citet[circles]{2022arXiv220712356D}, \citet[pluses]{2020MNRAS.493.2059B}, \citet[diamonds]{2019ApJ...883...99S}, and \citet[pentagons]{2018ApJ...867..150M},
-with the fitting functions from  \citet{Harikane_2022c}.
-At $z\sim$ $10-13$, \citet[triangles]{Harikane_2022c},\citet[circles]{2022arXiv220712356D},\citet[pluses]{Harikane_2022b}, \citet[diamonds]{2022arXiv220709434N}, \citet[pentagons]{2018ApJ...867..150M}, and \citet[stars]{2016ApJ...819..129O},
-and the fitting functions are produced by \citet{Harikane_2022c}.
+The galaxy luminosity function data at $z\sim$ 7 are taken from \citet{2022ApJS..259...20H} and \citet{2021AJ....162...47B}. 
+At $z\sim$ 8, the data points are from \citet{2021AJ....162...47B},
+\citet{2022arXiv220712356D}, \citet{2013MNRAS.432.2696M}, \citet{2020MNRAS.493.2059B}, and \citet{2019ApJ...883...99S}.
+At  $z\sim$ 9, those data are from \citet{Harikane_2022c}, \citet{2022arXiv220712356D}, \citet{2020MNRAS.493.2059B}, \citet{2019ApJ...883...99S}, 
+and \citet{2018ApJ...867..150M}.
+At $z\sim$ $10-13$, we take data from \citet{Harikane_2022c}, \citet{2022arXiv220712356D}, \citet{Harikane_2022b}, \citet{2022arXiv220709434N}, \citet{2018ApJ...867..150M}, 
+and \citet{2016ApJ...819..129O}.
+The fitting forms of the luminosity functions are given by \citet{2022ApJS..259...20H} at $z\simeq 7$, 
+\citet{2020MNRAS.493.2059B} and \citet{2013MNRAS.432.2696M} at $z\simeq 8$, and \citet{Harikane_2022c} at $9\lesssim z\lesssim 13$.
 }
 \label{fig:LFs}
 \end{figure*}
@@ -1477,6 +1481,25 @@ Therefore, this clearly shows that the massive BH samples observed in $z\simeq 6
 undergoes active accretion episodes at higher redshifts.
 
 
+%%%%%%%
+%    Fig. 10
+%%%%%%%
+\begin{figure}
+\centering
+\includegraphics[width=85mm]{Mevol.png}
+\caption{
+Evolutionary tracks of individual seed BHs with the the best-fit growth model parameters in the $\fseed=0.01$ case.
+Among all the samples, we select BHs that reach $M\geq 10^8~\Msun$ at $z=6$ (solid curves). 
+The heaviest 7 BHs with $M_\bullet \geq 10^9~\Msun$ at $z=6$ are highlighted with colors. 
+For the heaviest BHs, we draw the assembly history assuming an exponential growth with a constant Eddington ratio: 
+the $\lambda$-value found at $z=6$ for each BH (dotted curves; extrapolation with an observed value of $\lambda$) and 
+$\lambda =1$ (dashed curves; continuous Eddington growth).
+%constant $\lambda$ keeping the $z=$ 6 value with dotted lines and 
+%Eddington limit growth with $\lambda=1$ with dashed lines.
+}
+\label{fig:track}
+\end{figure}
+
 
 In this sub-sample, we find seven BHs heavier than $M=10^9~\Msun$ (highlighted with solid curves), 
 among which five BHs show $\lambda<1$ in the snapshots at $z=6$.
@@ -1513,25 +1536,6 @@ including both bursts of accretion and quiescent phases.
 % the observational active quasar episode.
 
 
-
-%%%%%%%
-%    Fig. 10
-%%%%%%%
-\begin{figure}
-\centering
-\includegraphics[width=85mm]{Mevol.png}
-\caption{
-Evolutionary tracks of individual seed BHs with the the best-fit growth model parameters in the $\fseed=0.01$ case.
-Among all the samples, we select BHs that reach $M\geq 10^8~\Msun$ at $z=6$ (solid curves). 
-The heaviest 7 BHs with $M_\bullet \geq 10^9~\Msun$ at $z=6$ are highlighted with colors. 
-For the heaviest BHs, we draw the assembly history assuming an exponential growth with a constant Eddington ratio: 
-the $\lambda$-value found at $z=6$ for each BH (dotted curves; extrapolation with an observed value of $\lambda$) and 
-$\lambda =1$ (dashed curves; continuous Eddington growth).
-%constant $\lambda$ keeping the $z=$ 6 value with dotted lines and 
-%Eddington limit growth with $\lambda=1$ with dashed lines.
-}
-\label{fig:track}
-\end{figure}
 
 
 
@@ -1624,24 +1628,20 @@ with the best-fit parameters reproducing their statistical properties.
 For massive BHs that reach $\gtrsim 10^8~\Msun$ by $z\simeq 6$, the average duty cycle of accretion is as high as $\simeq 15~\%$.
 Since the duty cycle is nearly twice that of the entire population, the BH samples observed in $z\simeq 6$ quasars are
 biased toward a population that undergoes active accretion episodes.
-Multiple accretion-burst treatment nicely produces the mass assembly history of individual high$-z$ luminous quasars,
+Multiple accretion-burst treatment nicely produces the mass assembly history of individual high-$z$ luminous quasars,
 unlike the case where one single value of the Eddington ratio is assigned.
 We also find that the observed Eddington-ratio distribution function is skewed to a log-normal shape from the intrinsic Shechter function
 owing to detection limits of quasar observations.
 Those results will be unveiled by future deep and wide surveys with the JWST, RST, and Euclid.
 
 
-% \begin{acknowledgments}
-% % We thank all the people that have made this paper what it is today.  
-% % This includes but not limited to Bob Hanisch, Chris Biemesderfer, Lee Brotzman,
-% % Pierre Landau, Arthur Ogawa, Maxim Markevitch, Alexey Vikhlinin and Amy
-% % Hendrickson. Also special thanks to David Hogg and Daniel Foreman-Mackey
-% % for the new "modern" style design. Considerable help was provided via bug
-% % reports and hacks from numerous people including Patriciddo Cubillos, Alex
-% % Drlica-Wagner, Sean Lake, Michele Bannister, Peter Williams, and Jonathan
-% % Gagne.
-% \end{acknowledgments}
-
+\acknowledgments
+We greatly thank Jin Wu, AAA, BBB, and CCC for constructive discussions. 
+We acknowledge support from the National Natural Science Foundation of China 
+(12073003, 12003003, 11721303, 11991052, 11950410493, and 1215041030), 
+and the China Manned Space Project Nos. CMS-CSST-2021-A04 and CMS-CSST-2021-A06. 
+The numerical simulations were performed with the Cray XC50 at the Center for Computational Astrophysics (CfCA) 
+of the National Astronomical Observatory of Japan and with the High-performance Computing Platform of Peking University.
 %% To help institutions obtain information on the effectiveness of their 
 %% telescopes the AAS Journals has created a group of keywords for telescope 
 %% facilities.
@@ -1683,7 +1683,7 @@ Those results will be unveiled by future deep and wide surveys with the JWST, RS
 %% pdflatex sample631.tex
 %% pdflatex sample631.tex
 
-\clearpage
+% \clearpage
 
 \newpage
 % \vspace{100mm}
