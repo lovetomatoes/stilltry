@@ -1467,31 +1467,27 @@ From the BH growth model described in \S~\ref{sec:MF}, we further explore indivi
 % \blue{(10$^5$ sample size actually, but with $\fseed=0.01$, essentially 10$^7$)}
 % \blue{(1e3 $\Msun$ in plot, with seed mass and redshift distribution can also be realized)}, 
 % motivated by the properties of typical BH seeds (with median formation redshift and median mass).
-We generate a sample of 10$^7$ BHs, whose formation time and mass distribution at birth follow the model described in \S~\ref{sec:seed}. 
+We generate a sample of 10$^6$ BHs, whose formation time and mass distribution at birth follow the model described in \S~\ref{sec:seed}. 
 Following the best fit parameters in the case of $\fseed = 0.01$,
-we assign an Eddington ratio $\lambda$ in every time interval $\tlife=18.76$ Myr to grow the individual BHs until $z=6$. 
-The value of $\lambda$ follows the ERDF characterized by a Schechter distribution with $\lambda_0=0.87$ and $\alpha=0.20$
-(see \S~\ref{sec:fitting_result}).
-With those parameters, we show the BH growth tracks that end up with $>10^8~\Msun$ by $z=6$ in Fig.~\ref{fig:track}. 
-%\red{KI: what is the frequency $N$ of BH accretion bursts with $\lambda>\lambda_0$ between $z=6$ and $10$? The duty cycle for the sub-sample
-%is $f_{\rm duty}\simeq N\tlife/\Delta t_{\rm H}$.}
-For those massive BHs, we estimate the duty cycle between $z=10$ and $6$ defined as $f_{\rm duty} \equiv \mathcal{N}\tlife/\Delta t_{\rm H}$, 
+for every time interval $\tlife=18.76$ Myr,
+we assign a constant Eddington ratio $\lambda$ generated randomly from the Schechter distribution function 
+characterized by $\lambda_0=0.87$ and $\alpha=0.20$ (see \S~\ref{sec:fitting_result}).
+With these parameters, we grow the individual BHs until $z=6$ and 
+study the statistical behavior in the growth of massive BHs.
+
+We estimate the duty cycle between $z=10$ and $6$ defined as $f_{\rm duty} \equiv \mathcal{N}\tlife/\Delta t_{\rm H}$, 
 where $\mathcal{N}$ is the frequency of super-Eddington accretion bursts with $\lambda>1$ and $\Delta t_{\rm H}\simeq 450$ Myr.
-The average duty cycle is found to be $\langle f_{\rm duty}\rangle \simeq 0.15$ (i.e., $\Delta t_{\rm H} \times f_{\rm duty} \simeq 70$ Myr).
-%We take this sub-sample representing the observable massive BH population,
-%which is easier to be probed by flux-limited quasar observations.
-%During the growth histories of these BHs, it is interesting to examine the duty cycle of the active phase, 
-%e.g., characterized as $f_{\rm duty}\simeq N\tlife/\Delta t_{\rm H}$,
-%where $N$ is the frequency of a BH growing with super-Eddington accretion bursts,
-%in a time duration $\Delta t_{\rm H}$.
-%We estimate the duty cycle between the cosmic age of $z=$ 10 to $z=$ 6,
-%and find $f_{\rm duty}\simeq 0.15$.
+For BH populations grown to $M_\bullet>10^7$, $10^8$ and $10^9~\Msun$ at $z=$ 6,
+the average duty cycle is found to be $\langle f_{\rm duty}\rangle \simeq 0.12$, 0.15, and 0.19
+(i.e., $\Delta t_{\rm H} \times f_{\rm duty} \simeq 55$, 69, and 85 Myr), respectively.
 On the other hand, the average duty cycle for the entire BH population is given by $f_{\rm duty}= 0.075$ 
-(see \S~\ref{sec:fitting_result}), which is half of that for the sub-sample.
-Therefore, this clearly shows that the massive BH samples observed in $z\simeq 6$ quasars are biased toward a population that
-undergoes active accretion episodes at higher redshifts.
+(see \S~\ref{sec:fitting_result}), which much lower than these massive sub-samples.
+Therefore, we suggest that the massive BHs observed in $z\simeq 6$ quasars are biased in a way that
+the more massive populations undergo longer active accretion episodes along their growth.
 
 
+In Fig.~\ref{fig:track}, we show the BH growth tracks that end up with $M_\bullet>10^8~\Msun$ by $z=6$.
+%
 %%%%%%%
 %    Fig. 10
 %%%%%%%
@@ -1510,12 +1506,13 @@ $\lambda =1$ (dashed curves; continuous Eddington growth).
 }
 \label{fig:track}
 \end{figure}
-
-
-In this sub-sample, we find seven BHs heavier than $M=10^9~\Msun$ (highlighted with solid curves), 
-among which five BHs show $\lambda<1$ in the snapshots at $z=6$.
-Tracing the BH growth curve back to $z=30$ with the Eddington ratio observed at $z=6$ (dotted curves),
-the extrapolated mass of those sub-Eddington BHs at $z=6$ is as massive as $\Mbh \gg 10^5~\Msun$ and is 
+%
+%
+In this sub-sample, we find five BHs heavier than $M=10^9~\Msun$ (highlighted with solid curves),
+among which all of them show $\lambda<1$ at the  $z=6$ snapshot.
+% among which five BHs show $\lambda<1$ in the snapshots at $z=6$.
+Tracing the BH growth curve back to $z=30$ with the Eddington ratio observed at $z=6$ (dashed curves),
+the extrapolated mass of those sub-Eddington BHs at $z=6$ is as massive as $\Mbh \gg 10^6~\Msun$ and is 
 substantially higher than the mass range for seed BHs.
 %ting BHs trace back to exceedingly massive seeds which are hard to be explained by current seeding scenarios. 
 %
@@ -1523,17 +1520,17 @@ substantially higher than the mass range for seed BHs.
 %the sub-Eddington accreting BHs trace back to exceedingly massive seeds which are hard to be explained by current seeding scenarios. 
 It has been pointed out by \cite{2019ApJ...880...77O} that such simple extrapolation of the growth history for low-$\lambda$ quasars 
 does not work properly (see their Figure 10).
-%it is challenging that observations of fait quasars strong challenges to the growth histories of these sub-Eddington accreting BHs
-%
-In contrast, the extrapolated growth curves of $z\sim$ 6 super-Eddington BHs are unrealistically steep,
-reaching $<100 ~\Msun$ within several hundred million years.
-This fact indicates short durations of the super-Eddington accretion mode.
-For comparison, we show the mass growth tracks assuming a constant Eddington ratio of $\lambda=1$, 
-where the extrapolated seed mass is $\Mbh \sim 10^2~\Msun$ at $z\sim 30$.
+% In contrast, the extrapolated growth curves of $z\sim$ 6 super-Eddington BHs are unrealistically steep,
+% reaching $<100 ~\Msun$ within several hundred million years.
+% This fact indicates short durations of the super-Eddington accretion mode.
+For comparison, we show the mass growth tracks assuming constant Eddington accretion (i.e., $\lambda=1$),
+where the extrapolated seed mass is $\Mbh \lesssim 10^2~\Msun$ at $z\sim 30$.
 %Both treatments of the constant $\lambda$ lead to BH seed masses extrapolation that deviate from the initial seeds we plant. 
-This argument clearly demonstrates that multiple accretion episodes with different values of $\lambda$ should be taken into account 
-to infer the seeding mass for the observed SMBHs as bright quasars at $z\gtrsim 6-7$, instead of assuming one single number 
-of the Eddington ratio.
+Therefore, one may postulate that short durations of super-Eddington accretion lead to the exsitence of the massive BHs.
+Based on the BH seeds and growth model we develop,
+we reiterate that multiple accretion episodes with different values of $\lambda$ should be taken into account 
+to infer the seeding mass for the observed SMBHs as bright quasars at $z\gtrsim 6-7$,
+instead of assuming one single number of the Eddington ratio.
 
 
 % \red{KI: still not sure what we discuss below... among the 7 BHs, is anyone consistent with Feige's BH?}
@@ -1544,9 +1541,12 @@ taking constant Eddington ratio derived from high-$z$ observation or assuming $\
 Therefore we raise a caveat that under these assumptions the seed mass achieved may be unreliable. 
 Instead we should take into account the episodical accretion nature of quasars, 
 including both bursts of accretion and quiescent phases.
-% This is supported strongly by our best model of a $\gtrsim 20$ Myr $\tlife$, which is intrinsically connected with 
-% the observational active quasar episode.
-
+Among the five supermassive BH growth tracks,
+we find one matching this currently known most distant quasar, 
+with $M_\bullet \simeq 1.8\times 10^9~\Msun$ and $\lambda \simeq 0.5$ at $z=7.6$ (shown with red curve).
+Starting from $z\sim 29$ with $M_{\rm seed} \sim 10^5~\Msun$,
+this overmassive growth history is realized by the combination of rare halo environments initilizing a heavy seed, 
+and several super-Eddington accretion bursts.
 
 
 
