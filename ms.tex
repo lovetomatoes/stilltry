@@ -203,7 +203,9 @@ along with the QLF \citep[e.g.,][]{2015ApJ...798...28K,2016ApJ...833..222J,2017A
 %where 
 Deep spectroscopic observations of high-$z$ quasars enable us to measure the virial BH mass 
 with the Mg~{\sc ii} single-epoch method and bring insights of the mass distribution
-\citep[e.g.,][]{2007AJ....134.1150J,2007ApJ...669...32K,2010AJ....140..546W,2018Natur.553..473B,2019ApJ...880...77O,2019ApJ...873...35S}. 
+(e.g., \citealt{2007AJ....134.1150J,2007ApJ...669...32K};
+\citealt{2010AJ....140..546W}, hereafter \citetalias{2010AJ....140..546W};
+\citealt{2018Natur.553..473B,2019ApJ...880...77O,2019ApJ...873...35S}). 
 However, extrapolation of the Soltan-Paczy{\'n}ski argument toward higher redshifts beyond $z\sim$ 6 is limited because of the current difficulty of
 constructing high-$z$ QLFs \citep{2013ApJ...768..105M,2016ApJ...829...33Y,2019ApJ...884...30W,2019BAAS...51c.121F}.
 Nevertheless, in the era of the James Webb Space Telescope (JWST) and forthcoming facilities,
@@ -300,11 +302,14 @@ constrained by the observable QLF and BHMF down to $z\sim$ 6,
 
 
 
-\red{(to be revised)
-This paper is organized as follows. Firstly, in \S \ref{sec:method} we describe the semi-analytical BH seeding procedure, 
-the parameterized BH growth and how we reproduce the modeled QLF and BHMF dataset at $z\sim$ 6 using these ingredients. 
-In \S \ref{sec:result} we present the fitting of model parameters constrained by quasar observations. 
-We then summarize our findings in \S \ref{sec:discussion} and discuss the potential applications on exploring the high-$z$ universe.
+\blue{
+This paper is organized as follows. Firstly, in \S~\ref{sec:method} we describe the semi-analytical BH seeding procedure, 
+the parameterized BH growth model and how we reproduce the QLF and BHMF dataset at $z\sim$ 6 using these ingredients. 
+In \S~\ref{sec:fitting_result} we present the fitting of model parameters constrained by quasar observations.
+In \S~\ref{sec:cosm} we discuss the cosmological evolution of BH mass and quasar luminosity functions 
+indicated by our best-fit models, as well as the potential detection of these BHs in their early growth.
+In \S~\ref{sec:discussion} we present the BH growth tracks and statistical properties along the $z\sim 6$ SMBH growth histories.
+We then summarize our findings in \S~\ref{sec:sum} and discuss the potential applications of quasar observations on exploring the high-$z$ universe.
 }
 Throughout this work, we apply the cosmological parameters from \cite{2016A&A...594A..13P},
 i.e., $\Omega_{\mathrm{m}}=0.307,~\Omega_{\Lambda}=0.693,~
@@ -511,16 +516,16 @@ The value is calculated as $f_{\vbsm} = 0.6$ and $0.4$ for $\vbsm = 0$ and $\vbs
 %%%%%%%
 \begin{figure*}
 \centering
-\includegraphics[width=150mm]{scheme.png}
+\includegraphics[width=150mm]{scheme1.png}
 \caption{
 Schematical demonstration of the procedure to calculate the evolution of BH mass distribution 
-between checkpoints time $t_0$ to $t_0+\tau$. 
+between checkpoints time $T_0$ to $T_0+\tau$. 
 The probability of a BH with mass $M_0$ grow to $M$ after $\Delta t=\tau$ is drew from the 
 ERDF following Eq.~(\ref{eq:Pl}). 
 For a newly formed seed BH $M_{\rm i}$, the probability distribution function of BH mass is a delta function, 
-and the growth time is $t_0+\tau-t_{\rm i}$.
+and the growth time is $T_0+\tau-t_{\rm i}$.
 Thus the evolution of BH mass distribution is reshaped iteratively 
-plus taking account of the newly formed seeds if any.
+plus taking account of the newly formed seeds if there are any.
 }
 \label{fig:scheme}
 \vspace{5mm}
@@ -565,6 +570,7 @@ On the basis of studies on the mass dependence of the radiative efficiency for A
 we introduce a similar functional form that characterizes the mass dependence 
 %
 \begin{equation}
+\label{eq:f_M}
 f(\Mbh) = \frac{2}{1+\left(\Mbh /M_{\bullet,c} \right)^\delta}, 
 \end{equation}
 %
@@ -634,9 +640,13 @@ As discussed in \citet{2009ApJ...696.1798T}, a small value of $\fseed <1$ is req
 depending on BH seeding and growth mechanisms in semi-analytical models.
 % that denotes the portion of DM halos where seed BHs are seeded \citep{2009ApJ...696.1798T}.
 Since the value has been poorly constrained both by theoretical and observational studies, we treat it as a free parameter.
-% wli avoid fseed=1
-We take three different values of $\fseed = 1$, $0.1$, and $0.01$ and explore the dependence on the best-fit QLF and BHMF.
-Note that the seed mass function shown in Fig.~\ref{fig:seedmf} is given with $\fseed = 1$.
+We take three different values of $\fseed = 1$, $0.1$, and $0.01$, and explore its effect on producing the QLF and BHMF.
+\blue{
+With analysis on the fitting results for $\fseed = 1$ and $\fseed = 0.1$,
+we find that the best-fit parameters in the two cases are overall similar (see Table.~\ref{tab:best_fits}). 
+For simplicity, we neglect presenting the discussion on the $\fseed=1$ case hereafter.
+}
+Note that for demonstration purposes, the seed mass function shown in Fig.~\ref{fig:seedmf} is given with $\fseed = 1$.
 
 
 
@@ -654,8 +664,8 @@ Note that the number of the checkpoints is given by $\lceil (t_{\rm H}-t_1)/\tau
 The time evolution of the BH mass distribution is calculated from the first checkpoint to $t_{\rm H}(z=6)$ by adding newly-forming seed BHs
 and taking into account growth of existing BHs via mass accretion.
 %every by evolves iteratively during each cycle,together with the seeds newly formed in between.
-For a given mass distribution function $\D P/\D  M_{\bullet, 0}$ at a checkpoint of $t=t_0$, 
-we give its evolution at $t=t_0+\Delta t$ as
+For a given mass distribution function $\D P/\D  M_{\bullet, 0}$ at a checkpoint of $t=T_0$, 
+we give its evolution at $t=T_0+\Delta t$ as
 %%%%%%%
 %    Eq. 5
 %%%%%%%
@@ -683,9 +693,9 @@ and is calculated analytically from Eq.~(\ref{eq:mdot}) by
 and the derivative of ($\D \ln \lambda_\ast / \D  \Mbh )|_{\Delta t, M_{\bullet,0}}$ is also determined.
 For existing BHs formed prior to this checkpoint, we calculate the evolution of the mass distribution by setting $\Delta t = \tlife$.
 % is set for the BH mass distribution iteration from the latest checkpoint, 
-For a seed BH formed during this cycle (i.e., $t_0\leq t_k < t_0+\tlife$), 
-we evolve $\D P^{\rm seed}_k/\D \Mbh$ by setting $\Delta t = t_0+\tlife -t_k$ and add it to the mass distribution 
-of the existing BHs at $t=t_0+\tlife$.
+For a seed BH formed during this cycle (i.e., $T_0\leq t_k < T_0+\tlife$), 
+we evolve $\D P^{\rm seed}_k/\D \Mbh$ by setting $\Delta t = T_0+\tlife -t_k$ and add it to the mass distribution 
+of the existing BHs at $t=T_0+\tlife$.
 %adopt $\Delta t = t-t_k$, and $\D P^{\rm seed}_{\rm i}/ \D \Mbh$ as the initial mass distribution.
 This procedure is illustrated schematically in Fig.~\ref{fig:scheme}. 
 \red{KI: Fig.~2 also needs to show the configuration of the checkpoints, adding more info.}
@@ -800,16 +810,16 @@ The obscuration fraction reads
   \fobsc = \text{min}\lbrace  0.84 , 0.73-0.24\times[ \log (\Lbol/L_\odot) -43.75] \rbrace,
 \end{equation*}
 following \citet{2014ApJ...786..104U}.
-An alternative fitting form of $\fobsc$ based on their X-ray AGN sample with additional optical obscuration classification 
-is proposed by \citet{2014MNRAS.437.3550M} as
-%
-\begin{equation*}
-  \fobsc = 0.56 + \frac{1}{\pi}~ \text{arctan} \left[ \frac{43.89 - \log (\Lbol/L_\odot)}{0.46}\right].
-\end{equation*}
-%
-We also conduct the parameter fitting with this prescription and discuss the sensitivity of our results to 
-the choice of $\fobsc$ in the Appendix.
-\red{KI: add appendix}
+% An alternative fitting form of $\fobsc$ based on their X-ray AGN sample with additional optical obscuration classification 
+% is proposed by \citet{2014MNRAS.437.3550M} as
+% %
+% \begin{equation*}
+%   \fobsc = 0.56 + \frac{1}{\pi}~ \text{arctan} \left[ \frac{43.89 - \log (\Lbol/L_\odot)}{0.46}\right].
+% \end{equation*}
+% %
+% We also conduct the parameter fitting with this prescription and discuss the sensitivity of our results to 
+% the choice of $\fobsc$ in the Appendix.
+% \red{KI: add appendix}
 
 
 Here, we neglect the contribution from Compton-thick AGNs with $N_\mathrm{H}>10^{24}$ cm$^{-2}$, 
@@ -854,13 +864,13 @@ to be compared with the ones from observation.
 %%%%%%%
 \begin{figure*}
 \centering
-\includegraphics[width=180mm]{contour.pdf}
+\includegraphics[width=180mm]{contour.png} % contour.pdf
 \caption{
 Two dimensional posterior distribution of all the model parameters with $\fseed=0.1$ and 0.01, 
 along with the marginalized one dimensional projection.
 % and the two dimensional distribution between every two parameters. 
 The distribution of three parameters ($\tau$, $\lambda_0$, and $\alpha$) show single peaks,
-meaning the convergence of those parameters.
+displaying the convergence of those parameters.
 The distribution of $\log\delta$ is relatively broader but suggests that the value of $\delta$
 is sufficiently low and thus the mass-dependent growth model is excluded.
 }
@@ -874,8 +884,7 @@ In this section, we describe the MCMC fitting procedure used to optimize
 the BH growth parameters so that the observed BHMF and QLF are consistently reproduced. 
 As discussed in \S~\ref{sec:MF}, we consider five parameters of $\tlife$, $\delta$, $\alpha$, $\lambda_0$, and $\fseed$.
 The best-fit values of the first four parameters are calculated by the MCMC method, while $\fseed$ is fixed to a single value.
-In what follows, we describe the results for $\fseed = 0.1$ and $0.01$ (see Appendix for the case with $\fseed =1.0$).
-\red{KI: add appendix}
+% In what follows, we describe the results for $\fseed = 0.1$ and $0.01$ (see Appendix for the case with $\fseed =1.0$).
 
 % prior
 In this analysis, we constrain those parameters to be within certain physically acceptable ranges, 
@@ -903,7 +912,7 @@ we impose a Gaussian prior function with a mean value of $\mu_{\lambda_0}=0.6$ a
 % motivated by the various observations revealing a large sample of quasars with peak $\lambda\lesssim 1$,
 The choice is motivated by the brightest quasar samples at $z=$ 6, whose ERDF function is peaked around $\lambda \sim 0.6$ 
 % \citep[e.g.,][Onoue et al. in preparation]{2010AJ....140..546W}.
-after luminosity bias correction \citep[e.g.,][]{2010AJ....140..546W}.
+after luminosity bias correction (e.g., \citetalias{2010AJ....140..546W}).
 % It is worth noting that, observationally the high-$z$ ERDF is fitted by a log-normal function. 
 % \blue{
 % because of detection limit, there may be a large population of low $\lambda$ BHs unrevealed,
@@ -923,7 +932,7 @@ but the low-$z$ quasar samples support $-0.3 \lesssim \alpha \lesssim 0.3$ \cite
 
 %
 % 1. data: observational MF LF; describe quadratic error in Willott 2010
-The observed BHMF data is taken from \citet{2010AJ....140..546W} (hereafter \citetalias{2010AJ....140..546W}), where 
+The observed BHMF data is taken from \citetalias{2010AJ....140..546W}, where 
 the virial BH mass measurements for 17 bright quasars at $z\simeq $ 6 are used.
 %rom the virial BH mass among $\sim$ 20 quasars at $z\approx$ 6.
 %they reconstruct the BHMF with the QLF and ERDF
@@ -975,21 +984,52 @@ with the models best reproducing the $z=$ 6 BHMF and QLF.
 %\subsection{Fitting Results}\label{sec:fitting_result}
 
 
-\red{KI: we need to explain why the peak of the 1D posterior distribution does not correspond to the best-fit case.
-I think the peak value is not necessarily the same as the best-fit value. 
-Also, we need to list the best-fit parameters somewhere in the text.}
+% \red{KI: we need to explain why the peak of the 1D posterior distribution does not correspond to the best-fit case.
+% I think the peak value is not necessarily the same as the best-fit value. 
+% Also, we need to list the best-fit parameters somewhere in the text.}
 
-In Fig.~\ref{fig:contour}, we visualize the MCMC fitting results for each parameter in two-dimensional 
+
+%%%%%%%
+%    Table. 1
+%%%%%%%
+\begin{deluxetable}{l|ccccccc}%[t!]
+\tablecolumns{1}
+\renewcommand\thetable{1} %! fix indexing
+\tablewidth{0pt} 
+\tablecaption{Best-fit Parameters \label{tab:best_fits}} %!!!!
+\tablehead{
+  \colhead{$\fseed$}  & \colhead{1} & \colhead{0.1} &  \colhead{0.01}
+}
+\startdata
+% $\fseed$    &      1 &      0.1  &  0.01  \\
+% \hline \hline
+$\tau$      &  23.13 &   20.07   & 18.76  \\
+$\delta$    &  0.001 &   0.001   & 0.055  \\
+$\lambda_0$ &  0.96  &   0.89    &  0.87  \\    
+$\alpha$    & -0.06  & 0.12   &  0.20  \\
+\enddata
+% \tablecomments{
+% The best-fit parameters optimized by MCMC sampling for the cases of $\fseed=1$, 0.1, and 0.01.
+% }
+\end{deluxetable}
+
+\blue{
+In the following, we discuss the MCMC fitting results and compare the reproduced BHMF and QLF with observations.
+In Fig.~\ref{fig:contour}, we visualize the fitting results for each parameter in two-dimensional 
 posterior distribution for the case of $\fseed= 0.1$ (left) and $0.01$ (right), respectively.
-The three vertical lines on each one-dimensional posterior distribution present the peak and the values
-with $1\sigma$ scatter.
-The result for the $\fseed=1$ case is discussed in the Appendix.
-\red{KI: add appendix}
+The three vertical dashed lines in the one-dimensional distribution of each parameter
+correspond to 16, 50, and 84 percentiles, respectively.
+The best-fit values shown in red thick lines are tabulated in Table.~\ref{tab:best_fits}.
+Note that the 50 percentile does not overlap the peak of an asymmetric distribution.
+% wli : 1\sigma definition here?
+We define the $1\sigma$ scatter of a value (e.g., $\Phi_{M_\bullet}$) as the standard deviation of it calculated
+from randomly selected parameters from the sampling.
+% instead of the 16 and 84 percentiles here.
+}
 
-
-For both cases, the best-fit solution consistently shows a small value of $\delta < 0.01$. \red{KI: but, $\delta=0.055$ is used later...}
+For both cases, the best-fit solution consistently shows a small value of $\delta < 0.1$.
 %, which is sufficiently small and should be marginalized out. 
-This suggests that a nearly exponential BH growth manner is favored in our model assumption. 
+This result favors the nearly exponential BH growth model with minor mass dependence (Eq.~\ref{eq:mdot},~\ref{eq:f_M}).
 % In other words, on average the BH growth can be described as exponential, 
 % under the premise that the gas supply is episodical. 
 The typical duration of quasar activity is required to be $\tlife \simeq 20-30$ Myr for both the cases.
@@ -1003,7 +1043,6 @@ observed in the rest-frame UV spectra \citep[e.g.,][]{2018ApJ...867...30E,2019Ap
 More detailed comparison is discussed in \S\ref{sec:evol}.
 \red{KI: where is the discussion?}
 
-
 %%%%%%%
 %    Fig. 4
 %%%%%%%
@@ -1011,7 +1050,7 @@ More detailed comparison is discussed in \S\ref{sec:evol}.
 \centering
 \includegraphics[width=145mm]{fits_MF.png}
 \caption{
-The BH mass function at $z=6$ with the best-fit parameters (purple curve) and the $1\sigma$ spread for the cases with $\fseed=0.1$ (left) and $0.01$ (right). 
+The BH mass function at $z=6$ with the best-fit parameters (black curve) and the $1\sigma$ spread (shaded region) for the cases with $\fseed=0.1$ (left) and $0.01$ (right). 
 For comparison, the BHMF inferred by \citetalias{2010AJ....140..546W} is overlaid (blue curve and shaded region).
 The data is used for the model parameter fitting.
 %.The blue line shows the BHMF derived by \citet{2010AJ....140..546W}.
@@ -1159,20 +1198,20 @@ We leave this issue as an important caveat in high-$z$ quasar observations.
 
 
 %%%%%%%
-%    Fig. 
+%    Fig. 6
 %%%%%%%
 \begin{figure*}
 \centering
 \includegraphics[width=175mm]{BHMF_rhoz1.png}
 \caption{
-\if0
-{\it Left panel}: BH mass functions at $z=6-10$. 
-The solid lines denote modeled BHMF produced by the best-fit parameters 
-and the shaded regions present the $1\sigma$ spread. 
-{\it Right panel}: the redshift evolution of the cumulative mass density of BHs with $\Mbh \geq 10^7~\Msun$ in a comoving volume, 
+{\it Left panel}: BH mass functions predicted by the best-fit models at $z=6-10$,
+including a fraction of $\fseed$ seeds evolving by our model assumption and the remaining ($1-\fseed$) fraction with no subsequent growth.
+The solid (dashed) lines denote the cases with $\fseed=0.1$ (0.01).
+{\it Right panel}: the cumulative mass density evolution for BHs in different mass ranges in a comoving volume, 
 evaluated by the integration of the BHMF shown in the left panel.
-The evolutionary trend can be approximated as $\rho_\bullet (z) \propto 10^{k_M z}$, where $k_M\simeq -0.68$.
-\fi
+The dashed-dotted line and open square symbol show the results from \citet{2022MNRAS.513..670N}.
+The upper bound of accreted BH mass density from \citet{2013ApJ...778..130T} is denoted by red triangles.
+% The evolutionary trend can be approximated as $\rho_\bullet (z) \propto 10^{k_M z}$, where $k_M\simeq -0.68$.
 }
 \label{fig:BHMF_rhoz}
 \vspace{0mm}
@@ -1243,10 +1282,9 @@ for less massive BHs that keep the information on their initial conditions at bi
 %%%%%%%
 %    Table. 2 
 %%%%%%%
-%\startlongtable
 \begin{deluxetable*}{lccccccc}%[t!]
 \tablecolumns{1}
-\renewcommand\thetable{1} %! fix indexing
+\renewcommand\thetable{2} %! fix indexing
 \tablewidth{0pt} 
 \tablecaption{Detection Number of Quasars Estimated for Future Surveys}
 \tablehead{
@@ -1254,12 +1292,13 @@ for less massive BHs that keep the information on their initial conditions at bi
   \colhead{} & \colhead{(\rm{deg}$^2$)} & \colhead{(AB mag)} & & & & & 
 }
 \startdata
-Wide RST    &  2000 & 27   & 6758 &  1514 &  349 & 85 & 25  \\
-Wide Euclid & 15000 & 24   & 6653  &  708 &   93 & -- & --  \\
+Wide RST    &  2000  & $YJH$ 27   & $6759_{-3185}^{+15} $ &  $1514_{-558}^{+169}$ &  $349_{-131}^{53}$ & $85_{-48}^{+23}$ & $25^{+12}_{-15}$  \\
+Wide Euclid & 15000  & $YJH$ 24   & $6654^{+95}_{-2282}$  &  $708^{+213}_{-237}$ &   $93^{+66}_{-56}$ & $14^{+32}_{-27}$ & --  \\
 \enddata
 \label{tab:N_detect}
 \tablecomments{
-Based on the 5$\sigma$ point source detection limits, the number of quasars at each redshift are predicted
+Based on the 5$\sigma$ point source detection limits of the $YJH$ bands in the two surveys,
+the number of quasars at each redshift are predicted
 with the assumption of the survey volume with $\Delta z =1$ and 100\% completeness.
 }
 \end{deluxetable*}
@@ -1269,7 +1308,7 @@ with the assumption of the survey volume with $\Delta z =1$ and 100\% completene
 %However, with $\fseed=0.01$, BHs in the low mass range quickly evolve into higher masses,
 %leading to convergent results in the two cases at $z\sim 6$.
 For comparison, we overlay the BH mass density evolution with $10^6<M_{\bullet}<10^8$, and $M_\bullet>10^8~\Msun$
-obtained from the cosmological simulations in \citet{2022MNRAS.513..670N} (open square symbols).
+obtained from the cosmological simulations in \citet{2022MNRAS.513..670N} (dashed-dotted line and open square symbols).
 At $z\lesssim 7$, our results are in overall good agreement with those simulation results.
 However, our models predict more $10^{6-8}~\Msun$ BHs emerging at $z\sim 10-8$,
 owing to the joint effect of our seeding and growth prescription that allows seed formation earlier on 
@@ -1385,14 +1424,14 @@ $M_{\rm min}$ & $\log \rho_{\bullet,0}$ & $k_{\rm M}$ ~~~ \\
 
 
 %%%%%%%
-%    Fig. 9
+%    Fig. 7
 %%%%%%%
 \begin{figure*}[h!]
 \centering
-\includegraphics[width=85mm]{M0r8_f2linLF_spreadz7_KI.pdf}\hspace{5mm}
-\includegraphics[width=85mm]{M0r8_f2linLF_spreadz8_KI.pdf}\\\vspace{5mm}
-\includegraphics[width=85mm]{M0r8_f2linLF_spreadz9_KI.pdf}\hspace{5mm}
-\includegraphics[width=85mm]{M0r8_f2linLF_spreadz10_KI.pdf}
+\includegraphics[width=85mm]{LF_spreadz7.pdf}%\hspace{5mm}
+\includegraphics[width=85mm]{LF_spreadz8.pdf}\\%\vspace{5mm}
+\includegraphics[width=85mm]{LF_spreadz9.pdf}%\hspace{5mm}
+\includegraphics[width=85mm]{LF_spreadz10.pdf}
 \caption{Predicted quasar luminosity functions and depths and volumes of upcoming surveys.
 The black solid and dashed curves present the QLF for the unobscured population (e.g., type-I AGNs) 
 and the whole population (i.e., type-I and type-II AGNs), and the shaded region presents the $1\sigma$ spread.
@@ -1414,13 +1453,13 @@ The fitting forms of the luminosity functions are given by \citet{2022ApJS..259.
 
 
 \if0
-Next, we show our prediction of $z=6-10$ unobscured QLFs taken from the BH growth model in the left panel of Fig.~\ref{fig:QLF_rhoz}.
+Next, we show our prediction of $z=6-10$ unobscured QLFs taken from the BH growth model in the left panel of Fig.~\ref{fig:QLFmag_z}.
 Similar to the BHMF, for all the redshift range, the shape of the QLF is well approximated with a double power-law function.
 From higher to lower redshifts, the number density of luminous quasars increases and the bright-end of the distribution rises.
 % %The model QLFs we propose give interesting prediction and will be further constrained by higher redshift quasar observations.
 % \red{KI: add more explanations about the QLFs. How about the detection limits of Euclid, Roman, and others?
 % Also, you could compare your results with Aaron Yung's results.}
-In the right panle of Fig.~\ref{fig:QLF_rhoz}, we present the number density of luminous quasars with $\Muv <-26~{\rm mag}$ as a function of redshift.
+In the right panle of Fig.~\ref{fig:QLFmag_z}, we present the number density of luminous quasars with $\Muv <-26~{\rm mag}$ as a function of redshift.
 The evolutionary trend can be fitted as $\propto 10^{k_{\rm L}z}$, where $k_{\rm L}\approx -0.97$.
 Observationally, a rapid decay of the quasar number density toward higher redshifts is found by previous studies
 \citep[e.g.,][]{2001AJ....122.2833F,2013ApJ...768..105M,2016ApJ...833..222J,2019ApJ...884...30W},
@@ -1445,7 +1484,7 @@ Next, we show our prediction of $z=6-10$ unobscured QLFs taken from the BH growt
 %On the other hand, the statistics of BH masses together with the ERDF in their growth history can rebuild quasar luminosity functions across cosmic time,
 %which is interesting to be probed with future observations.
 In Fig.~\ref{fig:LFs}, we divide the cosmological QLF evolution into four different epochs; (a) $z\simeq 7$, (b) $z\simeq 8$, (c) $z\simeq 9$, and (d) $z\simeq 10-13$.
-The black solid and dashed curves present the QLF for the unobscured population (i.e., type-I AGNs, same as those in Fig.~\ref{fig:QLF_rhoz})
+The black solid and dashed curves present the QLF for the unobscured population (i.e., type-I AGNs, same as those in Fig.~\ref{fig:QLFmag_z})
 and the whole population (i.e., type-I and type-II AGNs).
 The AGN obscured fraction based on X-ray samples \citep{2014ApJ...786..104U} is applied to faint objects, 
 but the correction factor is highly uncertain at the faint end of $\Muv\gtrsim -20$ mag.
@@ -1466,7 +1505,13 @@ and list the expected number of quasar detection.
 Euclid will identify quasars up to $z\sim 8$ and discover $O(100-1000)$ quasars at $z\simeq 7-8$.
 The RST will be able to explore the very faint ($\Muv>-22$ mag) but abundant quasar population even at $z>10$, in principle,
 after subtracting galaxy contaminants.
-
+\blue{
+Studies that take into account contamination from MLT dwarfs and compact early-type galaxies and quasar selction method
+have confirmed the capability of these surveys in searching high-$z$ quasars \citep{2019A&A...631A..85E,2019BAAS...51c.121F}.
+With the simplified assumption of $100\%$ selection function against contaminants,
+our predicted yield of high-$z$ quasars for the Euclid wide survey is a few times higher than that by \citet{2019A&A...631A..85E}.
+Therefore, our estimation should represent an upper bound of the potentially detectable quasar population.
+}
 
 %will be crucial to construct the LF data for high-$z$ quasars and galaxies,
 %categorizing them by spectroscopic diagnostics.
@@ -1499,41 +1544,44 @@ contribution of both populations to astrophysical phenomena e.g., the ionizing p
 
 
 %%%%%%%
-%    Fig. 
+%    Fig. 8
 %%%%%%%
 \begin{figure}
 \centering
 %\includegraphics[width=160mm]{QLF_rhoz.png}
-\includegraphics[width=80mm]{M0r8_f2QLF.png}
+\includegraphics[width=80mm]{QLFmag_z.pdf}
 \caption{
-{\it Left panel}: quasar luminosity functions at $z=6-10$. 
-The solid lines denote modeled QLF produced by the best-fit parameters and the shaded regions present the $1\sigma$ spread. 
-{\it Right panel}: the redshift evolution of the cumulative number density of quasars with $\Muv <-26~{\rm mag}$ in a comoving volume,
-evaluated by the integration of the QLF shown in the left panel.
-The evolutionary trend can be approximated as $n(\Muv<-26~{\rm mag})\propto 10^{k_{L} z}$, where $k_L \simeq -0.96$.
-This result indicates rapid decline of the number of bright quasars toward higher redshifts, consistent with previous observations
-\citep[red data points; see][]{2016ApJ...833..222J, 2019ApJ...884...30W}
+Evolution of quasar luminosity functions at different UV magnitudes.
+The theoretical prediction from $z=6$ to $10$ for the cases of $\fseed=0.1$ and 0.01 are denoted by solid and dashed lines, respectively.
+From theoretical models, the slope is estimated as $k_\mathrm{L} \simeq -0.91$ and $-0.62$ for quasars at $\Muv=-27$ and $-23$ mag, respectively.
+The observational data at lower redshifts $z\sim 0-6$ are from the Subaru HSC results \citep{2018PASJ...70S..34A,2018ApJ...869..150M,2020ApJ...904...89N},
+SDSS \citep{2006AJ....131.2766R,2013ApJ...768..105M},
+the 2dFSDSS LRG and Quasar Survey (2SLAQ; \citealt{2009MNRAS.399.1755C}),
+and the Spitzer Wide-area Infrared Extragalactic Legacy Survey (SWIRE; \citealt{2008ApJ...675...49S}).
 }
-\label{fig:QLF_rhoz}
+\label{fig:QLFmag_z}
 \vspace{5mm}
 \end{figure}
 
 
-In Fig.~\ref{fig:QLF_rhoz}, we present the quasar number density as a function of redshift for 
+In Fig.~\ref{fig:QLFmag_z}, we present the quasar number density as a function of redshift for 
 the case of $\fseed =0.1$ (solid) and $0.01$ (dashed).
-Each curve corresponds to the value at each UV magnitude from $\Muv=-27$ mag to $-23$ mag.
-Our theoretical predictions are shown at $z\geq 6$ (thick curves), while observational results are compiled at lower redshifts (thin curves).
+Each curve corresponds to the value at a UV magnitude from $\Muv=-27$ mag to $-23$ mag.
+Our theoretical predictions are shown at $z\geq 6$ (thick curves),
+while observational results summarized in \cite{2020ApJ...904...89N} are compiled at lower redshifts (thin curves).
 The evolutionary trend can be fitted as $\propto 10^{k_{\rm L}z}$,
-\red{
-where $k_{\rm L}\approx ***$ and $***$ for the brightest and faintest population
+\blue{
+where $k_{\rm L}\approx -0.91$ and $-0.62$ for the brightest and faintest population
 at $z\gtrsim 6$, respectively.
+Specially for $\Muv=-26$ mag, our models predict $k_\mathrm{L} \simeq -0.84$.
 }
-Observationally, a rapid decay of the quasar number density toward higher redshifts is found by previous studies
+Observationally, a rapid decay of luminous quasar (with $\Muv<-26$ mag) number density toward higher redshifts is found by previous studies
 \citep[e.g.,][]{2001AJ....122.2833F,2013ApJ...768..105M,2016ApJ...833..222J,2019ApJ...884...30W},
 which show $k_{\rm L}= -0.47$ and $-0.72$ from the analysis of quasar samples at $z\simeq 3-5$ and $z\simeq 5-6$, respectively.
 % Recently, a steeper decline of luminous quasar number density toward higher redshifts is proposed by \citet{2019ApJ...884...30W},
 % suggesting $k_{\rm L}=-0.78$ at $6\lesssim z \lesssim 7$.
-The rapid decline toward higher redshifts is characterized by the treatment of episodic natures of BH accretion with a finite value of
+The rapid decline toward higher redshifts shows overall agreement with our model results.
+Our model is characterized by the episodic natures of BH accretion with a finite value of
 $\tau ~(\simeq 20~{\rm Myr})$, in order to match the statistical properties of high-$z$ quasars.
 We also note that the tendency would be explained by the rarity of massive quasar-host halos at higher redshifts,
 non-constant radiative efficiencies that covert the BH growth rate into the luminosity, or some combination of these effects
@@ -1596,7 +1644,7 @@ the more massive populations undergo longer active accretion episodes along thei
 
 
 %%%%%%%
-%    Fig. 10
+%    Fig. 9
 %%%%%%%
 \begin{figure}
 \centering
@@ -1636,12 +1684,22 @@ does not work properly (see their Figure 10).
 For comparison, we show the mass growth tracks assuming continuous Eddington accretion (i.e., $\lambda=1$),
 where the extrapolated seed mass is $\Mbh \lesssim 10^2~\Msun$ at $z\sim 30$.
 %Both treatments of the constant $\lambda$ lead to BH seed masses extrapolation that deviate from the initial seeds we plant. 
-\red{Therefore, one may postulate that short durations of super-Eddington accretion lead to the existence of the massive BHs. KI: what do you mean?}
-\blue{It clearly indicates that super-Eddington accretion episodes are required to the existence of the massive BHs}
+% \red{Therefore, one may postulate that short durations of super-Eddington accretion lead to the existence of the massive BHs. KI: what do you mean?}
+% \blue{It indicates that super-Eddington accretion episodes are required to explain the existence of the massive BHs.}
 Based on the BH seeding and growth model we develop,
 we reiterate that multiple accretion episodes with different values of $\lambda$ should be taken into account 
 to infer the seeding mass for the observed SMBHs as bright quasars at $z\gtrsim 6-7$,
 instead of assuming one single number of the Eddington ratio.
+
+\blue{
+Moreover, some individual quasar observations give exceptionally small proximity zone sizes,
+indicating short lifetime of their luminous phase $t_{\rm Q} \lesssim 10^4$ yr.
+The short quasar lifetime may be due to the young age of quasars ionizing the surrounding IGM \citep[e.g.,][]{2020ApJ...903...60I,2021ApJ...917...38E}.
+Our episodic quasar growth model agrees with this argument,
+besides alleviates the growth tension of SMBHs by episodic accretion bursts.
+In other words, the lifetime of luminous quasar phase is the cumulative time of accreting activity in the current episode.
+}
+
 
 
 % \red{KI: still not sure what we discuss below... among the 7 BHs, is anyone consistent with Feige's BH?}
@@ -1704,7 +1762,7 @@ This will be proved by the ongoing observations with the Subaru HSC providing lo
 
 
 %%%%%%%
-%    Fig. 11
+%    Fig. 10
 %%%%%%%
 \begin{figure}
 \centering
@@ -1728,6 +1786,7 @@ but a lower detection limit alleviates the selection effect against the low Eddi
 
 
 \section{Summary}
+\label{sec:sum}
 In this paper, we propose a theoretical model for the redshift-dependent QLF and BHMF at $z\gtrsim 6$,
 applying the mass distribution function of seed BHs over $10^2 \lesssim M_\bullet/\Msun \lesssim 10^{5}$
 that originate from massive primordial stars formed in the overdense region of the universe.
@@ -1756,22 +1815,26 @@ in a consistent way with the observed QLF and BHMF.
 
 \item
 Using the best-fit model parameters, we construct the redshift-dependent QLF and BHMF at $6\leq z \leq 10$.
-\red{(to be revised) The two functions suggest a rapid decay of the number and mass density of massive BHs and luminous quasars in a cosmic volume
-toward higher redshifts as $\propto 10^{-k_i z}$, where $k_{\rm M}\simeq -0.68$ for the BH mass and $k_{\rm L}=-0.96$ for the quasar number.
-The predicted value of the decay slope $k_{\rm L}$ is consistent with that estimated by previous observations for $z\simeq 6-7$ quasars
-but tends to be slightly steeper at higher redshifts. }
-
-
+% \red{(to be revised)
+\blue{The two functions suggest a rapid decay of the number and mass density of massive BHs and luminous quasars
+in a cosmic volume toward higher redshifts,
+showing similar trend with predictions from previous observations and theoretical work.
+The predicted QLF at all redshifts of $z\gtrsim 6$ can be estimated as $\propto 10^{k_{\rm L} z}$,
+with the more luminous quasars decreasing more rapidly toward higher $z$.
+}
 
 \item
-Compared to the galaxy luminosity functions at redshifts from $z=7$ to $z\gtrsim 10$, the QLFs we predict are burried in the faint end at $\Muv \gtrsim -23$ mag,
+Compared to the galaxy luminosity functions at redshifts from $z=7$ to $z\gtrsim 10$,
+the QLFs we predict are burried in the faint end at $\Muv \gtrsim -23$ mag,
 which makes it challenging to select such faint quasars.
 The number of quasars dominates over that of galaxies in the bright end of the UV luminosity function.
 We predict the critical magnitude at which galaxies and quasars equally contribute in number,
 depending on extrapolation of the galaxy luminosity functions.
+
+
+\item
 We further explore individual BH evolutionary tracks starting from the BH seeds, applying the BH growth model
 with the best-fit parameters to examine their statistical properties.
-\item
 For massive BHs that reach $\gtrsim 10^8~\Msun$ by $z\simeq 6$, the average duty cycle of super-Eddington accretion is as high as $\simeq 15~\%$.
 Since the duty cycle is nearly twice that of the entire population, the BH samples observed in $z\simeq 6$ quasars are
 biased toward a population that undergoes active accretion episodes.
@@ -1831,12 +1894,15 @@ of the National Astronomical Observatory of Japan and with the High-performance 
 %% pdflatex sample631.tex
 
 \appendix
+
+
 %%%%%%%
-%    Fig. 
+%    Fig. 11
 %%%%%%%
 \begin{figure*}
 \centering
-\includegraphics[width=160mm]{tau.png}
+\includegraphics[width=80mm]{f2MFtau.pdf}
+\includegraphics[width=80mm]{f2LFtau.pdf}
 \caption{
 The BH mass function (left) and quasar luminosity function (right) at $z=$ 6 in the case of $\fseed=0.01$, 
 with different values of $\tlife=$ 10, 18 (the best-fit value), and 50 Myr, respectively.
@@ -1869,19 +1935,20 @@ compared to that with a single sampling of $\lambda$.
 In what follows, we demonstrate the role of $\tlife$ in shaping the BHMF evolution and the consequent QLF.
 % tau极端小，则非常小的lambda，不能解释 （且delta func？ 有必要说或是放在后面讨论？）
 
-In the left panel of Fig.~\ref{fig:tau}, we present the BHMF at $z=6$ for three different values of $\tlife=10$, $18$, and $50$ Myr,
+In the left panel of Fig.~\ref{fig:tau}, we present the BHMF at $z=6$ for three different values of $\tlife=14$, $18$, and $37$ Myr,
 but keeping the other parameters to the best-fit values ($\lambda_0=0.87$ and $\alpha=0.20$) for the case with $\fseed=0.01$.
-We note that $\tlife \approx$ 18 Myr is the best-fit value reproducing the BHMF consistent with that of \citetalias{2010AJ....140..546W}.
+We note that $\tlife \approx$ 18 Myr is the best-fit value reproducing the BHMF consistent with that of \citetalias{2010AJ....140..546W},
+and the other two values represent the $16$ and $84$ percentiles of the one-dimensional distribution of $\tau$, respectively (see Fig.~\ref{fig:contour}).
 %the other two cases demonstrate the sensitivity of the $\tlife$ value in producing the bulk of massive BHs
 %and the slope in the high mass tail.
-For $\tlife=10$ Myr, the frequency of Eddington ratio assignment increases by a factor of two until $z=6$.
+For $\tlife=14$ Myr, the frequency of Eddington ratio assignment increases by a factor of 1.3 until $z=6$.
 %to $\sim$ 80 from $\sim$ 40 with the best-fit $\tlife$ value.
 Therefore, continuous and efficient growth of BHs with $\lambda \gtrsim \lambda_0$ is less likely to occur,
 %high Eddington ratio accretion along the growth is lower,
 suppressing the formation of BHs heavier than $M_\bullet \simeq 10^8~\Msun$.
 Moreover, if a high Eddington ratio is given with a certain but low probability, the BH mass hardly increases
-within $\tlife=10$ Myr, which is $\simeq 20\%$ of the $e$-folding timescale.
-On the other hand, for $\tlife=$ 50 Myr, there is a non-negligible probability that
+within $\tlife=14$ Myr, which is $\simeq 30\%$ of the $e$-folding timescale.
+On the other hand, for $\tlife=$ 37 Myr, there is a non-negligible probability that
 % $\sim$ 16 times of Eddington ratio assignment,
 more BHs experience high accretion rates with $\lambda\gtrsim \lambda_0$ through their assembly history.
 %high values of $\lambda\gtrsim \lambda_0$ is non-negligibly realized in the BHMF evolution.
@@ -1898,18 +1965,18 @@ i.e., higher (lower) $\tlife$ values lead to under(over)-production of the lumin
 The best-fit value of $\tlife (\simeq 18$ Myr) favors a moderate fraction of $t_{\rm S}$.
 This result demonstrates the importance of early BHs experiencing multiple accretion episodes to 
 reproduce the observed distributions of BH mass and luminosity of quasars at $z\sim$ 6.
-In \S\ref{sec:evol}, we apply this episodic accretion model to individual growth pathways of high-$z$ quasars
-and demonstrate that normal seeding mechanisms can explain the existence of massive BHs with low luminosity
-observed at $z\simeq 6-7$.
+% In \S\ref{sec:evol}, we apply this episodic accretion model to individual growth pathways of high-$z$ quasars
+% and demonstrate that normal seeding mechanisms can explain the existence of massive BHs with low luminosity
+% observed at $z\simeq 6-7$.
 
 
 
 
+% \clearpage
 
-\clearpage
+% \newpage
 
-\newpage
-% \vspace{100mm}
+\vspace{100mm}
 \bibliography{ref}{}
 \bibliographystyle{aasjournal}
 
