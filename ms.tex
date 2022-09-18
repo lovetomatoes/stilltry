@@ -37,6 +37,7 @@
 
 \newcommand{\red}[1]{\textcolor{red}{ #1}}
 \newcommand{\blue}[1]{\textcolor{blue}{ #1}}
+\newcommand{\orange}[1]{\textcolor{orange}{ #1}}
 
 \defcitealias{2010AJ....140..546W}{W10}
 \defcitealias{2018ApJ...869..150M}{M18}
@@ -339,8 +340,13 @@ semi-analytic algorithm based on the extended Press-Schechter formalism
 For each tree, we adopt a minimum DM halo mass of $M_{\rm h,min}=10^5~\Msun$, which is small enough to capture 
 the earliest star formation episodes via H$_2$ line cooling at the high-$z$ universe \citep{1996ApJ...464..523H,1997ApJ...474....1T}.
 
-
-We consider seed BH formation in the main progenitors of quasar host galaxies, following a semi-analytical model established by \citet{2021ApJ...917...60L}.
+\orange{
+We consider seed BH formation as PopIII stellar remnants in the main progenitors of quasar host galaxies.
+We note that the more abundant but less massive PopII stellar remnants are likely to dominate
+the low mass end of the BHMF at $z\sim 6$,
+thus not significantly contribute to the observable QLF and BHMF \citep{2022MNRAS.511..616T}.
+}
+The BH seeding time and mass are determined adpoting a semi-analytical model established by \citet{2021ApJ...917...60L}.
 In the highly-biased, overdense regions of the universe, those progenitor halos are likely irradiated by intense H$_2$-photodissociating radiation 
 from nearby star-forming galaxies and heat the interior gas by successive mergers. 
 The two effects counteracting H$_2$ formation and cooling prevent gas collapse and delay prior star formation \citep[e.g.,][]{2014MNRAS.445..107V,2019Natur.566...85W}.
@@ -517,15 +523,17 @@ The value is calculated as $f_{\vbsm} = 0.6$ and $0.4$ for $\vbsm = 0$ and $\vbs
 \begin{figure*}
 \centering
 \includegraphics[width=150mm]{scheme1.png}
-\caption{
-Schematical demonstration of the procedure to calculate the evolution of BH mass distribution 
-between checkpoints time $T_0$ to $T_0+\tau$. 
-The probability of a BH with mass $M_0$ grow to $M$ after $\Delta t=\tau$ is drew from the 
-ERDF following Eq.~(\ref{eq:Pl}). 
+\caption{\blue{
+Schematical demonstration of the procedure to calculate the evolution of BH mass distribution from the earliest BH seed to $z=6$.
+The checkpoints are spaced evenly with time interval $\tau$.
+From time $T_0$ to $T_0+\tau$, 
+the BH mass distribution evolves with $\Delta t=\tau$.
 For a newly formed seed BH $M_{\rm i}$, the probability distribution function of BH mass is a delta function, 
-and the growth time is $T_0+\tau-t_{\rm i}$.
+and the growth time is $\Delta t = T_0+\tau-t_{\rm i}$.
+The probability of a BH with mass $M_0$ (or $M_{\rm i}$) to grow to $M$ after $\Delta t$ is drew from the 
+ERDF following Eq.~(\ref{eq:Pl}). 
 Thus the evolution of BH mass distribution is reshaped iteratively 
-plus taking account of the newly formed seeds if there are any.
+plus taking account of the newly formed seeds if there are any.}
 }
 \label{fig:scheme}
 \vspace{5mm}
@@ -575,10 +583,16 @@ f(\Mbh) = \frac{2}{1+\left(\Mbh /M_{\bullet,c} \right)^\delta},
 \end{equation}
 %
 where $M_{\bullet,c}=10^8~\Msun$ is adopted.
-With a positive value of $\delta$, the BH growth at the high mass end is suppressed, 
-while for small BHs the growth rate is accelerated.
-%  \blue{(references, Ueda+14?s)}.
-In the limit of $\delta \ll 1$, where $f(\Mbh) \simeq 1$ is approximated independent of $M_{\bullet,c}$, the model reproduces an exponential growth with an $e$-folding timescale of
+\orange{
+From the viewpoint of galactic-scale gas supply,
+this characteristic mass is in good agreement with the critical BH mass in \citet{2021ApJ...907...74T},
+above which super-Eddington mass growth of the central BHs no longer happens as
+galactic scale mass supply rates into the nuclear regions cannot be as large as the Eddington rates.
+With a positive value of $\delta$, we capture the suppression of BH growth at the high mass end, 
+while accelerate the growth rate of small BHs.
+}
+In the limit of $\delta \ll 1$, where $f(\Mbh) \simeq 1$ is approximated independent of $M_{\bullet,c}$,
+the model reduces to an exponential growth with an $e$-folding timescale of
 $t_{\rm S} =  \Mbh/\Mdot_{\mathrm{Edd}} \approx 45$ Myr, well known as the Salpeter timescale \citep{1964ApJ...140..796S}.
 %h independent of BH mass.
 % In \S~\ref{sec:fitting}, $\delta$ turns out to be close to 0, indicating an exponential grow manner independent of BH mass.
@@ -1018,11 +1032,15 @@ In the following, we discuss the MCMC fitting results and compare the reproduced
 In Fig.~\ref{fig:contour}, we visualize the fitting results for each parameter in two-dimensional 
 posterior distribution for the case of $\fseed= 0.1$ (left) and $0.01$ (right), respectively.
 The three vertical dashed lines in the one-dimensional distribution of each parameter
-correspond to 16, 50, and 84 percentiles, respectively.
-The best-fit values shown in red thick lines are tabulated in Table.~\ref{tab:best_fits}.
-Note that the 50 percentile does not overlap the peak of an asymmetric distribution.
+correspond to 16\%, 50\%, and 84\% quantiles in the cumulative distribution, respectively.
+The best-fit values shown in red thick lines are tabulated in Table.~\ref{tab:best_fits},
+displaying consistency with the peaks in the one-dimensional distributions.
+Note that the best-fit values may not overlap the 50\% quantile lines,
+and the deviation are significant in asymmetric one-dimensional distributions.
+The two-dimensional distributions show that the parameter pairs
+($\tau$, $\lambda_0$) and ($\lambda_0$ and $\alpha$) are negatively correlated.
 % wli : 1\sigma definition here?
-We define the $1\sigma$ scatter of a value (e.g., $\Phi_{M_\bullet}$) as the standard deviation of it calculated
+We later refer the $1\sigma$ scatter of a value (e.g., $\Phi_{M_\bullet}$) to the standard deviation of it calculated
 from randomly selected parameters from the sampling.
 % instead of the 16 and 84 percentiles here.
 }
