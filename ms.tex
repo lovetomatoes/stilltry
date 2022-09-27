@@ -69,8 +69,8 @@
 %% where dimension is any recognized LaTeX dimension, e.g. pt, in, etc.
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\graphicspath{{./}{../figs/}}
-% \graphicspath{{./}{figures/}{figs/}}
+% \graphicspath{{./}{../figs/}}
+\graphicspath{{./}{./figs/}}
 %% This is the end of the preamble.  Indicate the beginning of the
 %% manuscript itself with \begin{document}.
 
@@ -408,7 +408,7 @@ and the contribution from newly-born BHs during the interval are highlighted in 
 The majority of seed BHs form in the epoch of $20\lesssim z \lesssim 40$.
 %The most vigorous seed formation epoches are in redshift ranges $z\sim$ $40-30$ and $30-20$.
 Overall, the seed BH mass distribution is extended to $M_\bullet \gtrsim 10^5~\Msun$, 
-imprinted with various pathways of parent halo assembly and environmental effects as discussed in \S\ref{sec:seed}.
+imprinted with various pathways of parent halo assembly and environmental effects as discussed in Section~\ref{sec:seed}.
 }
 \label{fig:seedmf}
 \end{figure*}
@@ -583,7 +583,7 @@ combining the semi-analytical growth model and ERDF (see Eqs.~\ref{eq:mdot} and 
 The schematic illustration of our numerical procedure is shown in Fig.~\ref{fig:scheme}. 
 We first set a series of checkpoints with an interval of $\tlife$, 
 tracing back from $t_{\rm H}(z=6)$ to just prior than the first seed formation time $t_1$, where $t_i$ is the $i$-th seed forming time
-as defined in \S\ref{sec:seed} ($1\leq i\leq N_{\rm tot}$).
+as defined in Section~\ref{sec:seed} ($1\leq i\leq N_{\rm tot}$).
 Note that the number of the checkpoints is given by $\lceil (t_{\rm H}-t_1)/\tau \rceil+1$, where $\lceil x\rceil \equiv {\rm min}\{n \in \mathbb{Z}~ |~x\leq n\}$.
 
 
@@ -835,7 +835,7 @@ $\simeq 30-40$ times on average toward the cosmic time at $z\simeq 6$.
 The timescale of $\tlife$ is also related to the quasar lifetimes of $t_{\rm Q}\sim 1-10$ Myr, 
 which are estimated by the measurement of the physical extents of hydrogen Ly$\alpha$ proximity zones 
 observed in the rest-frame UV spectra \citep[e.g.,][]{2018ApJ...867...30E,2019ApJ...884L..19D}.
-More detailed comparison is discussed in \S\ref{sec:evol}.
+More detailed comparison is discussed in Section~\ref{sec:evol}.
 
 %%%%%%%
 %    Table. 1
@@ -1004,7 +1004,7 @@ We leave this issue as an important caveat in high-$z$ quasar observations.
 \tablecolumns{1}
 \renewcommand\thetable{2} %! fix indexing
 \tablewidth{0pt}
-\tablecaption{Parametric Quasar Luminosity Function}
+\tablecaption{Parametric Quasar Luminosity Function \label{tab:QLF_fit}}
 \tablehead{
   & & \multicolumn{4}{c}{Unobscured QLF} && \multicolumn{4}{c}{Intrinsic QLF}  \\
   \cline{3-6} \cline{8-11}
@@ -1020,8 +1020,9 @@ $z\sim 8$  && 1.18 & -23.80 & -1.83 & -3.02   && 1.91 & -23.98 & -2.08 & -3.12 \
 $z\sim 9$  && 0.268 & -23.80 & -1.98 & -3.18  && 0.429& -23.96 & -2.23 & -3.28 \\
 $z\sim 10$ && 0.0841 & -23.68 & -2.01 & -3.30 && 0.144 & -23.82 & -2.35 & -3.40 \\
 \enddata
-\label{tab:QLF_fit}
-\tablecomments{Parametric fitting function of both unobscured and intrinsic QLFs at $z=6-10$, produced by the best-fit model with $\fseed=0.01$.
+\tablecomments{Parameters characterizing the double power-law fitting functions
+of both the unobscured and intrinsic QLFs.
+At $z=6-10$, the QLF evolution is produced by the best-fit BH growth model with $\fseed=0.01$.
 }
 \end{deluxetable*}
 
@@ -1032,7 +1033,7 @@ $z\sim 10$ && 0.0841 & -23.68 & -2.01 & -3.30 && 0.144 & -23.82 & -2.35 & -3.40 
 \tablecolumns{1}
 \renewcommand\thetable{3} %! fix indexing
 \tablewidth{0pt} 
-\tablecaption{\blue{Detection Number of Quasars Estimated for Future Surveys} \label{tab:N_detect}} %! reference indexing
+\tablecaption{Detection Number of Quasars Estimated for Future Surveys \label{tab:N_detect}} %! reference indexing
 \tablehead{
   \colhead{Telescope} & \colhead{ Survey area} & \colhead{Photo. depth} &  \colhead{$N(z\sim 6)$} & \colhead{$N(z\sim 7)$}& \colhead{$N(z\sim 8)$}&  \colhead{$N(z\sim 9)$}&  \colhead{$N(z\sim 10)$}\\
   \colhead{} & \colhead{(\rm{deg}$^2$)} & \colhead{(AB mag)} & & & & & 
@@ -1040,16 +1041,18 @@ $z\sim 10$ && 0.0841 & -23.68 & -2.01 & -3.30 && 0.144 & -23.82 & -2.35 & -3.40 
 \startdata
 Wide RST    &  2000  & $YJH$  27   & $6759_{-3185}^{+15} $ &  $1514_{-558}^{+169}$ &  $349_{-131}^{53}$ & $85_{-48}^{+23}$ & $25^{+12}_{-15}$  \\
 Wide RST    &  2000  & $\Muv=-26$ & $21_{-5}^{+13} $      &  $2_{-7}^{+8}$        &  --  & -- & --  \\
+\hline
 Wide Euclid & 15000  & $YJH$  24   & $6654^{+95}_{-2282}$  &  $708^{+213}_{-237}$ &   $93^{+66}_{-56}$ & $14^{+32}_{-27}$ & --  \\
 Wide Euclid & 15000  & $YJH$  23   & $2480^{+188}_{-614}$  &  $207^{+144}_{-114}$ &   $23^{+27}_{-19}$ & $3^{+12}_{-10}$ & --  \\
-Wide Euclid & 15000  & $\Muv=-26$ & $154^{+100}_{-38}$  &  $12^{+59}_{-50}$ &   $1^{+4}_{-3}$ & -- & --  \\
+Wide Euclid & 15000  & $\Muv=-26$  & $154^{+100}_{-38}$    &  $12^{+59}_{-50}$    &   $1^{+4}_{-3}$    & -- & --  \\
 \enddata
-\tablecomments{
-Predicted number of quasars at each redshift in the two surveys, with the assumption of the survey volume with $\Delta z =1$ and 100\% completeness.
-The integration of QLF starts from the 5$\sigma$ point source detection limits of the $YJH$ bands in each survey, 
-and the bright magnitude with $\Muv=-26$ mag.
-In addition, detection limit with 22 mag in the $YJH$ bands is examined for Euclid,
-mimicking the effect of quasar selection function.% following \citet{2019A&A...631A..85E}.
+\tablecomments{\blue{
+Predicted number of quasars by the BH growth model with $\fseed=0.01$ at each redshift in the two surveys, with the assumption of the survey volume with $\Delta z =1$ and 100\% completeness.
+The integration of QLF starts from the 5$\sigma$ point source detection limits of the $YJH$ bands in each survey (27 mag for the RST; 24 mag for Euclid), 
+and from the bright absolute magnitude with $\Muv<=-26$ mag.
+In addition, with more realistic quasar identification capability down to 23 mag in the $YJH$ bands,
+\citet{2019Barnett} predicts the yields of quasar numbers as 117 at $7<z<7.5$, 25 at $7.5<z<8.5$, and 2 at $8.5<z<9$.
+We set the same detection limit and find our result in good agreement with theirs.}
 }
 \end{deluxetable*}
 
@@ -1238,7 +1241,8 @@ $M_{\rm min}$ & $\log \rho_{\bullet,0}$ & $k_{\rm M}$ ~~~ \\
 \includegraphics[width=85mm]{LF_spreadz8.pdf}\\\vspace{5mm}
 \includegraphics[width=85mm]{LF_spreadz9.pdf}\hspace{2mm}
 \includegraphics[width=85mm]{LF_spreadz10.pdf}
-\caption{Predicted quasar luminosity functions and depths and volumes of upcoming surveys.
+\caption{Predicted quasar luminosity functions \blue{based on the BH growth model with $\fseed=0.01$},
+as well as depths and volumes of upcoming surveys.
 The black solid and dashed curves present the QLF for the unobscured population (e.g., type-I AGNs) 
 and the whole population (i.e., type-I and type-II AGNs), and the shaded region presents the $1\sigma$ spread.
 The expected depths and volumes of future surveys with Wide RST and Wide Euclid are overlaid with the blue lines,
@@ -1285,7 +1289,7 @@ non-constant radiative efficiencies that covert the BH growth rate into the lumi
 %and this calls consideration of the more realistic BH-galaxy coevolution in understanding the observable AGN properties.
 \fi
 
-Fig.~\ref{fig:LFs} presents our prediction of QLFs at $z>6$ taken from the BH growth model.
+Fig.~\ref{fig:LFs} presents our prediction of QLFs at $z>6$ taken from the BH growth model \blue{with $\fseed=0.01$.}
 We divide the cosmological QLF evolution results into four different epochs; (a) $z\simeq 7$, (b) $z\simeq 8$, (c) $z\simeq 9$, and (d) $z\simeq 10-13$.
 The black solid and dashed curves show the QLF for the unobscured population 
 and entire population (including unobscured and obscured quasars), respectively.
@@ -1305,17 +1309,21 @@ From higher to lower redshifts, the number density of luminous quasars increases
 
 \blue{
 We overlay the expected depths and survey volumes of upcoming near-infrared surveys by
-Euclid \citep{2011arXiv1110.3193L} and RST \citep{2019arXiv190205569A}.
+Euclid (\citealt{2011arXiv1110.3193L}; with realistic depth updated in \citealt{2019Barnett}) and RST \citep{2019arXiv190205569A}.
 Here we consider only their wide-area survey layers because other survey programs are not suitable for quasars at $z\gtrsim 7$.
-Table~\ref{tab:N_detect} summarizes the coverage and limiting magnitudes in each survey
-and lists the expected detection number of quasars.
+Table~\ref{tab:N_detect} summarizes the survey coverage and lists the expected detection number of quasars with varying limiting magnitudes.
+We first integrate the QLFs starting from the 5$\sigma$ point source detection limits (27 mag for the RST and 24 mag for Euclid).
 In priniciple, Euclid will identify quasars up to $z\sim 8$ and discover $O(100-1000)$ quasars at $z\simeq 7-8$.
 The RST will potentially be able to explore the very faint ($\Muv>-22$ mag) but abundant quasar population even at $z\gtrsim 10$. 
-%in principle, after subtracting galaxy contaminants.
-Note that we do not take into account selection criteria to differentiate quasars from other astrophysical sources such
+Note that here we do not take into account selection criteria to differentiate quasars from other astrophysical sources such
 as Galactic brown dwarfs, strong Balmer-break galaxies, and extremely dusty star-forming galaxies at intermediate redshifts.
-Therefore, our estimate in Table~\ref{tab:N_detect} gives an upper bound of the number of detectable high-$z$ quasars.
-Nevertheless, this simplified assumption yields $\approx 3-7$ times higher values than those predicted by \citet{2019A&A...631A..85E}.
+Therefore, this estimate gives an upper bound of the number of detectable high-$z$ quasars.
+Considering 23 mag as the effective depth based on analysis of quasar selection methods for Euclid \citep{2019Barnett},
+we find our estimate of the quasars yields in good agreement with their results.
+Besides, luminous quasars with $\Muv<=-26$ are predicted to be marginally detected by the RST and Euclid up to $z\sim 7$ and 8, respectively.
+However, \citet{2019BAAS...51c.121F} propose that quasar detection can reach $z\sim 9$ by the two surveys,
+where they extrapolate the number density of those bright quasars with a milder decay up to higher redshifts. (wli: they used $-0.78$, but we discuss it later with Fig.8.)
+The difference of predictions is to be tested by upcoming high-$z$ quasar observations.
 %Studies that take into account contamination from MLT dwarfs and compact early-type galaxies and quasar selction method
 %have confirmed the capability of these surveys in searching high-$z$ quasars \citep{2019A&A...631A..85E,2019BAAS...51c.121F}.
 %With the simplified assumption of $100\%$ selection function against contaminants,
@@ -1327,7 +1335,7 @@ Nevertheless, this simplified assumption yields $\approx 3-7$ times higher value
 
 
 We also show the galaxy UV luminosity function in each panel
-along with the fitting functions in a Schechter (dotted) and double power law (dashed-dotted) shape extended to the brighter end
+along with the fitting functions in a Schechter (dotted) and double powe-law (dashed-dotted) shape extended to the brighter end
 \citep{2013MNRAS.432.2696M, 2016ApJ...819..129O, 2018ApJ...867..150M, 2019ApJ...883...99S, 2020MNRAS.493.2059B,
 2021AJ....162...47B, 2022arXiv220712356D,
 2022ApJS..259...20H, Harikane_2022b, Harikane_2022c, 2022arXiv220709434N}.
@@ -1725,7 +1733,7 @@ i.e., higher (lower) $\tlife$ values lead to under(over)-production of the lumin
 The best-fit value of $\tlife (\simeq 18$ Myr) favors a moderate fraction of $t_{\rm S}$.
 This result demonstrates the importance of early BHs experiencing multiple accretion episodes to 
 reproduce the observed distributions of BH mass and luminosity of quasars at $z\sim$ 6.
-% In \S\ref{sec:evol}, we apply this episodic accretion model to individual growth pathways of high-$z$ quasars
+% In Section~\ref{sec:evol}, we apply this episodic accretion model to individual growth pathways of high-$z$ quasars
 % and demonstrate that normal seeding mechanisms can explain the existence of massive BHs with low luminosity
 % observed at $z\simeq 6-7$.
 
