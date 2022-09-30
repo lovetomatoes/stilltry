@@ -1,0 +1,135 @@
+\documentclass[twocolumn, twocolappendix]{aastex63}
+
+% \documentclass[linenumbers,preprint2,tighten,trackchanges]{aastex631}
+%\documentclass[nolinenumbers,preprint2,tighten]{aastex631}
+%\hypersetup{filecolor=cyan,urlcolor=blue} %citecolor=green, linkcolor=red,
+\newcommand{\vdag}{(v)^\dagger}
+\newcommand\aastex{AAS\TeX}
+\newcommand\latex{La\TeX}
+\usepackage{amsmath}	% Advanced maths commands
+\usepackage{amssymb}	% Extra maths symbols
+\usepackage{mathrsfs}
+
+\usepackage{bigints}
+\usepackage{CJK}
+\usepackage{lipsum}
+
+\newcommand{\Msun}{M_\odot}
+\newcommand{\Msunyr}{M_\odot~{\rm yr}^{-1}}
+\newcommand{\Mh}{M_\mathrm{h}}
+\newcommand{\Mbh}{M_\bullet}
+\newcommand{\Mseed}{M_\mathrm{seed}}
+\newcommand{\zseed}{z_\mathrm{seed}}
+\newcommand{\hh}{\mathrm{H_2}}
+\newcommand{\CII}{\mathrm{C_{II}}}
+\newcommand{\vbsm}{v_\mathrm{bsm}}
+\newcommand{\jlw}{J_{\rm LW}}
+\newcommand{\Mdot}{\dot{M}}
+% \newcommand{\tlife}{t_\mathrm{life}}
+\newcommand{\tlife}{\tau}
+\newcommand{\fseed}{f_\mathrm{seed}}
+\newcommand{\fobsc}{f_\mathrm{obsc}}
+\newcommand{\Nt}{N_\mathrm{t}}
+\newcommand{\Muv}{M_{1450}}
+\newcommand{\Lbol}{L_\mathrm{bol}}
+\newcommand{\fbol}{f_\mathrm{bol}}
+\newcommand{\D}{\mathrm{d}}
+
+\newcommand{\red}[1]{\textcolor{red}{ #1}}
+\newcommand{\blue}[1]{\textcolor{blue}{ #1}}
+\newcommand{\orange}[1]{\textcolor{orange}{ #1}}
+
+\defcitealias{2010AJ....140..546W}{W10}
+\defcitealias{2018ApJ...869..150M}{M18}
+
+
+%\received{March 1, 2021}
+%\revised{April 1, 2021}
+%\accepted{\today}
+
+%% The following command can be used to set the latex table counters.  It
+%% is needed in this document because it uses a mix of latex tabular and
+%% AASTeX deluxetables.  In general it should not be needed.
+\setcounter{table}{1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% The following section outlines numerous optional output that
+%% can be displayed in the front matter or as running meta-data.
+
+\shorttitle{BH growth toward $z=$ 6 BHMF \& QLF}
+ \shortauthors{Li et al.}
+%%
+%% You can add a light gray and diagonal water-mark to the first page 
+%% with this command:
+% \watermark{DRAFT}
+%% where "text", e.g. DRAFT, is the text to appear.  If the text is 
+%% long you can control the water-mark size with:
+%% \setwatermarkfontsize{dimension}
+%% where dimension is any recognized LaTeX dimension, e.g. pt, in, etc.
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \graphicspath{{./}{../figs/}}
+\graphicspath{{./}{./figs/}}
+%% This is the end of the preamble.  Indicate the beginning of the
+%% manuscript itself with \begin{document}.
+
+\begin{document}
+\begin{CJK*}{UTF8}{gbsn}
+
+%%%%%%%
+%  Table. 3
+%%%%%%%
+\begin{deluxetable*}{ccccccccccc}%[t!]
+\tablecolumns{1}
+\renewcommand\thetable{3} %! fix indexing
+\tablewidth{0pt}
+\tablecaption{Parametric Quasar Luminosity Function \label{tab:QLF_fit}}
+\tablehead{
+  & & \multicolumn{4}{c}{Unobscured QLF} && \multicolumn{4}{c}{Intrinsic QLF}  \\
+  \cline{3-6} \cline{8-11}
+  \colhead{Redshift} && \colhead{$\Phi_{\Muv}^\ast$} & \colhead{$\Muv^\ast$} & \colhead{$\tilde \alpha$} & \colhead{$ \tilde \beta$}& &
+  \colhead{$\Phi_{\Muv}^\ast$} & \colhead{$\Muv^\ast$} & \colhead{$\tilde \alpha$} & \colhead{$\tilde \beta$}\\
+  & & \colhead{(Gpc$^{-3}$ mag$^{-1}$)} & \colhead{(mag)} & & & &
+  \colhead{(Gpc$^{-3}$ mag$^{-1}$)} & \colhead{(mag)} & &
+}
+\startdata
+$z\sim 6$  && 46.5 & -23.62 & -1.33 & -2.57    && 89.2 & -23.73 & -1.59 & -2.67 \\
+$z\sim 7$  && 6.98 & -23.70 & -1.61 & -2.82   && 12.4 & -23.85 & -1.87 & -2.92 \\
+$z\sim 8$  && 1.18 & -23.80 & -1.83 & -3.02   && 1.91 & -23.98 & -2.08 & -3.12 \\
+$z\sim 9$  && 0.268 & -23.80 & -1.98 & -3.18  && 0.429& -23.96 & -2.23 & -3.28 \\
+$z\sim 10$ && 0.0841 & -23.68 & -2.01 & -3.30 && 0.144 & -23.82 & -2.35 & -3.40 \\
+\enddata
+\tablecomments{no.
+}
+\end{deluxetable*}
+  
+  
+%%%%%%%
+%    Table. 4
+%%%%%%%
+\begin{deluxetable*}{cccccccc}%[t!]
+\tablecolumns{1}
+\renewcommand\thetable{4} %! fix indexing
+\tablewidth{0pt} 
+\tablecaption{Expected Number of Quasars Discovered in Future NIR Surveys \label{tab:N_detect}} %! reference indexing
+\tablehead{
+  \colhead{Survey} & \colhead{ Area} & \colhead{Selection} &  \colhead{$N(z\sim 6)$} & \colhead{$N(z\sim 7)$}& \colhead{$N(z\sim 8)$}&  \colhead{$N(z\sim 9)$}&  \colhead{$N(z\sim 10)$}\\
+  \colhead{} & \colhead{(\rm{deg}$^2$)} & \colhead{(mag)} & & & & & 
+}
+\startdata
+Euclid      & 15000           & $m_{1450}\leq 24$   & $6654^{+95}_{-2282}$  &  $708^{+213}_{-237}$ &   $93^{+66}_{-56}$ & $14^{+32}_{-14}$ & --  \\
+Euclid      & 15000           & $m_{1450}\leq 23$   & $2480^{+188}_{-614}$  &  $207^{+144}_{-114}$ &   $23^{+27}_{-19}$ & $3^{+12}_{-3}$ & --  \\
+Euclid Collab. (2019) & 15000   & selection func.  & --                             &  $204 (117)$                &   $16 (6)$             & $7 (2)$ & --  \\
+% Wide Euclid & 15000  & $\Muv=-26$  & $154^{+100}_{-38}$    &  $12^{+59}_{-50}$    &   $1^{+4}_{-3}$    & -- & --  \\
+\hline
+RST    &  2000  & $m_{1450}\leq 27$  & $6759_{-3185}^{+15} $ &  $1514_{-558}^{+169}$ &  $349_{-131}^{53}$ & $85_{-48}^{+23}$ & $25^{+12}_{-15}$  \\
+% Wide RST    &  2000  & $\Muv=-26$ & $21_{-5}^{+13} $      &  $2_{-7}^{+8}$        &  --  & -- & --  \\
+\enddata
+\tablecomments{
+no}
+\end{deluxetable*}
+  
+  
+\end{CJK*}
+\end{document}
