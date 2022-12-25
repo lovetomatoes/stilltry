@@ -1,0 +1,138 @@
+Dear Editor,
+Thank you for forwarding us the reviewer's comments concerning our manuscript submitted to the Astrophysical Journal
+Title: The Assembly of Black Hole Mass and Luminosity Functions of High-redshift Quasars via Multiple Accretion Episodes
+Authors: Wenxiu Li, Kohei Inayoshi, Masafusa Onoue and Daisuke Toyouchi
+Number: AAS42476
+We are thankful for the reviewer's comments and have revised our manuscript accordingly.
+We hope that the revised version is now acceptable for publication.
+Sincerely,
+The Authors
+
+
+— to reviewer —
+We thank the reviewer for the careful reading and thoughtful comments. We have revised the manuscript to address the reviewer’s comments, and the revised parts are indicated by red text throughout the manuscript. We reply to the specific comments point-by-point below.
+
+
+1) Section 2, page 3, right column: In Li+21, the authors employ the Dijkstra+14 prescription to 
+estimate the LW background, which assumes that haloes nearby formed all of the stars in a single burst. 
+I was wondering whether the authors considered a more physically motivated case in which 
+SF proceeds smoothly when galaxies become more massive (see, e.g. Lupi et al. 2021) 
+and the impact it might have on the seed formation probability.
+
+Thanks for the suggestion. In Li+21, we do not consider the smoothed SF process. In our semi-analytical model, the information of nearby halos is limited to their masses and emergence time from the Press-Schechter formalism and non-linear halo clustering. Therefore, we lack the information of stellar mass evolving in nearby halos. Moreover, our treatment of measuring the LW photons at a free-fall timescale after single star bursts underestimates the LW radiation by assuming all old stars instead of young stars emitting strong UV radiation.
+Therefore, the influence of the LW background enhancing the seed mass is conservative. We add explanations to point out the simplification adopted in our model (page 3, right column, line 233-240).
+
+2) Section 2.2, page 4, eq 6: Eq 6 defines an accretion rate, not a mass growth rate, as it neglects the (1-eta) factor (with eta being the radiative efficiency). 
+Given the definition of lambda, the mass growth should account for the missing factor. 
+Obviously, since eta=0.1 is small, the correction is not expected to significantly impact the results. Nonetheless, a comment on this missing factor should be included.
+
+Thanks for pointing it out, we add a comment on the simplification of the (1-eta) factor (page 5, left column, line 343-347 ).
+
+3) Section 2.3, page 7, Eq. 13: I am not sure Eq. 13 is correct. In particular, as it is written in the manuscript, the only way fobs can become smaller than 0.84 is for Lbol to be larger than 10^42 Lsol, which is not plausible. I personally rederived Eq. 13, and I could not obtain the one reported in the manuscript. On top of this, Eq. 13 is derived assuming the flat regime of the X-ray bolometric correction in Eq. 14. At low BH masses, which likely correspond to low luminosities, this assumption is perfectly reasonable.  However, at the high luminosities potentially reached when the BHs exceed 10^7 Msun, this relation is not valid anymore, 
+and the slope change should be accounted for. If the authors do not want to include this additional term,  they should at least comment on the expected effect on the results.
+
+Thanks for the reviewer’s careful reading. This equation was wrong in the expression of L_bol.
+In the code the f_obs is calculated from L_Xray and we now replace this equation Eq.13 with the correct functional form f_obs(L_Xray) from Ueda et al. 2014 (https://ui.adsabs.harvard.edu/abs/2014ApJ...786..104U). (page 7, right column, line 511-516)
+
+4) Section 2.5, MCMC fitting: More details on the MCMC procedure should be given. 
+For example, there is no mention of the number of samples used in the MCMC. 
+It is also not clear whether the MCMC has reached convergence (computing the autocorrelation or changing the number of samples).
+
+We agree with the reviewer that the convergence of MCMC fitting is essential and always necessary to be ensured. We add descriptions regarding this (page 8, left column, line 539-544).
+
+5) The corner plots in Fig. 3 show some curious results. First, it seems that a correlation exists between alpha and lambda0, which is not clear to me. Why does the MCMC not explore the high alpha/high lambda 0 region at all? 
+Secondly, the value of tau seems to be completely skewed toward the lower boundary of the prior distribution, hence the best fit value might be biased by this choice. Have the authors tried to extend the range of tau to enclose values down to 1 or less Myr to see how the distribution changes?
+
+As the reviewer mentioned, there is an anti-correlation between lambda0 and alpha. The reason is that fixing the other parameters, the higher characteristic Eddington ratio (lambda0) would lead to more rapid BH growth, then constrained by the z=6 data, the best-fit alpha would prefer the Eddington ratio distribution function being skewed to lower lambda values, i.e., lower alpha. The posterior distribution reached by MCMC stays with this (lambda0, alpha) anti-correlation, thus does not spread in the high alpha/high lambda 0 region. We add an explanation on this (page 9, right column line 638-642). We delete the statement on the anti-correlation between alpha and fseed, since it’s not strongly indicated by the results.
+
+On the fitting for parameter tau, we set the uniform prior within (10-200) Myr, the lower bound is determined by the trade-off between the computing time and the reliability of the prior.
+Low values of tau make the iteration times too much (~800 times of calculation of Eq.9 from z=20-6 with tau=1 Myr in one sample) and dramatically lower the efficiency of the fitting.
+To ensure the best-fit tau in posterior is not biased by the choice of lower boundary, we carry out two tests: (i) a parameter survey with fixed tau=1-10 Myr with delta tau=1 Myr and grids of other parameters. The lowest chi^2 value (7.28) found by these parameter combinations are higher than the best-fit results found at tau~18.76 Myr (6.21).
+(ii) we do the MCMC fitting for 3 parameters (log_delta, lambda0, alpha) in the fseed=0.01 case, with two fixed tau values: 5 and 10Myr. The fitting can converge within reasonable computing time, and the best fit chi2 = 8.44 and 7.16, for tau=5 and 10 Myr, respectively. Both are higher than chi2=6.21, found at tau~18.76 in our previous fitting. 
+Therefore, we confirm that the chi^2 reaches a minimum value at the best-fit parameters we find. For illustration purpose, in Fig.3 we change the tau distribution to be in log scale: the height of the histogram is written as dP/dlog_tau, keeping the the area of bars as the fraction of samples in the tau ranges. In this way the tau distribution is more balanced and easy to read.
+We find the definition of the chi^2 value was wrong. The MCMC fitting explores the parrameter space to minimize the value of the classical chi^2 + prior function, which is identical to 
+-2*ln (P_data*P_prior). We correct the descriptions (see page 8, right column, line 585-598).
+
+
+6) I understand that running the MCMC with 5 parameters instead of 4 would have been more expensive and also that the authors wanted to explore the impact of different fseed. 
+Nonetheless, I wonder whether they considered this idea of running the MCMC including fseed, to find the most likely fseed (if any) that matched the BHMF and the QLF.
+
+As the reviewer expected, initially we tried fitting with the 5 free parameters including fseed and found it hard to reach convergence.
+So we decided to fix fseed and vary it with 3 values to demonstrate its influence on the fitting. We add an explanation on this on page 8, left column, in Section 2.5, line 540.
+
+7) Apart from delta, the other best-fit parameters in Table 1 seem more similar between the fseed=0.1 and fseed=0.01 cases than between the 1 and 0.1 ones. How does this relate to the authors' comment about the 1 and 0.1 being quantitatively similar (also in the light of the chi-squared value which is a factor of 2 higher in the fseed=1 case than in the 0.1 one)? 
+Moreover, is delta perfectly identical in the 1.0 and 0.1 cases? Or is it a matter of number of digits reported? In this second case, I would suggest the authors to report the value using exponential notation, to highlight how different they are.
+
+Thanks for asking. We find the term "quantitatively similar" less objective than we intended. 
+In the revised version, we choose to emphasize the fseed=1 case is omitted for its unreality (100% of BHs formed having subsequent growth, without considering any negative environmental effects). We re-arrange the statement on page 9, left column, line 601. We changed delta values to exponential notation in Table 1.
+
+
+8) In Section 4.1 the authors comment on the fact that the information on the seeding process remains in the low mass regime. However, Fig. 6 shows that the 0.1 and 0.01 cases perfectly overlap at very low masses. Could the authors comment on it? Is it because typical PopIII remnants are so abundant that the difference is not significant, whereas the conditions for larger seed masses become less likely for low fseed? Or is there another reason?
+
+Thanks for asking. In Fig.6, the BHMF consist of the mass distribution of both growing BHs and the remaining seeds, i.e., fseed of the whole BH population with subsequent growth + (1-fseed) of all BHs stay at their initial masses in the range of 10^2-10^5 solar mass.
+The BHs remaining in this very low mass range are 90% and 99% of the seeds in the fseed=0.1 and 0.01 cases, respectively, so the difference between the solid and dashed lines is not significant plotted in log scale spanning a large range of the y axis. 
+We realized that the term "the seeding process” is ambiguous, with which we refer to the different seeding fraction fseed, which results in different BHMF shapes in 10^5-10^7 solar mass range. We changed the phrasing that may cause confusion (page 11, left column, line 747).
+
+
+9) Moreover, in this work the authors only consider haloes above 10^11 Msun at z=6 for their models, neglecting lower mass haloes. 
+I am wondering what effect lower mass haloes in these overdense regions might have on the low-mass end of the BHMF/QLF. 
+Obviously, given the available constraints, I do not expect the results to change in the high-mass end, but maybe the predictions at lower masses might vary.
+
+Thanks for pointing it out. The BHs we consider are a biased population formed in halos above 10^11 solar mass. Namely, the BH seeds are more massive and early-formed than typical PopIII stars. We modify the statement and raise the caveat on page 12, right column, line 780.
+Here we give a rough estimate on the contribution of low mass BHs formed in M=10^10 Msun halos. The halo abundance is ~0.03 Mpc^-3. BHs formed as typical PopIII remnants in such small halos reach mass ~10^3 Msun (Hirano+2015). Considering the shallow halo gravitational potential, such BHs can hardly grow their mass with sufficient cold gas accretion. Therefore, the mass density of these small BHs is ~ 30 Msun, which is comparable to our current value. In this sense, the underestimation is not severe problem. 
+
+Minor comments
+
+- Introduction, page 2, second column: In Lupi et al. 2021, the author also mentioned the fact that the higher probability of mergers and irradiation is not the only condition affecting the formation of massive seeds, because of the stronger metal pollution resulting from star formation. I think a comment on this aspect is relevant.
+
+Thanks for the reviewer’s suggestion. We add a discussion in the introduction.
+
+
+- Introduction, page 2, second column: in addition to Lupi et al 2021 and Li et al. 2021, there is also a recent paper by Latif and collaborators that suggested massive clouds could form in qso progenitors (arxiv 2207.05093)
+
+Thanks for the recommendation. We included the reference in the same paragraph, line 126, highlighting the influence of turbulence. Therefore, we choose to mention only the Lupi+ 2021 and Li+ 2021, which account for more comprehensive aspects in the seed formation.  
+
+- Section 2.1, page 4, line 288: The assumption of massive primordial stars collapsing into BHs assumes that stars are at most mildly rotating. However, when rotation is important, Stacey et al. (2016) showed that PopIII stars might produce strong winds, reducing their mass, and finally exploding as SNe similar to PopII/I stars. I am wondering whether the authors considered that very massive protostars as those likely to directly collapse into BHs could be characterised by large radii, and might therefore accrete gas with significant angular momentum, resulting in potentially fast rotation.
+
+
+We do not trace angular momentum in the stellar evolution. We add some references and more explicitly describe the parameter eta depicting angular momentum in the BH seed formation (see page 4, left column).
+
+- Section 2.5, line 525: What is the reason behind the exponential cutoff? What is the impact of this choice compared to a uniform prior over the entire considered range?
+
+We impose an exponential cut-off on the prior for log_delta <-4, in order to suppress the probability of such low delta’s, which are similarly equivalent with delta=0 (exponential BH growth). This treatment helps with the fitting convergence at low log_delta values.
+
+
+- Section 2.5, line 538: I checked Figure 21 in Schulze et al. 2015, but I could not find anything related to alpha. Maybe the authors wanted to refer to a different figure from the same article. If not, I suggest them to refer to the Table in Schulze+2015, which reports some values for alpha both positive and negative.
+
+Thanks for the suggestion. In Schulze+ 2015, the authors use fitting formula including mass dependence in the characteristic lambda (see Eq. 15, 16). So the alpha parameter we adopt does not correspond to any parameters in their fitting function. We refer readers to the Figure 21, which shows a positive and negative slope at the low lambda end, for type 1 and type 2 AGNs, respectively. We believe the figure is adequate for indicating the slope of the Schechter lambda distribution.
+
+- Section 3, Fig. 4: Maybe I misunderstood these results, but it seems that a significant fraction of the MBH population at high redshift might be characterised by low luminosities, in order not to overestimate the luminosity function. In this respect, I think it might help the reader to show (even in an appendix) a distribution of the average Eddington ratio/quasar lifetime as a function of BH mass.
+
+We model the Eddington ratio distribution without including mass dependence, for simplicity in describing the BH growth. In Fig. 4, the low mass BHs may not be observable, e.g., 10^7 Msun BH with an Eddington ratio < 0.1. The massive BHs (M>10^8 Msun), however, are a statistically biased population with on average higher lambda realized in their growth history.
+
+- Section 5, lines 917-921: The authors comment on the formation and evolution of highest-z quasars that results from their work. This conclusion is in line with results by dedicated cosmological simulations, as those by Di Matteo+17, Barai+18, and Lupi+19 (the latter also mentions that super-Eddington accretion phases occurred in the simulation, although the growth was forced to stay within the Eddington limit).
+
+Thanks for the recommendation. We have added a comment on the consistency with these simulation results (page16, left column, line 975). 
+
+- The model presented in this work assumes that the Eddington ratio distribution follows a well-defined distribution which is the same independently of the redshift or the BH mass. Although consistent with observations of high-redshift quasars, cosmological simulations showed that MBHs in massive galaxies (Dubois+14, Di Matteo+17, Barai+18, Lupi+19) are characterised by three different growth phases, one of them being almost constant at the Eddington rate. I am perfectly aware that the model cannot easily take into account this behaviour, but I think a comment about it is in order.
+
+Following the reviewer’s suggestion, we have added a comment about this Eddington ratio distribution assumption (page 6, right column, line 401-407).
+
+
+Typos:
+
+- Section 2.2, line 360: integrant->integral
+
+- Section 3, line 567: with those observed -> with the observed
+
+- Section 3, lines 594-595: grow->grows, develop->develops
+
+- Section 3, line 639: Similar as -> Similarly to
+
+Section 4.2, line 820: powe-law -> power-law
+
+We have fixed the typos thanks to the reviewer’s correction.
+
+
+Sincerely yours,
+The Authors

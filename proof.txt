@@ -1,0 +1,105 @@
+Dear Editorial team,
+Thank you for sending us the proof.
+We have read the Q1, Q2 and fully respect the rules of the journal.
+===
+Q2:
+We would prefer that the tile is adjusted in one line.
+If the current tile is too long to be matched after the editorial process,
+we agree that the title will be shortened as
+"Evolution of High-redshift Quasar Hosts and Promotion of Massive Black Hole Formation".
+or split into 2 lines as "Evolution of High-redshift Quasar Hosts // and Promotion of Massive Black Hole Seed Formation".
+===
+Q3:
+The Chinese characters of the authors are Wenxiu Li (李 文秀), with a blank space
+after the first character, and (邱 宇) is associated with the third author (Yu Qiu).
+In addition, we would like the 1st/2nd authors (Wenxiu Li and Kohei Inayoshi) to
+be the corresponding authors, i.e., double corresponding authors.
+This has been approved by the Editor during the review process.
+The email address of the 2nd author (Kohei Inayoshi) is
+inayoshi@pku.edu.cn.
+===
+Q4:
+The ORCID iDs are correct, but the "ORCID iDs" in page 18 are not correct.
+They should be:
+Wenxiu Li (李 文秀) https://orcid.org/0000-0002-1044-4081
+Kohei Inayoshi https://orcid.org/0000-0001-9840-4959
+Yu Qiu (邱 宇) https://orcid.org/0000-0002-6164-8463
+===
+Q5:
+>Please expand "SMS" (used only once).
+Please change "an SMS" to "a super-massive star".
+===
+Q6-Q9:
+We have checked them. They are fine.
+===
+Q10:
+>Please provide the publisher details in reference [Dalgarno & Lepp 1987].
+Please use the following bibtex information:
+@INPROCEEDINGS{1987IAUS..120..109D,
+       author = {{Dalgarno}, A. and {Lepp}, S.},
+        title = "{Chemistry in the early universe}",
+     keywords = {Chemical Evolution, Cosmochemistry, Molecular Clouds, Reaction Kinetics, Universe, Big Bang Cosmology, Gravitational Collapse, Hydrogen, Temperature Effects, Astrophysics},
+    booktitle = {Astrochemistry},
+         year = 1987,
+       editor = {{Vardya}, M.~S. and {Tarafdar}, S.~P.},
+       series = {IAU Symposium},
+       volume = {120},
+        month = jan,
+        pages = {109-118},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/1987IAUS..120..109D},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+===
+Q11:
+>In the reference [Lupi et al. 2021], please provide volume or page number, as needed.
+Please use the following bibtex information:
+@ARTICLE{Lupi2021,
+       author = {{Lupi}, Alessandro and {Haiman}, Zolt{\'a}n and {Volonteri}, Marta},
+        title = "{Forming massive seed black holes in high-redshift quasar host progenitors}",
+      journal = {\mnras},
+     keywords = {stars: black holes, methods: numerical, quasars: supermassive black holes, cosmology: first stars, Astrophysics - Astrophysics of Galaxies, Astrophysics - Cosmology and Nongalactic Astrophysics},
+         year = 2021,
+        month = may,
+       volume = {503},
+       number = {4},
+        pages = {5046-5060},
+          doi = {10.1093/mnras/stab692},
+archivePrefix = {arXiv},
+       eprint = {2102.05051},
+ primaryClass = {astro-ph.GA},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2021MNRAS.503.5046L},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+===
+Q12:
+>The reference info for Sakurai et al. (2020a) and (2020b) is identical; please fix.
+Thank you for finding this mistake. Yes, they are the same paper.
+Please refer only to Sakurai, Y., Haiman, Z., & Inayoshi, K. 2020a, MNRAS, 499, 5960
+The bibtex information is the following:
+@ARTICLE{2020MNRAS.499.5960S,
+       author = {{Sakurai}, Yuya and {Haiman}, Zolt{\'a}n and {Inayoshi}, Kohei},
+        title = "{Radiative feedback for supermassive star formation in a massive cloud with H$_{2}$ molecules in an atomic-cooling halo}",
+      journal = {\mnras},
+     keywords = {stars: evolution, stars: formation, stars: protostars, galaxies: star formation, Astrophysics - Astrophysics of Galaxies},
+         year = 2020,
+        month = dec,
+       volume = {499},
+       number = {4},
+        pages = {5960-5971},
+          doi = {10.1093/mnras/staa3227},
+archivePrefix = {arXiv},
+       eprint = {2009.02629},
+ primaryClass = {astro-ph.GA},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2020MNRAS.499.5960S},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+===
+Q13:
+>Please provide conference details in reference [Walkauskas & Kaufman 1975].
+>The format for conference citations is [Conference Title, Publication, editors
+>(Publisher City, State: Publisher Name), page number].
+We decide to cite Glover & Abel (2008), which tabulates this reaction coefficient.
+Glover, S. C. O., & Abel, T. 2008, MNRAS, 388, 1627
+
+Sincerely,
+The Authors
