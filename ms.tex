@@ -266,11 +266,16 @@ Although the conditions required for heavy seed formation are thought to be too 
 recent studies by \citet{2021MNRAS.503.5046L} and \citet{2021ApJ...917...60L} found that the formation of heavy seeds
 accelerates in rare, overdense regions of the universe, where non-linear galaxy clustering boosts the irradiation intensity
 and frequency of halo mergers.
+\blue{In such massive halos, intense cold streams through cosmic webs and supersonic turbulent motion promote the formation
+of massive gas clouds that collapse into supermassive stars and seed BHs \citep{2009Natur.457..451D,2012MNRAS.422.2539I,2022Natur.607...48L}.}
 The mass distribution of seed BHs is expected to be substantially top-heavy, extending the upper mass to $\gtrsim 10^{4-5}~\Msun$
 \citep{2021ApJ...917...60L, 2022arXiv220614459T}.
-\red{
-We note that metal enrichment of the pristine halos from internal and external star formation activities also regulates the IMF.
-Further studies accounting for this effect are essential to improve our work.
+\blue{
+Metal enrichment of the progenitor halos due to internal and external star formation activity would regulate the formation of 
+seed BHs and alter the characteristic of the mass distribution function (see also a quantitative argument on the low efficiency of enrichment in 
+\citealt{2021ApJ...917...60L}).
+Further studies with hydrodynamic simulations are required to improve our understanding of the efficiency of metal enrichment in quasar progenitor halos
+\citep[e.g.,][]{2018MNRAS.475.4378C}.
 }
 %As a result, \citet{2021ApJ...917...60L} predicted a top-heavy mass distribution of seed BHs ranging from $10^2-10^5~\Msun$.
 
@@ -339,12 +344,13 @@ Under such peculiar circumstances, massive clouds collapse to the halo centers a
 Our model takes into account various key physical processes on star formation such as halo merger heating, radiative cooling, and
 (photo-)chemical reaction networks.
 The time evolution of the gas dynamics and thermal states is calculated in a self-consistent way with the halo assembly history.
-\red{
-We note that the H$_2$-photodissociating radiation is calculated following \citet{2014MNRAS.442.2036D},
-measuring the flux at a free-fall timescale after single star bursts in nearby halos. 
-This treatment underestimates the photodissociating flux, since the assumption of old stellar population provides less UV photons than smoothly-proceeding star formation
-\citep{2021MNRAS.503.5046L}.
-Therefore, our scenario is conservative in estimating the enhanced seed BH mass.
+\blue{
+We calculate the time-dependent H$_2$-photodissociating and H$^-$ photo-detachment radiation flux (${\rm H}_2+\gamma \rightarrow 2~{\rm H}$; 
+${\rm H}^-+\gamma \rightarrow {\rm H}+{\rm e}^-$) from each star forming galaxy with a radiation temperature of $T_{\rm rad}=2\times 10^4~{\rm K}$ \citep{2014MNRAS.445..544S,2015MNRAS.450.4350I}.
+Following the treatment adopted in \citet{2014MNRAS.442.2036D}, the flux is measured at one free-fall timescale of the individual source halos after their single star bursts.
+This assumption underestimates the radiation flux because the radiation contribution from pre-existing old stellar populations is neglected
+(see also \citealt{2021MNRAS.503.5046L}, where the star formation activity is assumed to proceed in a smooth way rather than single burst episodes).
+Therefore, our model gives a conservative estimate of the formation efficiency of seed BHs.
 }
 
 
@@ -355,7 +361,7 @@ The amplitude of the streaming velocity is set to $\vbsm = 0$ and $\vbsm=1~\sigm
 is the root-mean-square speed at a redshift of $z$ \citep{2010PhRvD..82h3520T}.
 We calculate the effective sound speed of gas as $c_{\rm eff} = \{c_{\rm s}^2+v_{\rm tur}^2/3+\left(\alpha_0 \vbsm \right)^2 \}^{1/2}$ at the center of each progenitor halo,
 where $c_{\rm s}$ is the thermal sound speed, $v_{\rm tur}$ is the turbulent velocity of gas (i.e., the specific kinetic energy accumulated through halo mergers), and
-the coefficient is set to $\alpha_0=1$ \footnote[1]{The value of $\alpha_0=1.0$ is motivated by cosmological simulations of massive primordial stars
+the coefficient is set to $\alpha_0=1$ \footnote{The value of $\alpha_0=1.0$ is motivated by cosmological simulations of massive primordial stars
 under fast streaming velocities \citep{2017Sci...357.1375H,2019MNRAS.484.3510S}.
 Note that our previous study in \citet{2021ApJ...917...60L} adopted $\alpha_0=4.7$ \citep{2018ApJ...855...17H}.}.
 When the gas core becomes gravitationally unstable, the evolution of the gas density profile is well described by 
@@ -365,12 +371,11 @@ where $G$ is the gravitational constant.
 
 
 
+\blue{
 At the vicinity of an accreting protostar, an accretion disk forms due to angular momentum of the inflowing material from large scales
-\red{
-\citep{2010MNRAS.403...45S,2011Sci...331.1040C,2011ApJ...737...75G}.
-}
+\citep{2010MNRAS.403...45S,2011Sci...331.1040C,2011ApJ...737...75G}.}
 The episodic nature of disk accretion decreases the time-averaged accretion rate onto the protostar as $\Mdot_{\star}=\eta \Mdot$, 
-where we adopt $\eta=0.3$ as the conversion efficiency \red{due to the centrifugal barrier} \citep{2016MNRAS.459.1137S, 2022arXiv220614459T}. 
+where we adopt $\eta=0.3$ as the conversion efficiency \blue{owing to angular momentum of the accreting flow} \citep{2016MNRAS.459.1137S, 2022arXiv220614459T}. 
 %\blue{
 %  (Toyouchi+ find 0.4 actually.)
 %}
@@ -394,7 +399,7 @@ Hence, intense stellar UV radiation heats the disk surface and launches mass out
 \citep{2008ApJ...681..771M,2011Sci...334.1250H}. 
 In this case, the stellar mass is determined by the balance between mass accretion and mass loss via photoevaporation \citep{2013ApJ...773..155T}.
 The feedback-regulated mass can be approximated as
-\footnote[2]{A recent study by \citet{2022arXiv220614459T} provides a more sophisticated prescription of the feedback-regulated stellar mass based on their radiation hydrodynamical simulations.}
+\footnote{A recent study by \citet{2022arXiv220614459T} provides a more sophisticated prescription of the feedback-regulated stellar mass based on their radiation hydrodynamical simulations.}
 %
 \begin{equation}
 M_{\star, \mathrm{fb}} \simeq 2.9 \times 10^{3} \Msun\left(\frac{\dot{M}_{\star}}{0.01 M_{\odot} \mathrm{yr}^{-1}}\right),
@@ -406,7 +411,17 @@ we perform logarithmic interpolation in the $\Mdot_\star - M_\star$ plane to smo
 $M_{\star, \mathrm{fb}}$ and $M_{\star, \mathrm{GR}}$ at the boundaries.
 At the end of the stellar lifetime, those massive primordial stars result in BHs without significant mass loss 
 via stellar winds \citep{2003ApJ...591..288H,2015MNRAS.451.4086S}.
-Therefore, we assume that the mass of a remant BH is equal to that of its stellar progenitor.
+\blue{One important caveat is the effect of stellar rotation on the structure evolution.
+Namely, the mass loss rate of a rotating massive star via winds would be enhanced by the centrifugal force on the surface
+or suppressed by efficient mixing of the interior structure by meridional circulation \citep[see][references therein]{2008A&A...489..685E,2012A&A...542A.113Y}.
+Although those effects in the high mass regime are poorly understood yet, full general-relativistic simulations of the gravitational collapse of a rotating supermassive star 
+show that most of the stellar mass is eventually swallowed by the newly born BH, ejecting only $\sim 10\%$ of the mass \citep{2002ApJ...572L..39S,2016PhRvD..94b1501S}.}
+Therefore, we assume that the mass of a remnant BH is equal to that of its stellar progenitor.
+%\footnote{
+%\blue{Stellar rotation is expected to induce various effects on the structure evolution; namely, the mass loss rate via winds would be enhanced by the centrifugal force on the surface
+%or suppressed by efficient mixing of the interior structure by meridional circulation \citep[see][references therein]{2008A&A...489..685E,2012A&A...542A.113Y}.
+%Although those effects in the high mass regime are poorly understood yet, full general-relativistic simulations of the gravitational collapse of a rotating supermassive star 
+%found that most of the stellar mass is eventually swallowed by the newly born BH, ejecting only $\sim 10\%$ of the mass \citep{2002ApJ...572L..39S,2016PhRvD..94b1501S}.}}.
 
 
 %%%%%%%
@@ -487,11 +502,6 @@ where $\lambda$ is the ratio of the quasar bolometric luminosity to its Eddingto
 % $\lambda \equiv L/L_\mathrm{Edd}$ 
 and $\Mdot_\mathrm{Edd} \equiv L_{\mathrm{Edd}}/\eta_0 c^2$ is the Eddington accretion rate with a radiative efficiency of $\eta_0=0.1$ \citep{1973A&A....24..337S},
 which is consistent with the value obtained from the Soltan-Paczy{\'n}ski argument \citep[e.g.,][]{2002MNRAS.335..965Y,2010ApJ...725..388C}.
-\red{
-Here we take the mass accretion rate as the net BH growth rate,
-omitting the subtraction of energy loss with radiation by a factor of $1-\eta_0=0.9$.
-This treatment simplifies the functional form without significantly impacting the results.
-}
 Based on studies on the mass dependence of the radiative efficiency for AGNs at $z\lesssim$ 3 
 \citep{2008MNRAS.390..561C,2012ApJ...749..187L,2014ApJ...786..104U}, 
 we introduce a similar functional form of
@@ -502,15 +512,21 @@ f(\Mbh) = \frac{2}{1+\left(\Mbh /M_{\bullet,c} \right)^\delta},
 \end{equation}
 %
 where $M_{\bullet,c}=10^8~\Msun$ is adopted
-\footnote[3]{
+\footnote{
 A series of radiation hydrodynamical simulations for BH accretion
 suggest that the gas supplying rate from galactic scales into the nuclear scale is not high enough to sustain 
 super-Eddington accretion when the BH mass is higher than the characteristic value \citep{2021ApJ...907...74T}.}.
 With a positive value of $\delta$, the BH growth at the high mass end is suppressed,
-while the growth speed for less masssive BHs is accelerated.
+while the growth speed for less massive BHs is accelerated.
 In the limit of $\delta \ll 1$, where $f(\Mbh) \simeq 1$ is nearly independent of $M_{\bullet,c}$,
 the model in Eq.~(\ref{eq:f_M}) reproduces an exponential growth with an $e$-folding timescale of
 $t_{\rm S} =  \Mbh/\Mdot_{\mathrm{Edd}} \approx 45$ Myr (the so-called Salpeter timescale; \citealt{1964ApJ...140..796S}).
+\blue{
+Note that we do not explicitly consider the energy loss with radiation in Eq.~(\ref{eq:mdot}), neglecting a factor of $1-\eta_0=0.9$.
+This small deviation from unity can be absorbed by the uncertainty due to the functional form of $f(M_\bullet)$ and does not bring 
+a significant impact on the results discussed below.
+}
+
 
 
 
@@ -569,9 +585,9 @@ This treatment enables us to capture the nature of accretion bursts and prohibit
 long-lasting rapid growth phase of a BH.
 This phenomenological method avoids numerous uncertainties in modeling of the galaxy assembly, 
 gas feeding, and BH feedback processes in the quasar progenitor halos,
-\red{
-which are implemented as sub-grid models in cosmological simulations \citep{2017MNRAS.467.4243D,2018MNRAS.473.4003B,2019MNRAS.488.4004L}.
-Interestingly, these studies found the growth of massive BH seeds toward SMBHs is characterized by patterns including quiescent stages and accretion bursts.
+\blue{
+which are implemented as sub-grid models in previous cosmological simulations \citep{2017MNRAS.467.4243D,2018MNRAS.473.4003B,2019MNRAS.488.4004L}.
+These studies found that the growth of massive BH seeds toward SMBHs is characterized by the intermittent patterns with quiescent and accretion phases.
 Instead of treating these ingredients explicitly in our semi-analytical model,} we extract 
 an averaged but fundamental timescale that governs mutual correlation between the QLF and BHMF,
 based on direct comparison to those distribution functions for the observed high-$z$ quasar population.
@@ -653,7 +669,7 @@ in a reasonable computational time.
 
 Using the BHMF and its evolution, we construct the QLF, which can be directly probed by high-$z$ quasar observations.
 For an accreting BH with a bolometric luminosity of $\Lbol=\lambda L_\mathrm{Edd}$, 
-its rest-frame ultraviolot (UV) absolute magnitude of $\Muv$ at 1450 $\mathrm{\AA}$ is estimated as
+its rest-frame ultraviolet (UV) absolute magnitude of $\Muv$ at 1450 $\mathrm{\AA}$ is estimated as
 %
 \begin{equation}
   \label{eq:M1450}
@@ -689,14 +705,16 @@ Moreover, the obscured fraction is found to increase gradually toward higher red
 
 
 In this study, we adopt the obscuration fraction $\fobsc$ based on X-ray observations \citep{2014ApJ...786..104U}:
-\red{
+\blue{
 %
 \begin{eqnarray}
-\fobsc & = \text{min} & \left\{ \psi_{\rm max}, \right.  \\ \nonumber 
-&   & \left. \text{max}\left[ \psi_{43.75}  - \beta (\log L_{\rm X} -43.75), \psi_{\rm min}     \right]\right\},
+%\fobsc & = \text{min} & \left\{ \psi_{\rm max}, \right.  \\ \nonumber 
+%&   & \left. \text{max}\left[ \psi_{43.75}  - \beta (\log L_{\rm X} -43.75), \psi_{\rm min}     \right]\right\},
+\fobsc && = \text{min}  \left[ \psi_{\rm max}, \psi \right], \\[5pt]
+\psi &&= \text{max}\left[\psi_0  - \beta \log (L_{\rm X}/L_{\rm X,0}), \psi_{\rm min}     \right],
 \end{eqnarray}
 %
-where the parameters are written as $\psi_{\rm max}=0.84$, $\psi_{\rm min}=0.2$, $\psi_{43.75}=0.73$, and $\beta=0.24$.
+where the parameters are written as $\psi_{\rm max}=0.84$, $\psi_{\rm min}=0.2$, $\psi_{0}=0.73$, $\beta=0.24$, and $L_{\rm X,0}=10^{43.75}~{\rm erg~s}^{-1}$.
 % %
 % \begin{eqnarray}
 % \fobsc & = \text{min} & \left\{ 0.84, \right.  \\ \nonumber 
@@ -750,7 +768,7 @@ In this section, we describe the MCMC fitting procedure used to optimize
 the BH growth parameters so that the observed BHMF and QLF are consistently reproduced. 
 As discussed in Section~\ref{sec:MF}, we consider five parameters of $\tlife$, $\delta$, $\alpha$, $\lambda_0$, and $\fseed$.
 The best-fit values of the first four parameters are calculated by the MCMC method, while $\fseed$ is fixed to a single value.
-\red{
+\blue{
 We vary four parameters instead of five in the fitting to guarantee that the Marchov chain can be stabilized. 
 The fitting is carried out by sampling 100 walkers with 5000 steps.
 We verify the convergence of the posterior distribution results by doubling the chain length.
@@ -759,13 +777,13 @@ We verify the convergence of the posterior distribution results by doubling the 
 
 % prior
 In this analysis, we constrain those four parameters to be within certain physically acceptable ranges, 
-assuming \red{a prior probability function $P^{\rm prior}_a$ for each quantity $a=\tlife$, $\delta$, $\lambda_0$, and $\alpha$}.
+assuming \blue{a prior probability function $P^{\rm prior}_a$ for each quantity $a=\tlife$, $\delta$, $\lambda_0$, and $\alpha$}.
 We use a uniform prior on $\tlife$ with a limit of $10~{\rm Myr} \leq \tlife \leq 200~{\rm Myr}$,
 motivated by the constraints on the quasar lifetime based on various observations
 \citep[e.g.,][]{2004cbhg.symp..169M}.
 The parameter of $\delta$ that characterizes a non-exponential BH growth 
 is constrained at $-4 \leq \log \delta \leq -0.3$
-\footnote[4]{ We first set a uniform prior at $0\leq \delta \leq 1$, 
+\footnote{ We first set a uniform prior at $0\leq \delta \leq 1$, 
 and find the posterior distribution assembles to $\delta \lesssim 0.1$.
 We then switch to impose the $\log \delta$ prior to improve the fitting performance at small $\delta$ values.}.
 The prior function is uniform at $\log \delta \geq -3$ and is imposed to decay with an exponential cutoff at $\log \delta < -3$,
@@ -778,7 +796,8 @@ after luminosity bias correction \citep[e.g.,][]{2010AJ....140..546W}.
 For the low-$\lambda$ slope of $\alpha$ in the ERDF, we assign a Gaussian prior function with a mean value 
 $\mu_{\alpha}=0$ and a dispersion of $\sigma_{\alpha}=0.3$.
 Note that the value of $\alpha$ remains poorly constrained by the current high-$z$ quasar observations,
-but the low-$z$ quasar samples support $-0.3 \lesssim \alpha \lesssim 0.3$ \citep[e.g., see Figure 21 in][]{2015MNRAS.447.2085S}.
+but the low-$z$ quasar samples support $-0.3 \lesssim \alpha \lesssim 0.3$ 
+\blue{\citep[e.g., see the mass-integrated ERDF for comparison; the right panel of Figure 21 in][]{2015MNRAS.447.2085S}}.
 
 
 The observed BHMF data is taken from \citet{2010AJ....140..546W} (hereafter, \citetalias{2010AJ....140..546W}), where 
@@ -796,7 +815,7 @@ The magnitude bins and the error sizes are given consistently with \citetalias{2
   
 
 % posterior
-\red{
+\blue{
 In the MCMC fitting, the four parameters are sampled to generate the synthetic BHMF and QLF dataset,
 which are compared to the observational dataset. 
 The probability is evaluated by a $\chi^2$-type value defined by
@@ -808,12 +827,12 @@ The probability is evaluated by a $\chi^2$-type value defined by
   - 2 \sum_{a} \ln P^{\rm prior}_a.
 \end{align}
 %
-The first term on the right hand side is the classical $\chi^2$ value in statistics which measures the dispersion of the observational data from the model prediction,
+The first term on the right hand side is the classical $\chi^2$ value that measures the dispersion of the observational data from the model prediction,
 where $\Phi^{\rm mod}_{x,i}$ and $\Phi^{\rm obs}_{x,i}$ represent the modeled and observational value 
 on the \textit{i-}th bin of the BHMF ($x=\Mbh$) and QLF ($x=\Muv$), and $\Phi^{\rm err}_{x,i}$ is the corresponding error.
 Adopting 10 mass bins and 12 magnitude bins, we treat the errors from comparison both in the BHMF and QLF
 with nearly equal weight.
-The second term denotes the deviation of the parameter set from the prior distribution.
+The second term denotes the deviation of the parameter set from the assumed prior distribution functions.
 The posterior distribution of the MCMC fitting is stabilized around the minimum value of $\chi^2$ (highest probability), 
 with the models best reproducing the $z=$ 6 BHMF and QLF.
 }
@@ -859,12 +878,12 @@ The best-fit values shown with the red lines are listed in Table~\ref{tab:best_f
 \end{figure*}
 %
 
-\red{
-In the following, we discuss the MCMC fitting results and compare the BHMF and QLF with \textbf{the} observed distribution functions.
-The best-fit parameters together with the $\chi^2$ values for the three $\fseed$ cases are tabulated in Table~\ref{tab:best_fits}.
-Since $\fseed=1$ is an idealized case neglecting any environmental effects impeding BHs from subsequent growth,
-and the deviation from the observational data denoted by $\chi^2$ is nearly a factor of 2 higher than those in the other two cases,
-hereafter we discuss only the results of $\fseed=0.1$ and $0.01$ in comparison with observations.
+\blue{
+We discuss the MCMC fitting results and compare the BHMF and QLF with their observed distribution functions.
+The best-fit model parameters together with the $\chi^2$ values for the three cases with $\fseed$ are summarized in Table~\ref{tab:best_fits}.
+We note that the ideal case with $\fseed=1.0$, where environmental effects preventing BHs from growing is neglected, yields a $\chi^2$ value 
+nearly twice larger than those in the other two cases.
+Therefore, in the following, we focus only on the results with $\fseed=0.1$ and $0.01$ in comparison with observations.
 }
 In Fig.~\ref{fig:contour}, we visualize the fitting results of the model parameters in two-dimensional 
 posterior distribution for the case of $\fseed= 0.1$ (left) and $0.01$ (right), respectively.
@@ -886,35 +905,15 @@ which is estimated by the measurement of the physical extents of hydrogen Ly$\al
 observed in the rest-frame UV spectra \citep[e.g.,][]{2018ApJ...867...30E,2019ApJ...884L..19D}.
 The characteristic Eddington ratio $\lambda_0$ needs to be close to unity, otherwise the highest luminosity and BH mass
 in the model would differ from those in observations.
-\red{
-\sout{The power-law index of $\alpha$ in the ERDF increases as the seeding fraction decreases.
-Thus, a more significant fraction of BHs actively \textbf{grows} with $\lambda \gtrsim 1$ and \textbf{develops} the QLF and BHMF.
-}
-As shown in Fig.~\ref{fig:contour}, the power-law index $\alpha$ in the ERDF shows an anti-correlation with the value of $\lambda_0$.
-With lower $\lambda_0$, higher values of $\alpha$ enhance the fraction of actively accreting BHs,
-and develop the QLF and BHMF consistent with the observations.
+\blue{
+%\sout{The power-law index of $\alpha$ in the ERDF increases as the seeding fraction decreases.
+%Thus, a more significant fraction of BHs actively \textbf{grows} with $\lambda \gtrsim 1$ and \textbf{develops} the QLF and BHMF.
+%}
+As shown in Fig.~\ref{fig:contour}, the power-law index $\alpha$ in the ERDF shows an anti-correlation with the characteristic Eddington ratio $\lambda_0$.
+With a higher $\lambda_0$ (i.e., faster BH growth), the ERDF needs to be skewed toward the lower $\lambda$ regime with a smaller value of $\alpha$ (i.e., a larger fraction of inactive BHs)
+to be consistent with the observed QLF and BHMF.
 }
 
-%%%%%%%
-%    Table. 1
-%%%%%%%
-\begin{deluxetable}{cccccccc}%[t!]
-\tablecolumns{1}
-\renewcommand\thetable{1} %! fix indexing
-\tablewidth{0pt}
-\tablecaption{Best-fit parameters for BH growth\label{tab:best_fits}} %!!!!
-\tablehead{
-  \colhead{$\fseed$}  && \colhead{$\tau$ (Myr)} & \colhead{\red{$\log\delta$}} &  \colhead{$\lambda_0$}  & \colhead{$\alpha$}  & \colhead{$\chi^2$}
-}
-\startdata
-1.0    &&  23.13 &    -2.97    &   0.96    &   -0.06    &    15.77   \\
-0.1    &&  20.07 &    -2.98    &   0.89    &    0.12    &    8.27    \\
-0.01   &&  18.76 &    -1.26    &   0.87    &    0.20    &    6.21    \\
-\enddata
-\tablecomments{
-The best-fit parameters optimized by MCMC sampling for the three different cases of $\fseed$.
-The fitting performance is quantified with the relative magnitudes of the $\chi^2$ value.}
-\end{deluxetable}
 
 
 The best-fit parameters for the two cases reproduce the bulk properties of the BHMF and QLF at $z\sim 6$,
@@ -930,6 +929,49 @@ promoting the growth of less massive BHs with $M_\bullet <10^8~\Msun$.
 Therefore, a larger fraction of seed BHs are delivered into the SMBH regime,
 and the ten-fold difference in $\fseed$ is nearly compensated.
 
+
+
+
+
+
+In Fig.~\ref{fig:fitmf}, we show the BHMFs at $z=$ 6 reproduced by the best-fit parameters for 
+$\fseed = 0.1$ (left) and $0.01$ (right) as well as
+the $1\sigma$ standard deviation calculated from random parameter sampling in the Markov chain.
+For comparison, we present the BHMF inferred by \citetalias{2010AJ....140..546W} along with the statistical errors.
+Note that \citetalias{2010AJ....140..546W} constructed the BHMF using quasar samples with 
+$10^8~\Msun \lesssim \Mbh \lesssim 3\times 10^9~\Msun$.
+Overall, our best-fit BHMF model agrees with their constraints in this mass range.
+The power-law index of the BHMF ($\gamma_{M_\bullet} \equiv \D \ln \Phi_{M_\bullet}/\D \ln M_\bullet$) is as steep as $\gamma_{M_\bullet}\lesssim -1$
+at $M_\bullet \gtrsim 10^7~(3\times 10^7)~\Msun$ for $\fseed = 0.1 ~(0.01)$.
+Thus, the total mass budget of the entire BH population is dominated by BHs with the characteristic mass (see also Section~\ref{sec:cosm}). 
+The discrepancy between the model and observational data enlarges at the high- and low-mass end,
+reflecting poor constraints on the BHMF from the current observations.
+%The differences at the two extreme ends become smaller with the lower seeding fraction of $\fseed = 0.01$.
+%This is because the progenitors of $z=6$ BHs with $10^{7-8}~\Msun$ were the most abundant BH population 
+%in the seeding epochs (i.e., a flatter slope of the BHMF; see Fig.~\ref{fig:seedmf}) and mass growth for BHs heavier than 
+%$\sim 10^8~\Msun$ is suppressed owing to the high value of $\delta~(\simeq 0.055)$.
+
+
+%%%%%%%
+%    Table. 1
+%%%%%%%
+\begin{deluxetable}{cccccccc}%[t!]
+\tablecolumns{1}
+\renewcommand\thetable{1} %! fix indexing
+\tablewidth{0pt}
+\tablecaption{Best-fit parameters for BH growth\label{tab:best_fits}} %!!!!
+\tablehead{
+  \colhead{$\fseed$}  && \colhead{$\tau$ (Myr)} & \colhead{\blue{$\log\delta$}} &  \colhead{$\lambda_0$}  & \colhead{$\alpha$}  & \colhead{$\chi^2$}
+}
+\startdata
+1.0    &&  23.13 &    -2.97    &   0.96    &   -0.06    &    15.77   \\
+0.1    &&  20.07 &    -2.98    &   0.89    &    0.12    &    8.27    \\
+0.01   &&  18.76 &    -1.26    &   0.87    &    0.20    &    6.21    \\
+\enddata
+\tablecomments{
+The best-fit parameters optimized by MCMC sampling for the three different cases of $\fseed$.
+The fitting performance is quantified with the relative magnitudes of the $\chi^2$ value.}
+\end{deluxetable}
 
 
 %%%%%%%
@@ -970,25 +1012,6 @@ by a factor of $10^{-0.72\Delta z}$ \citep{2016ApJ...833..222J}, where $\Delta z
 \label{fig:fitlf}
 \vspace{5mm}
 \end{figure*}
-
-
-
-In Fig.~\ref{fig:fitmf}, we show the BHMFs at $z=$ 6 reproduced by the best-fit parameters for 
-$\fseed = 0.1$ (left) and $0.01$ (right) as well as
-the $1\sigma$ standard deviation calculated from random parameter sampling in the Markov chain.
-For comparison, we present the BHMF inferred by \citetalias{2010AJ....140..546W} along with the statistical errors.
-Note that \citetalias{2010AJ....140..546W} constructed the BHMF using quasar samples with 
-$10^8~\Msun \lesssim \Mbh \lesssim 3\times 10^9~\Msun$.
-Overall, our best-fit BHMF model agrees with their constraints in this mass range.
-The power-law index of the BHMF ($\gamma_{M_\bullet} \equiv \D \ln \Phi_{M_\bullet}/\D \ln M_\bullet$) is as steep as $\gamma_{M_\bullet}\lesssim -1$
-at $M_\bullet \gtrsim 10^7~(3\times 10^7)~\Msun$ for $\fseed = 0.1 ~(0.01)$.
-Thus, the total mass budget of the entire BH population is dominated by BHs with the characteristic mass (see also Section~\ref{sec:cosm}). 
-The discrepancy between the model and observational data enlarges at the high- and low-mass end,
-reflecting poor constraints on the BHMF from the current observations.
-%The differences at the two extreme ends become smaller with the lower seeding fraction of $\fseed = 0.01$.
-%This is because the progenitors of $z=6$ BHs with $10^{7-8}~\Msun$ were the most abundant BH population 
-%in the seeding epochs (i.e., a flatter slope of the BHMF; see Fig.~\ref{fig:seedmf}) and mass growth for BHs heavier than 
-%$\sim 10^8~\Msun$ is suppressed owing to the high value of $\delta~(\simeq 0.055)$.
 
 
 %%%%%%%
@@ -1069,11 +1092,10 @@ In the left panel of Fig.~\ref{fig:BHMF_rhoz}, we show the predicted BHMFs at fi
 for $\fseed=0.1$ (solid) and $0.01$ (dashed).
 As shown in Fig.~\ref{fig:seedmf}, the mass distribution of seed BHs establishes up to $M_\bullet \lesssim 2\times10^5~\Msun$ by $z\gtrsim 17$.
 Subsequently, the BHMF develops toward higher mass ranges by the growth of seeds with a fraction of $\fseed$.
-\red{\sout{
-Thus, the information on the seeding process still remains in the low mass regime.}}
+%\red{\sout{
+%Thus, the information on the seeding process still remains in the low mass regime.}}
 In fact, the case with $\fseed=0.1$ yields the number density of those growing seeds ten times higher than that with $\fseed =0.01$,
-making the difference in the BH abundance at $M_\bullet \sim 10^{5-6}~\Msun$.
-\red{
+\blue{making the difference in the BH abundance at $M_\bullet \sim 10^{5-7}~\Msun$.
 Thus, the information on the seeding fraction still remains in this low mass regime.}
 Toward lower redshifts, heavier BHs with $\gtrsim 10^7~\Msun$ emerge owing to efficient growth
 and thus BHMF in the high-mass tail increases.
@@ -1175,12 +1197,12 @@ promoting the so-called downsizing or anti-hierarchical evolution of massive BHs
 in terms of mass occupation \citep[e.g.,][]{2014ApJ...786..104U}.
 % Namely, the characteristic mass at $z\simeq 6$ in the BHMF (i.e., $\alpha_{M_\bullet}=-1$) is $M_\bullet \simeq 10^7~(3\times 10^7)~\Msun$ for 
 % $\fseed=0.1~(0.01)$.
-\red{
-We note that our model captures a biased BH population formed in the overdense region,
-and neglects the BH seeds from typical PopIII remnants in lower-mass halos ($\Mh<10^{11}~\Msun$).
-The latter population is typically less massive but more abundant and emerges later.
-Therefore, although the BHMFs in the high-mass end ($M_\bullet \gtrsim 10^7~\Msun$) sufficiently match the observations,
-we caution that in the low-mass range, the BH abundance can be underestimated.
+\blue{
+We note that our model considers a BH population formed in the overdense region,
+and neglects the contribution of BH seeds from ordinary PopIII remnants in lower-mass halos ($\Mh<10^{11}~\Msun$).
+The latter population is typically less massive ($M_\star \lesssim 10^3~\Msun$) but more abundant \citep[e.g.,][]{2015MNRAS.448..568H,2022arXiv220614459T}.
+Therefore, the BHMF at the low-mass end in our model underestimate their contribution while
+the high-mass end at $M_\bullet \gtrsim 10^7~\Msun$ matches the observed distribution well.
 }
 
 
@@ -1309,7 +1331,7 @@ $z\sim 7$--$9$ quasars can be identified down to $J \sim$ 23 mag
 due to photometric noise and contaminants in the color selection such as Galactic brown dwarfs and low-$z$ early-type galaxies.
 Adopting $m_{1450}=23$ mag as the effective depth, %based on the quasar selection methods for Euclid \citep{2019Barnett},
 our predicted detection numbers are in good agreement with their results but show a better match for the case
-where their QLFs are extrapolated from $z\sim 6$ with $10^{-0.72z}$ toward higher redshfits
+where their QLFs are extrapolated from $z\sim 6$ with $10^{-0.72z}$ toward higher redshifts
 (see the fourth column of Table~3 in \citealt{2019Barnett}).
 
 Luminous quasars with $\Muv \lesssim -26$ mag are expected to be marginally detected by Euclid and the RST up to $z\sim 7$ and 8, respectively,
@@ -1318,7 +1340,7 @@ However, \citet{2019BAAS...51c.121F} proposed that quasar detection can reach $z
 assuming a moderate decline of the quasar number density ($\propto 10^{-0.78z}$) in QLF extrapolations from $z\sim 6$
 (see more discussion in Fig.~\ref{fig:QLFmag_z}).
 The differences in those predictions will be tested by upcoming high-$z$ quasar observations.
-%Studies that take into account contamination from MLT dwarfs and compact early-type galaxies and quasar selction method
+%Studies that take into account contamination from MLT dwarfs and compact early-type galaxies and quasar selection method
 %have confirmed the capability of these surveys in searching high-$z$ quasars \citep{2019A&A...631A..85E,2019BAAS...51c.121F}.
 %With the simplified assumption of $100\%$ selection function against contaminants,
 %our predicted yield of high-$z$ quasars for the Euclid wide survey is a few times higher than that by \citet{2019A&A...631A..85E}.
@@ -1467,9 +1489,9 @@ $M_\bullet \simeq 1.7\times 10^9~\Msun$ and $\lambda \simeq 0.6$ at $z=7.6$).
 The result demonstrates that
 one possible formation channel of the highest-$z$ quasar is through the combination of rare halo environments planting a seed BH 
 with $\sim 2\times 10^5~\Msun$ at $z\sim 30$ and several (modest) super-Eddington accretion bursts.
-\red{
-From a statistical perspective, our semi-analytical model predicts Eddington accretion phases in line with the results found by previous cosmological simulations
-\citep{2017MNRAS.467.4243D,2018MNRAS.473.4003B,2019MNRAS.488.4004L}.
+\blue{
+The mass range of the highest-$z$ SMBHs can be achieved by previous cosmological simulations with a certain type of
+sub-grid models for BH feeding and feedback \citep{2017MNRAS.467.4243D,2018MNRAS.473.4003B,2019MNRAS.488.4004L}.
 }
 
 
